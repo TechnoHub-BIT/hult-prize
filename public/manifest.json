@@ -1,12 +1,12 @@
 {
-  "short_name": "TEDxBITD",
-  "name": "TEDxBITD",
+  "short_name": "Hult Prize BITD- 2022",
+  "name": "Hult Prize BITD- 2022",
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#e62b1e",
+  "theme_color": "#e4147f",
   "background_color": "#ffffff",
   "icons": [
-    {  
+    {
       "src": "./assets/images/manifest/36x36.png",
       "sizes": "36x36",
       "type": "image/png",

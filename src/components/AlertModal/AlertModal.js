@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./AlertModalComponent.css";
+import "./AlertModal.css";
 
-class AlertModalComponent extends Component {
+class AlertModal extends Component {
   state = {
     showModal: true,
     modalClass: "modalCont show",
@@ -45,4 +45,4 @@ class AlertModalComponent extends Component {
   }
 }
 
-export default AlertModalComponent;
+export default AlertModal;
