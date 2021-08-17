@@ -1,1 +1,118 @@
-/* No CSS *//*# sourceMappingURL=Navbar.css.map */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0 10vw;
+  z-index: 2;
+}
+
+.navbar .mobileNavbar {
+  display: none;
+}
+
+.navbar .desktopNavbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.navbar .desktopNavbar .navbarLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .desktopNavbar .navbarLeft .links {
+  margin-left: 1em;
+}
+
+.navbar .desktopNavbar .navbarLeft .links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .desktopNavbar .navbarLeft .links a:not(:first-child) {
+  margin-left: 2em;
+}
+
+.navbar .desktopNavbar .navbarRight .social a {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.navbar .desktopNavbar .navbarRight .social a:not(:first-child) {
+  margin-left: 1em;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar {
+    padding: 0 30px;
+    height: 8vh;
+  }
+  .navbar .mobileNavbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .navbar .mobileNavbar .hamburger {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    z-index: 3;
+  }
+  .navbar .mobileNavbar .hamburger .line {
+    height: 3px;
+    background-color: #fff;
+  }
+  .navbar .mobileNavbar .hamburger .line1 {
+    width: 15px;
+  }
+  .navbar .mobileNavbar .hamburger .line2 {
+    margin-top: 0.4em;
+    width: 30px;
+  }
+  .navbar .mobileNavbar .hamburger .line3 {
+    margin-top: 0.4em;
+    width: 15px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .navbar .desktopNavbar {
+    position: fixed;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 0;
+    left: -100%;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+  }
+  .navbar .desktopNavbar.true {
+    left: 0;
+  }
+}
+/*# sourceMappingURL=Navbar.css.map */

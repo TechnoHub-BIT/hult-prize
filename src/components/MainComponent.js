@@ -2,6 +2,7 @@ import React from "react";
 
 //Pages
 import Home from "./Home/Home";
+import ContactUs from "./ContactUs/ContactUs";
 //End Pages
 
 //Common Components
@@ -21,8 +22,11 @@ const MainComponent = () => {
         <AuthProvider>
           <ScrollToTop />
           <Navbar />
+          {/* Pages */}
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
+          <Route exact path="/contact-us" component={ContactUs} />
+          {/* End Pages */}
         </AuthProvider>
       </Router>
     </React.Fragment>
