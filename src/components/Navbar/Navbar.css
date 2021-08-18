@@ -108,11 +108,14 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    cursor: pointer;
     z-index: 3;
   }
   .navbar .mobileNavbar .hamburger .line {
     height: 3px;
     background-color: #fff;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
   }
   .navbar .mobileNavbar .hamburger .line1 {
     width: 15px;
@@ -124,17 +127,26 @@
   .navbar .mobileNavbar .hamburger .line3 {
     margin-top: 0.4em;
     width: 15px;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    margin-left: 15px;
+  }
+  .navbar .mobileNavbar .hamburger.true .line1 {
+    margin-left: 15px;
+  }
+  .navbar .mobileNavbar .hamburger.true .line3 {
+    margin-left: 0;
   }
   .navbar .desktopNavbar {
     position: fixed;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    background-color: var(--theme-clr);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     top: 0;
     left: -100%;
     -webkit-transition: 0.3s all ease;
@@ -142,6 +154,51 @@
   }
   .navbar .desktopNavbar.true {
     left: 0;
+  }
+  .navbar .desktopNavbar .navbarLeft {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navbar .desktopNavbar .navbarLeft .logo {
+    display: none;
+  }
+  .navbar .desktopNavbar .navbarLeft .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    text-align: center;
+    height: 30vh;
+    margin-left: 0;
+  }
+  .navbar .desktopNavbar .navbarLeft .links a {
+    font-size: 0.9rem;
+  }
+  .navbar .desktopNavbar .navbarLeft .links a:hover {
+    color: #000;
+  }
+  .navbar .desktopNavbar .navbarLeft .links a:not(:first-child) {
+    margin-left: 0;
+  }
+  .navbar .desktopNavbar .navbarRight .social a:hover {
+    color: #000;
+  }
+  .navbar .desktopNavbar .navbarRight .social a:not(:first-child) {
+    margin-left: 1em;
   }
 }
 /*# sourceMappingURL=Navbar.css.map */

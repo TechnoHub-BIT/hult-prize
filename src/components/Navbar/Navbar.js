@@ -4,12 +4,19 @@ import HorizontalLogo from "../../images/logos/horizontal-white.png";
 
 const Navbar = () => {
   const [navbarClass, toggleNavbar] = useState(false);
+  const [menuIcon, setIcon] = useState(false);
 
   return (
     <React.Fragment>
       <nav className="navbar">
         <div className="mobileNavbar">
-          <div className="hamburger" onClick={() => toggleNavbar(!navbarClass)}>
+          <div
+            className={"hamburger " + menuIcon}
+            onClick={() => {
+              toggleNavbar(!navbarClass);
+              setIcon(!menuIcon);
+            }}
+          >
             <div className="line line1"></div>
             <div className="line line2"></div>
             <div className="line line3"></div>

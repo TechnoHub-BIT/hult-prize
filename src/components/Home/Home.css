@@ -232,79 +232,6 @@
           transform: scale(1.03);
 }
 
-.homeContainer .section.faqSection .faqsList {
-  margin-bottom: 3em;
-  width: 100%;
-  color: #000;
-}
-
-.homeContainer .section.faqSection .singleFaq {
-  width: 100%;
-}
-
-.homeContainer .section.faqSection .singleFaq .faq {
-  margin: 15px 5px;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.homeContainer .section.faqSection .singleFaq .faq .faqQuestion {
-  position: relative;
-  font-size: 1.1rem;
-  padding-right: 80px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.homeContainer .section.faqSection .singleFaq .faq .faqQuestion::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  background-image: url("./arrow-down-mint.svg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.homeContainer .section.faqSection .singleFaq .faq .faqAnswer {
-  opacity: 0;
-  max-height: 0;
-  color: var(--light-black);
-  overflow-y: hidden;
-  font-size: 0.95rem;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.homeContainer .section.faqSection .singleFaq .faq .faqAnswer a {
-  color: var(--theme-clr);
-}
-
-.homeContainer .section.faqSection .singleFaq .faq.open .faqQuestion {
-  margin-bottom: 15px;
-}
-
-.homeContainer .section.faqSection .singleFaq .faq.open .faqQuestion::after {
-  -webkit-transform: translateY(-50%) rotate(180deg);
-          transform: translateY(-50%) rotate(180deg);
-}
-
-.homeContainer .section.faqSection .singleFaq .faq.open .faqAnswer {
-  max-height: 1000px;
-  opacity: 1;
-}
-
 .homeContainer .section.sponsorsSection .sponsorsList {
   display: -ms-grid;
   display: grid;
@@ -334,5 +261,172 @@
 .homeContainer .section.sponsorsSection .sponsorsList .singleSponsor .title {
   font-size: 0.95rem;
   margin-top: 0.5em;
+}
+
+.homeContainer .section.faqSection .faqsList .singleFaq .faq {
+  margin: 15px 5px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.homeContainer .section.faqSection .faqsList .singleFaq .faq .faqQuestion {
+  position: relative;
+  font-size: 1.1rem;
+  padding-right: 80px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.homeContainer .section.faqSection .faqsList .singleFaq .faq .faqQuestion::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-image: url("./arrow-down-mint.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.homeContainer .section.faqSection .faqsList .singleFaq .faq .faqAnswer {
+  opacity: 0;
+  max-height: 0;
+  color: var(--light-black);
+  overflow-y: hidden;
+  font-size: 0.95rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.homeContainer .section.faqSection .faqsList .singleFaq .faq .faqAnswer a {
+  color: var(--theme-clr);
+}
+
+.homeContainer .section.faqSection .faqsList .singleFaq .faq.open .faqQuestion {
+  margin-bottom: 15px;
+}
+
+.homeContainer .section.faqSection .faqsList .singleFaq .faq.open .faqQuestion::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
+.homeContainer .section.faqSection .faqsList .singleFaq .faq.open .faqAnswer {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 992px) {
+  .homeContainer .mainCarousel {
+    overflow: hidden;
+  }
+  .homeContainer .mainCarousel .owl-carousel {
+    width: 100vw;
+  }
+  .homeContainer .mainCarousel .owl-carousel .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 90vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 30px 20vh;
+  }
+  .homeContainer .mainCarousel .owl-carousel .item .content .heading {
+    font-size: 2rem;
+  }
+  .homeContainer .mainCarousel .owl-carousel .item .content .subHeading {
+    font-size: 1.5rem;
+  }
+  .homeContainer .mainCarousel .owl-carousel .item .content .ctaBtn {
+    padding: 10px 30px;
+    font-size: 0.9rem;
+  }
+  .homeContainer .section {
+    padding: 5vh 30px 10vh;
+  }
+  .homeContainer .section .ctaBtn a {
+    padding: 8px 25px;
+  }
+  .homeContainer .section.latestNewsSection {
+    padding-bottom: 15vh;
+  }
+  .homeContainer .section.latestNewsSection .newsGrid {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2em;
+  }
+  .homeContainer .section.latestNewsSection .newsGrid .singleNews:nth-child(even) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .homeContainer .section.latestNewsSection .newsGrid .singleNews:nth-child(even) img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin: 0;
+  }
+  .homeContainer .section.latestNewsSection .newsGrid .singleNews:nth-child(even) .title {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin: 0.5em 0;
+  }
+  .homeContainer .section.latestNewsSection .newsGrid .singleNews:nth-child(even) .date {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .homeContainer .section.latestNewsSection .newsGrid .singleNews:nth-child(even) .description {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    margin-top: 0.5em;
+  }
+  .homeContainer .section.downloadsSection {
+    padding: 10vh 30px;
+  }
+  .homeContainer .section.downloadsSection .downloadsGrid {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1.5em;
+  }
+  .homeContainer .section.downloadsSection .downloadsGrid .singleDownload {
+    -webkit-box-shadow: 12px 12px 15px #c3c3c3;
+            box-shadow: 12px 12px 15px #c3c3c3;
+  }
+  .homeContainer .section.sponsorsSection .sponsorsList {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .homeContainer .section.sponsorsSection .sponsorsList .singleSponsor {
+    -webkit-box-shadow: 12px 12px 15px #d9d9d9;
+            box-shadow: 12px 12px 15px #d9d9d9;
+  }
+  .homeContainer .section.faqSection .faqsList .singleFaq .faq .faqQuestion {
+    font-size: 1rem;
+  }
+  .homeContainer .section.faqSection .faqsList .singleFaq .faq .faqAnswer {
+    font-size: 0.8rem;
+  }
 }
 /*# sourceMappingURL=Home.css.map */

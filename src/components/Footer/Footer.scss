@@ -69,3 +69,34 @@
     }
   }
 }
+
+@media only screen and (max-width: 992px) {
+  .footer {
+    .mainFooter {
+      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+
+      .footerTop {
+        grid-template-columns: repeat(1, 1fr);
+
+        .description {
+          text-align: center;
+
+          p {
+            width: 100%;
+          }
+        }
+      }
+
+      .footerBottom {
+        flex-direction: column;
+        justify-content: center;
+        font-size: 0.85rem;
+        margin-top: 7vh;
+
+        div:last-child {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+}

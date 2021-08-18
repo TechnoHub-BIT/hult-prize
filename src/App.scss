@@ -44,3 +44,15 @@ button {
   cursor: pointer;
   outline: none;
 }
+
+@media only screen and (max-width: 992px) {
+  .sectionTitle {
+    font-size: 2rem;
+    margin: 0 0 10vh;
+
+    span {
+      color: var(--theme-clr);
+      font-weight: 500;
+    }
+  }
+}

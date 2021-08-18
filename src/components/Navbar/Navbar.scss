@@ -85,11 +85,13 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
         z-index: 3;
 
         .line {
           height: 3px;
           background-color: #fff;
+          transition: 0.3s all ease;
         }
 
         .line1 {
@@ -104,7 +106,17 @@
         .line3 {
           margin-top: 0.4em;
           width: 15px;
-          align-self: flex-end;
+          margin-left: 15px;
+        }
+
+        &.true {
+          .line1 {
+            margin-left: 15px;
+          }
+
+          .line3 {
+            margin-left: 0;
+          }
         }
       }
     }
@@ -112,14 +124,61 @@
     .desktopNavbar {
       position: fixed;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      background-color: var(--theme-clr);
       flex-direction: column;
+      justify-content: center;
       top: 0;
       left: -100%;
       transition: 0.3s all ease;
 
       &.true {
         left: 0;
+      }
+
+      .navbarLeft {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo {
+          display: none;
+        }
+
+        .links {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          text-align: center;
+          height: 30vh;
+          margin-left: 0;
+
+          a {
+            font-size: 0.9rem;
+
+            &:hover {
+              color: #000;
+            }
+
+            &:not(:first-child) {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+
+      .navbarRight {
+        .social {
+          a {
+            &:hover {
+              color: #000;
+            }
+
+            &:not(:first-child) {
+              margin-left: 1em;
+            }
+          }
+        }
       }
     }
   }
