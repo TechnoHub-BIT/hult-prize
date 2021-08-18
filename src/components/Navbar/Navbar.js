@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <React.Fragment>
-      <div className="navbar">
+      <nav className="navbar">
         <div className="mobileNavbar">
           <div className="hamburger" onClick={() => toggleNavbar(!navbarClass)}>
             <div className="line line1"></div>
@@ -37,7 +37,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </nav>
     </React.Fragment>
   );
 };

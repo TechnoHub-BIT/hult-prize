@@ -7,6 +7,7 @@ import ContactUs from "./ContactUs/ContactUs";
 
 //Common Components
 import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
 import ScrollToTop from "./ScrollToTop";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 //End Common Components
@@ -27,6 +28,7 @@ const MainComponent = () => {
           <Route exact path="/home" component={Home} />
           <Route exact path="/contact-us" component={ContactUs} />
           {/* End Pages */}
+          <Footer />
         </AuthProvider>
       </Router>
     </React.Fragment>

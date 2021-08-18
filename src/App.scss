@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 
 :root {
-  --theme-clr: #e4147f;
+  --theme-clr: #eb386e;
 }
 
 * {
@@ -10,4 +10,28 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
+}
+
+.textWhite {
+  color: #fff;
+}
+
+.textBlack {
+  color: #000;
+}
+
+.textTheme {
+  color: var(--theme-clr);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0 0 10vh;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
 }
