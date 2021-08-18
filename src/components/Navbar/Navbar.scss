@@ -22,13 +22,29 @@
 
     .navbarLeft {
       display: flex;
+      align-items: center;
+
+      .logo {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 150px;
+        }
+      }
 
       .links {
-        margin-left: 1em;
+        margin-left: 3em;
 
         a {
           color: #fff;
           text-decoration: none;
+          font-size: 0.9rem;
+          transition: 0.3s all ease;
+
+          &:hover {
+            color: var(--theme-clr);
+          }
 
           &:not(:first-child) {
             margin-left: 2em;
@@ -42,6 +58,11 @@
         a {
           color: #fff;
           font-size: 1.1rem;
+          transition: 0.3s all ease;
+
+          &:hover {
+            color: var(--theme-clr);
+          }
 
           &:not(:first-child) {
             margin-left: 1em;

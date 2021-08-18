@@ -1,16 +1,45 @@
 .footer .mainFooter {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2em;
   background-color: #000;
   -webkit-clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
-  padding: 20vh 0;
+  padding: 25vh 10vw 10vh;
 }
 
-.footer .mainFooter .links {
+.footer .mainFooter .footerTop {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
+  grid-gap: 2em;
+}
+
+.footer .mainFooter .footerTop .description img {
+  width: 200px;
+}
+
+.footer .mainFooter .footerTop .description p {
+  color: var(--dark-white);
+  font-size: 0.8rem;
+  width: 80%;
+  margin: 1em 0;
+}
+
+.footer .mainFooter .footerTop .description .social a {
+  color: var(--dark-white);
+  font-size: 1.1rem;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.footer .mainFooter .footerTop .description .social a:hover {
+  color: #fff;
+}
+
+.footer .mainFooter .footerTop .description .social a:not(:first-child) {
+  margin-left: 1em;
+}
+
+.footer .mainFooter .footerTop .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,19 +49,34 @@
           flex-direction: column;
 }
 
-.footer .mainFooter .links a {
-  color: #a7a6a6;
+.footer .mainFooter .footerTop .links a {
+  color: var(--dark-white);
   text-decoration: none;
   font-size: 0.8rem;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
 
-.footer .mainFooter .links a:hover {
+.footer .mainFooter .footerTop .links a:hover {
   color: #fff;
 }
 
-.footer .mainFooter .links a:not(:first-child) {
+.footer .mainFooter .footerTop .links a:not(:first-child) {
   margin-top: 1em;
+}
+
+.footer .mainFooter .footerBottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--dark-white);
+  font-size: 0.85rem;
+  margin-top: 7vh;
 }
 /*# sourceMappingURL=Footer.css.map */

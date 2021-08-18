@@ -36,15 +36,38 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .desktopNavbar .navbarLeft .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .desktopNavbar .navbarLeft .logo img {
+  width: 150px;
 }
 
 .navbar .desktopNavbar .navbarLeft .links {
-  margin-left: 1em;
+  margin-left: 3em;
 }
 
 .navbar .desktopNavbar .navbarLeft .links a {
   color: #fff;
   text-decoration: none;
+  font-size: 0.9rem;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.navbar .desktopNavbar .navbarLeft .links a:hover {
+  color: var(--theme-clr);
 }
 
 .navbar .desktopNavbar .navbarLeft .links a:not(:first-child) {
@@ -54,6 +77,12 @@
 .navbar .desktopNavbar .navbarRight .social a {
   color: #fff;
   font-size: 1.1rem;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.navbar .desktopNavbar .navbarRight .social a:hover {
+  color: var(--theme-clr);
 }
 
 .navbar .desktopNavbar .navbarRight .social a:not(:first-child) {

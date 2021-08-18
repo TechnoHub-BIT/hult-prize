@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import HorizontalLogo from "../../images/logos/horizontal-white.png";
 
 const Navbar = () => {
   const [navbarClass, toggleNavbar] = useState(false);
@@ -16,7 +17,9 @@ const Navbar = () => {
         </div>
         <div className={"desktopNavbar " + navbarClass}>
           <div className="navbarLeft">
-            <div className="logo">HULT PRIZE</div>
+            <a href="/" className="logo">
+              <img src={HorizontalLogo} alt="" />
+            </a>
             <div className="links">
               <a href="/">Home</a>
               <a href="/about-us">About</a>

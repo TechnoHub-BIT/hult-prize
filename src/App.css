@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 :root {
   --theme-clr: #eb386e;
+  --sec-clr: #e5e5e5;
+  --light-black: #6e6e6e;
+  --dark-white: #a7a6a6;
 }
 
 * {
@@ -10,6 +13,7 @@
           box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
+  scroll-behavior: smooth;
 }
 
 .textWhite {
@@ -29,6 +33,11 @@
   font-size: 2.5rem;
   font-weight: 500;
   margin: 0 0 10vh;
+}
+
+.sectionTitle span {
+  color: var(--theme-clr);
+  font-weight: 500;
 }
 
 button {
