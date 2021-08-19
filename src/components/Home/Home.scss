@@ -165,7 +165,7 @@
           background-color: #fff;
           padding: 15px;
           border-radius: 10px;
-          box-shadow: 12px 12px 24px #c3c3c3;
+          box-shadow: 12px 12px 20px #c3c3c3;
           text-decoration: none;
           transition: 0.3s all ease;
 
@@ -177,7 +177,8 @@
 
             .date {
               color: var(--light-black);
-              font-size: 0.8rem;
+              font-size: 0.75rem;
+              margin-top: 0.5em;
             }
           }
 
@@ -199,6 +200,79 @@
       }
     }
 
+    &.aboutHultSection {
+      display: flex;
+      justify-content: space-between;
+      padding: 15vh 10vw;
+
+      .logo {
+        img {
+          width: 150px;
+        }
+      }
+
+      .text {
+        display: flex;
+        align-items: center;
+        color: var(--light-black);
+        font-size: 0.9rem;
+        width: 75%;
+        border-left: 2px solid var(--theme-clr);
+        padding-left: 100px;
+      }
+    }
+
+    &.aboutUsSection {
+      position: relative;
+      height: 30vh;
+      background-image: url("../../images/dashboard/carousel/hult-prize-theme-cover.jpg");
+      background-position: 0% 60%;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .title {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 500;
+        z-index: 2;
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      a {
+        color: #fff;
+        background-color: var(--theme-clr);
+        font-size: 0.9rem;
+        padding: 10px 30px;
+        text-decoration: none;
+        border: 2px solid var(--theme-clr);
+        z-index: 2;
+        transition: 0.3s all ease;
+
+        &:hover {
+          background-color: #fff;
+          color: var(--theme-clr);
+          border-color: #fff;
+        }
+      }
+    }
+
     &.sponsorsSection {
       .sponsorsList {
         display: grid;
@@ -206,8 +280,8 @@
         grid-gap: 2em;
 
         .singleSponsor {
-          background-color: var(--sec-clr);
-          box-shadow: 12px 12px 24px #d9d9d9;
+          background-color: #fff;
+          box-shadow: 12px 12px 20px #d9d9d9;
           border-radius: 10px;
           padding: 15px;
           text-align: center;
@@ -230,6 +304,8 @@
     }
 
     &.faqSection {
+      padding: 10vh 15vw;
+
       .faqsList {
         .singleFaq {
           .faq {
@@ -332,7 +408,7 @@
     }
 
     .section {
-      padding: 5vh 30px 10vh;
+      padding: 5vh 15px 10vh;
 
       .ctaBtn {
         a {
@@ -375,7 +451,7 @@
       }
 
       &.downloadsSection {
-        padding: 10vh 30px;
+        padding: 10vh 15px;
 
         .downloadsGrid {
           grid-template-columns: repeat(1, 1fr);
@@ -387,7 +463,46 @@
         }
       }
 
+      &.aboutHultSection {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10vh 15px;
+
+        .logo {
+          img {
+            width: 100px;
+          }
+        }
+
+        .text {
+          font-size: 0.8rem;
+          width: 100%;
+          border: none;
+          padding: 40px 0 0;
+        }
+      }
+
+      &.aboutUsSection {
+        padding: 5vh 15px;
+        height: 35vh;
+        background-position: 0% 60%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        a {
+          margin-top: 2em;
+          font-size: 0.8rem;
+          padding: 8px 25px;
+        }
+      }
+
       &.sponsorsSection {
+        .sectionTitle {
+          margin: 0 0 5vh;
+        }
+
         .sponsorsList {
           grid-template-columns: repeat(1, 1fr);
 
@@ -398,6 +513,8 @@
       }
 
       &.faqSection {
+        padding: 5vh 15px;
+
         .faqsList {
           .singleFaq {
             .faq {

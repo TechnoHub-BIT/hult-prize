@@ -201,8 +201,8 @@
   background-color: #fff;
   padding: 15px;
   border-radius: 10px;
-  -webkit-box-shadow: 12px 12px 24px #c3c3c3;
-          box-shadow: 12px 12px 24px #c3c3c3;
+  -webkit-box-shadow: 12px 12px 20px #c3c3c3;
+          box-shadow: 12px 12px 20px #c3c3c3;
   text-decoration: none;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
@@ -215,7 +215,8 @@
 
 .homeContainer .section.downloadsSection .downloadsGrid .singleDownload .left .date {
   color: var(--light-black);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  margin-top: 0.5em;
 }
 
 .homeContainer .section.downloadsSection .downloadsGrid .singleDownload .right .downloadBtn {
@@ -232,6 +233,92 @@
           transform: scale(1.03);
 }
 
+.homeContainer .section.aboutHultSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15vh 10vw;
+}
+
+.homeContainer .section.aboutHultSection .logo img {
+  width: 150px;
+}
+
+.homeContainer .section.aboutHultSection .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--light-black);
+  font-size: 0.9rem;
+  width: 75%;
+  border-left: 2px solid var(--theme-clr);
+  padding-left: 100px;
+}
+
+.homeContainer .section.aboutUsSection {
+  position: relative;
+  height: 30vh;
+  background-image: url("../../images/dashboard/carousel/hult-prize-theme-cover.jpg");
+  background-position: 0% 60%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homeContainer .section.aboutUsSection::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.homeContainer .section.aboutUsSection .title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.homeContainer .section.aboutUsSection .title span {
+  font-weight: 600;
+}
+
+.homeContainer .section.aboutUsSection a {
+  color: #fff;
+  background-color: var(--theme-clr);
+  font-size: 0.9rem;
+  padding: 10px 30px;
+  text-decoration: none;
+  border: 2px solid var(--theme-clr);
+  z-index: 2;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.homeContainer .section.aboutUsSection a:hover {
+  background-color: #fff;
+  color: var(--theme-clr);
+  border-color: #fff;
+}
+
 .homeContainer .section.sponsorsSection .sponsorsList {
   display: -ms-grid;
   display: grid;
@@ -241,9 +328,9 @@
 }
 
 .homeContainer .section.sponsorsSection .sponsorsList .singleSponsor {
-  background-color: var(--sec-clr);
-  -webkit-box-shadow: 12px 12px 24px #d9d9d9;
-          box-shadow: 12px 12px 24px #d9d9d9;
+  background-color: #fff;
+  -webkit-box-shadow: 12px 12px 20px #d9d9d9;
+          box-shadow: 12px 12px 20px #d9d9d9;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
@@ -261,6 +348,10 @@
 .homeContainer .section.sponsorsSection .sponsorsList .singleSponsor .title {
   font-size: 0.95rem;
   margin-top: 0.5em;
+}
+
+.homeContainer .section.faqSection {
+  padding: 10vh 15vw;
 }
 
 .homeContainer .section.faqSection .faqsList .singleFaq .faq {
@@ -360,7 +451,7 @@
     font-size: 0.9rem;
   }
   .homeContainer .section {
-    padding: 5vh 30px 10vh;
+    padding: 5vh 15px 10vh;
   }
   .homeContainer .section .ctaBtn a {
     padding: 8px 25px;
@@ -403,7 +494,7 @@
     margin-top: 0.5em;
   }
   .homeContainer .section.downloadsSection {
-    padding: 10vh 30px;
+    padding: 10vh 15px;
   }
   .homeContainer .section.downloadsSection .downloadsGrid {
     -ms-grid-columns: (1fr)[1];
@@ -414,6 +505,51 @@
     -webkit-box-shadow: 12px 12px 15px #c3c3c3;
             box-shadow: 12px 12px 15px #c3c3c3;
   }
+  .homeContainer .section.aboutHultSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10vh 15px;
+  }
+  .homeContainer .section.aboutHultSection .logo img {
+    width: 100px;
+  }
+  .homeContainer .section.aboutHultSection .text {
+    font-size: 0.8rem;
+    width: 100%;
+    border: none;
+    padding: 40px 0 0;
+  }
+  .homeContainer .section.aboutUsSection {
+    padding: 5vh 15px;
+    height: 35vh;
+    background-position: 0% 60%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .homeContainer .section.aboutUsSection a {
+    margin-top: 2em;
+    font-size: 0.8rem;
+    padding: 8px 25px;
+  }
+  .homeContainer .section.sponsorsSection .sectionTitle {
+    margin: 0 0 5vh;
+  }
   .homeContainer .section.sponsorsSection .sponsorsList {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
@@ -421,6 +557,9 @@
   .homeContainer .section.sponsorsSection .sponsorsList .singleSponsor {
     -webkit-box-shadow: 12px 12px 15px #d9d9d9;
             box-shadow: 12px 12px 15px #d9d9d9;
+  }
+  .homeContainer .section.faqSection {
+    padding: 5vh 15px;
   }
   .homeContainer .section.faqSection .faqsList .singleFaq .faq .faqQuestion {
     font-size: 1rem;

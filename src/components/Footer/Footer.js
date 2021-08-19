@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
             <div className="links">
               <a href="/news">Latest News</a>
-              <a href="#">About Hult Prize BITD</a>
+              <a href="/team">Team 2022</a>
               <a href="#">Contact Us</a>
             </div>
           </div>

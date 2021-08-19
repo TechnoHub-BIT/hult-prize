@@ -172,7 +172,10 @@ const Home = () => {
             <a href="#" className="singleDownload">
               <div className="left">
                 <h4 className="title">Hult Prize 2022 Theme</h4>
-                <h5 className="date">Uploaded on: 18 Aug, 2021</h5>
+                <h5 className="date">
+                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                  2021
+                </h5>
               </div>
               <div className="right">
                 <a href="#" class="downloadBtn">
@@ -183,7 +186,10 @@ const Home = () => {
             <a href="#" className="singleDownload">
               <div className="left">
                 <h4 className="title">Hult Prize 2022 Theme</h4>
-                <h5 className="date">Uploaded on: 18 Aug, 2021</h5>
+                <h5 className="date">
+                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                  2021
+                </h5>
               </div>
               <div className="right">
                 <a href="#" class="downloadBtn">
@@ -194,7 +200,10 @@ const Home = () => {
             <a href="#" className="singleDownload">
               <div className="left">
                 <h4 className="title">Hult Prize 2022 Theme</h4>
-                <h5 className="date">Uploaded on: 18 Aug, 2021</h5>
+                <h5 className="date">
+                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                  2021
+                </h5>
               </div>
               <div className="right">
                 <a href="#" class="downloadBtn">
@@ -205,7 +214,10 @@ const Home = () => {
             <a href="#" className="singleDownload">
               <div className="left">
                 <h4 className="title">Hult Prize 2022 Theme</h4>
-                <h5 className="date">Uploaded on: 18 Aug, 2021</h5>
+                <h5 className="date">
+                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                  2021
+                </h5>
               </div>
               <div className="right">
                 <a href="#" class="downloadBtn">
@@ -220,6 +232,29 @@ const Home = () => {
               <i className="fas fa-long-arrow-alt-right"></i>
             </a>
           </div>
+        </div>
+        <div className="section aboutHultSection">
+          <div className="logo">
+            <img
+              src="./assets/images/logos/bit-vertical-black.png"
+              alt="Hult Prize BITD 2022 Logo"
+            />
+          </div>
+          <div className="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+            provident quas fugiat! Unde asperiores nihil harum odit sint
+            voluptates, accusamus magni quaerat cum necessitatibus? Iste
+            repellendus repellat perferendis nisi doloremque earum placeat
+            reiciendis autem, dicta, dolore pariatur neque labore qui quidem vel
+            enim recusandae odit minus. Ratione delectus repudiandae rerum.
+          </div>
+        </div>
+        <div className="section aboutUsSection">
+          <h3 className="title">
+            Still don't know what's{" "}
+            <span className="textTheme">Hult Prize?</span>
+          </h3>
+          <a href="/about-us">Know More</a>
         </div>
         <div className="section sponsorsSection">
           <h3 className="sectionTitle">
