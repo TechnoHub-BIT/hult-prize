@@ -1,0 +1,171 @@
+.ourTeamContainer {
+  .section {
+    &.teamSection {
+      .singleTeam {
+        .title {
+          font-size: 2rem;
+          font-weight: 500;
+          text-align: center;
+          margin-top: 5vh;
+
+          span {
+            color: var(--theme-clr);
+            font-weight: 500;
+          }
+        }
+
+        .members {
+          margin-top: 15vh;
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+
+          &.members2 {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          &.members3 {
+            grid-template-columns: repeat(3, 1fr);
+          }
+
+          .singleMember {
+            .memberImage {
+              position: relative;
+              background-color: var(--theme-clr);
+              height: 30vh;
+
+              img {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                filter: grayscale(100%);
+                height: 40vh;
+              }
+            }
+
+            .memberDetails {
+              background-color: var(--sec-clr);
+              height: 30vh;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              text-align: center;
+
+              .name {
+                font-size: 1.3rem;
+                font-weight: 500;
+              }
+
+              .post {
+                color: var(--theme-clr);
+                font-size: 0.95rem;
+              }
+
+              .bar {
+                height: 2px;
+                width: 50px;
+                background-color: var(--theme-clr);
+                margin: 2em auto;
+              }
+
+              .social {
+                display: flex;
+                justify-content: center;
+
+                .link {
+                  color: var(--dark-white);
+                  font-size: 1.2rem;
+                  transition: 0.3s all ease;
+
+                  &:hover {
+                    color: var(--theme-clr);
+                  }
+
+                  &:not(:first-child) {
+                    margin-left: 1em;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &:not(:first-child) {
+          margin-top: 10vh;
+        }
+
+        &:last-child {
+          margin-bottom: 10vh;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ourTeamContainer {
+    .section {
+      &.teamSection {
+        .singleTeam {
+          .title {
+            padding: 0 15px;
+          }
+
+          .members {
+            margin-top: 12vh;
+            grid-gap: 12vh;
+
+            &.members2 {
+              grid-template-columns: repeat(1, 1fr);
+            }
+
+            &.members3 {
+              grid-template-columns: repeat(1, 1fr);
+            }
+
+            .singleMember {
+              .memberImage {
+                height: 20vh;
+
+                img {
+                  height: 25vh;
+                }
+              }
+
+              .memberDetails {
+                height: 20vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0;
+
+                .name {
+                  font-size: 1rem;
+                }
+
+                .post {
+                  font-size: 0.85rem;
+                  margin-top: 0.5em;
+                }
+
+                .bar {
+                  margin: 1em auto;
+                }
+
+                .social {
+                  .link {
+                    font-size: 0.95rem;
+
+                    &:not(:first-child) {
+                      margin-left: 1em;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

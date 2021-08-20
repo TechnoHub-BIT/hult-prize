@@ -66,6 +66,10 @@
       color: var(--dark-white);
       font-size: 0.85rem;
       margin-top: 7vh;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 }

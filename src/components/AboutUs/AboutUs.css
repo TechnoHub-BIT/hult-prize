@@ -1,0 +1,89 @@
+.aboutUsContainer .section {
+  padding: 10vh 10vw;
+}
+
+.aboutUsContainer .section.contactUsSection {
+  padding: 0 10vw;
+  position: relative;
+  height: 100vh;
+  background-image: url("../../images/dashboard/carousel/hult-prize-theme-cover.jpg");
+  background-position: 0% 60%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-clip-path: polygon(0 30%, 100% 20%, 100% 80%, 0 70%);
+          clip-path: polygon(0 30%, 100% 20%, 100% 80%, 0 70%);
+}
+
+.aboutUsContainer .section.contactUsSection::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.aboutUsContainer .section.contactUsSection .title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.aboutUsContainer .section.contactUsSection .title span {
+  font-weight: 600;
+}
+
+.aboutUsContainer .section.contactUsSection a {
+  color: #fff;
+  background-color: var(--theme-clr);
+  font-size: 0.9rem;
+  padding: 10px 30px;
+  text-decoration: none;
+  border: 2px solid var(--theme-clr);
+  z-index: 2;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.aboutUsContainer .section.contactUsSection a:hover {
+  background-color: #fff;
+  color: var(--theme-clr);
+  border-color: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+  .aboutUsContainer .section {
+    padding: 5vh 15px 10vh;
+  }
+  .aboutUsContainer .section.contactUsSection {
+    padding: 5vh 10vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .aboutUsContainer .section.contactUsSection a {
+    margin-top: 2em;
+    font-size: 0.8rem;
+    padding: 8px 25px;
+  }
+}
+/*# sourceMappingURL=AboutUs.css.map */

@@ -44,7 +44,9 @@ const Footer = () => {
             <div>Copyright &copy; Hult Prize BITD 2022</div>
             <div>
               Developed by-{" "}
-              <span className="textTheme">Hult Prize Technical Team</span>
+              <a href="/team#technicalTeam" className="textTheme">
+                Hult Prize Technical Team
+              </a>
             </div>
           </div>
         </div>

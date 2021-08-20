@@ -3,6 +3,8 @@ import React from "react";
 //Pages
 import Home from "./Home/Home";
 import ContactUs from "./ContactUs/ContactUs";
+import AboutUs from "./AboutUs/AboutUs";
+import OurTeam from "./OurTeam/OurTeam";
 //End Pages
 
 //Common Components
@@ -27,6 +29,9 @@ const MainComponent = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/contact-us" component={ContactUs} />
+          <Route exact path="/about-us" component={AboutUs} />
+          <Route exact path="/team" component={OurTeam} />
+          <Route exact path="/our-team" component={OurTeam} />
           {/* End Pages */}
           <Footer />
         </AuthProvider>
