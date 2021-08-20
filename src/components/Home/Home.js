@@ -249,12 +249,13 @@ const Home = () => {
             enim recusandae odit minus. Ratione delectus repudiandae rerum.
           </div>
         </div>
-        <div className="section aboutUsSection">
+        <div className="section contactUsSection">
           <h3 className="title">
-            Still don't know what's{" "}
-            <span className="textTheme">Hult Prize?</span>
+            Still got <span className="textTheme">mixed up</span> thoughts?
+            <br />
+            We are always here.
           </h3>
-          <a href="/about-us">Know More</a>
+          <a href="/contact-us">Contact Us</a>
         </div>
         <div className="section sponsorsSection">
           <h3 className="sectionTitle">

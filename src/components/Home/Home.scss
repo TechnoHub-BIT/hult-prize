@@ -203,7 +203,7 @@
     &.aboutHultSection {
       display: flex;
       justify-content: space-between;
-      padding: 15vh 10vw;
+      padding: 15vh 10vw 0;
 
       .logo {
         img {
@@ -218,13 +218,14 @@
         font-size: 0.9rem;
         width: 75%;
         border-left: 2px solid var(--theme-clr);
-        padding-left: 100px;
+        padding-left: 140px;
       }
     }
 
-    &.aboutUsSection {
+    &.contactUsSection {
+      padding: 0 10vw;
       position: relative;
-      height: 30vh;
+      height: 100vh;
       background-image: url("../../images/dashboard/carousel/hult-prize-theme-cover.jpg");
       background-position: 0% 60%;
       background-size: cover;
@@ -233,6 +234,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      clip-path: polygon(0 30%, 100% 20%, 100% 80%, 0 70%);
 
       &::after {
         position: absolute;
@@ -274,6 +276,8 @@
     }
 
     &.sponsorsSection {
+      padding: 0 10vw 10vh;
+
       .sponsorsList {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -467,7 +471,8 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: 10vh 15px;
+        padding: 10vh 15px 0;
+        margin-bottom: -10vh;
 
         .logo {
           img {
@@ -483,10 +488,8 @@
         }
       }
 
-      &.aboutUsSection {
-        padding: 5vh 15px;
-        height: 35vh;
-        background-position: 0% 60%;
+      &.contactUsSection {
+        padding: 5vh 10vw;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
@@ -499,6 +502,9 @@
       }
 
       &.sponsorsSection {
+        padding: 0 15px 10vh;
+        margin: -10vh;
+
         .sectionTitle {
           margin: 0 0 5vh;
         }

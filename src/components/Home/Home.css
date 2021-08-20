@@ -240,7 +240,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 15vh 10vw;
+  padding: 15vh 10vw 0;
 }
 
 .homeContainer .section.aboutHultSection .logo img {
@@ -258,12 +258,13 @@
   font-size: 0.9rem;
   width: 75%;
   border-left: 2px solid var(--theme-clr);
-  padding-left: 100px;
+  padding-left: 140px;
 }
 
-.homeContainer .section.aboutUsSection {
+.homeContainer .section.contactUsSection {
+  padding: 0 10vw;
   position: relative;
-  height: 30vh;
+  height: 100vh;
   background-image: url("../../images/dashboard/carousel/hult-prize-theme-cover.jpg");
   background-position: 0% 60%;
   background-size: cover;
@@ -278,9 +279,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-clip-path: polygon(0 30%, 100% 20%, 100% 80%, 0 70%);
+          clip-path: polygon(0 30%, 100% 20%, 100% 80%, 0 70%);
 }
 
-.homeContainer .section.aboutUsSection::after {
+.homeContainer .section.contactUsSection::after {
   position: absolute;
   content: "";
   height: 100%;
@@ -290,18 +293,18 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.homeContainer .section.aboutUsSection .title {
+.homeContainer .section.contactUsSection .title {
   color: #fff;
   font-size: 2rem;
   font-weight: 500;
   z-index: 2;
 }
 
-.homeContainer .section.aboutUsSection .title span {
+.homeContainer .section.contactUsSection .title span {
   font-weight: 600;
 }
 
-.homeContainer .section.aboutUsSection a {
+.homeContainer .section.contactUsSection a {
   color: #fff;
   background-color: var(--theme-clr);
   font-size: 0.9rem;
@@ -313,10 +316,14 @@
   transition: 0.3s all ease;
 }
 
-.homeContainer .section.aboutUsSection a:hover {
+.homeContainer .section.contactUsSection a:hover {
   background-color: #fff;
   color: var(--theme-clr);
   border-color: #fff;
+}
+
+.homeContainer .section.sponsorsSection {
+  padding: 0 10vw 10vh;
 }
 
 .homeContainer .section.sponsorsSection .sponsorsList {
@@ -516,7 +523,8 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 10vh 15px;
+    padding: 10vh 15px 0;
+    margin-bottom: -10vh;
   }
   .homeContainer .section.aboutHultSection .logo img {
     width: 100px;
@@ -527,10 +535,8 @@
     border: none;
     padding: 40px 0 0;
   }
-  .homeContainer .section.aboutUsSection {
-    padding: 5vh 15px;
-    height: 35vh;
-    background-position: 0% 60%;
+  .homeContainer .section.contactUsSection {
+    padding: 5vh 10vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -542,10 +548,14 @@
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .homeContainer .section.aboutUsSection a {
+  .homeContainer .section.contactUsSection a {
     margin-top: 2em;
     font-size: 0.8rem;
     padding: 8px 25px;
+  }
+  .homeContainer .section.sponsorsSection {
+    padding: 0 15px 10vh;
+    margin: -10vh;
   }
   .homeContainer .section.sponsorsSection .sectionTitle {
     margin: 0 0 5vh;
