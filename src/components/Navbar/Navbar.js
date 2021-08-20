@@ -21,6 +21,9 @@ const Navbar = () => {
             <div className="line line2"></div>
             <div className="line line3"></div>
           </div>
+          <a href="/" className="logo">
+            <img src={HorizontalLogo} alt="Hult Prize BITD 2022 Logo" />
+          </a>
         </div>
         <div className={"desktopNavbar " + navbarClass}>
           <div className="navbarLeft">

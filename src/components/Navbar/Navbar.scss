@@ -80,6 +80,10 @@
 
     .mobileNavbar {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      width: 100%;
 
       .hamburger {
         position: relative;
@@ -117,6 +121,12 @@
           .line3 {
             margin-left: 0;
           }
+        }
+      }
+
+      .logo {
+        img {
+          width: 150px;
         }
       }
     }

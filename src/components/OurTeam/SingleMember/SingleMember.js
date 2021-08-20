@@ -1,4 +1,5 @@
 import React from "react";
+import { Fade } from "react-reveal";
 
 const SingleMember = (props) => {
   return (
@@ -11,34 +12,55 @@ const SingleMember = (props) => {
           />
         </div>
         <div className="memberDetails">
-          <h3 className="name">{props.name}</h3>
-          {props.post ? <h4 className="post">{props.post}</h4> : null}
-          <div className="bar"></div>
+          <Fade up>
+            <h3 className="name">{props.name}</h3>
+          </Fade>
+          {props.post ? (
+            <Fade up>
+              <h4 className="post">{props.post}</h4>
+            </Fade>
+          ) : null}
+
+          <Fade up>
+            <div className="bar"></div>
+          </Fade>
           <div className="social">
-            <a
-              href={props.facebook}
-              className="link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a
-              href={"https://instagram.com/" + props.instagram}
-              className="link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a
-              href={"https://linkedin.com/" + props.linkedin}
-              className="link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-linkedin"></i>
-            </a>
+            {props.facebook ? (
+              <Fade up>
+                <a
+                  href={props.facebook}
+                  className="link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+              </Fade>
+            ) : null}
+            {props.instagram ? (
+              <Fade up>
+                <a
+                  href={"https://instagram.com/" + props.instagram}
+                  className="link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </Fade>
+            ) : null}
+            {props.linkedin ? (
+              <Fade up>
+                <a
+                  href={"https://linkedin.com/in/" + props.linkedin}
+                  className="link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-linkedin"></i>
+                </a>
+              </Fade>
+            ) : null}
           </div>
         </div>
       </div>

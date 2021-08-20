@@ -12,6 +12,7 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import ScrollToTop from "./ScrollToTop";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import config from "react-reveal/globals";
 //End Common Components
 
 //Private Route
@@ -19,6 +20,8 @@ import PrivateRoute from "../PrivateRoute";
 import { AuthProvider } from "../contexts/AuthContext";
 
 const MainComponent = () => {
+  config({ ssrFadeout: true });
+
   return (
     <React.Fragment>
       <Router>

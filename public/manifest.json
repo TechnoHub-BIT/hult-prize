@@ -1,9 +1,9 @@
 {
-  "short_name": "Hult Prize BITD- 2022",
-  "name": "Hult Prize BITD- 2022",
+  "short_name": "Hult Prize BITD 2022",
+  "name": "Hult Prize BITD 2022",
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#e4147f",
+  "theme_color": "#eb386e",
   "background_color": "#ffffff",
   "icons": [
     {

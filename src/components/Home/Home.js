@@ -6,6 +6,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import Image from "../../images/dashboard/carousel/hult-prize-cover.png";
 import Image2 from "../../images/dashboard/carousel/hult-prize-theme-cover.jpg";
 import FAQ from "./FAQ";
+import { Fade } from "react-reveal";
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -85,228 +86,279 @@ const Home = () => {
               style={{ backgroundImage: "url(" + Image + ")" }}
             >
               <div className="content">
-                <h2 className="heading textTheme">Registrations are Live!</h2>
-                <h2 className="subHeading textWhite">
-                  On-Campus Program 2021-22
-                </h2>
-                <a href="#" className="ctaBtn">
-                  Register Now
-                </a>
+                <Fade up>
+                  <h2 className="heading textTheme">Registrations are Live!</h2>
+                  <h2 className="subHeading textWhite">
+                    On-Campus Program 2021-22
+                  </h2>
+                  <a href="#" className="ctaBtn">
+                    Register Now
+                  </a>
+                </Fade>
               </div>
             </div>
           </OwlCarousel>
         </div>
         <div className="section latestNewsSection">
-          <h3 className="sectionTitle">
-            <span>Latest</span> News & Updates
-          </h3>
+          <Fade up>
+            <h3 className="sectionTitle">
+              <span>Latest</span> News & Updates
+            </h3>
+          </Fade>
           <div className="newsGrid">
-            <div className="singleNews">
-              <a href="#">
-                <img src="./assets/images/dashboard/news/news-1.jpg" alt="" />
-              </a>
-              <a href="#" className="title">
-                Whatever the news title be
-              </a>
-              <h4 className="date">
-                <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug, 2021
-              </h4>
-              <p className="description">
-                tenetur. Lorem ipsum dolor, sit amet consectetur adipisicing
-                elit. Voluptate doloribus rem, enim alias deleniti, perferendis
-                at ipsum reprehenderit cupiditate ea, est dolorum aut iure
-                nulla. Voluptas nesciunt nemo minus amet temporibus dolor
-                pariatur voluptates culpa repellendus, labore et nihil
-                distinctio!
-              </p>
-            </div>
-            <div className="singleNews">
-              <a href="#">
-                <img src="./assets/images/dashboard/news/news-1.jpg" alt="" />
-              </a>
-              <a href="#" className="title">
-                Whatever the news title be
-              </a>
-              <h4 className="date">
-                <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug, 2021
-              </h4>
-              <p className="description">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Voluptate doloribus rem, enim alias deleniti, perferendis at
-                ipsum reprehenderit cupiditate ea, est dolorum aut iure nulla.
-                Voluptas nesciunt nemo minus amet temporibus dolor pariatur
-                voluptates culpa repellendus, labore et nihil distinctio!
-              </p>
-            </div>
-            <div className="singleNews">
-              <a href="#">
-                <img src="./assets/images/dashboard/news/news-1.jpg" alt="" />
-              </a>
-              <a href="#" className="title">
-                Whatever the news title be
-              </a>
-              <h4 className="date">
-                <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug, 2021
-              </h4>
-              <p className="description">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Voluptate doloribus rem, enim alias deleniti, perferendis at
-                ipsum reprehenderit cupiditate ea, est dolorum aut iure nulla.
-                Voluptas nesciunt nemo minus amet temporibus dolor pariatur
-                voluptates culpa repellendus, labore et nihil distinctio!
-              </p>
-            </div>
+            <Fade up>
+              <div className="singleNews">
+                <a href="#">
+                  <img src="./assets/images/dashboard/news/news-1.jpg" alt="" />
+                </a>
+                <a href="#" className="title">
+                  Whatever the news title be
+                </a>
+                <h4 className="date">
+                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                  2021
+                </h4>
+                <p className="description">
+                  tenetur. Lorem ipsum dolor, sit amet consectetur adipisicing
+                  elit. Voluptate doloribus rem, enim alias deleniti,
+                  perferendis at ipsum reprehenderit cupiditate ea, est dolorum
+                  aut iure nulla. Voluptas nesciunt nemo minus amet temporibus
+                  dolor pariatur voluptates culpa repellendus, labore et nihil
+                  distinctio!
+                </p>
+              </div>
+            </Fade>
+            <Fade down>
+              <div className="singleNews">
+                <a href="#">
+                  <img src="./assets/images/dashboard/news/news-1.jpg" alt="" />
+                </a>
+                <a href="#" className="title">
+                  Whatever the news title be
+                </a>
+                <h4 className="date">
+                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                  2021
+                </h4>
+                <p className="description">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Voluptate doloribus rem, enim alias deleniti, perferendis at
+                  ipsum reprehenderit cupiditate ea, est dolorum aut iure nulla.
+                  Voluptas nesciunt nemo minus amet temporibus dolor pariatur
+                  voluptates culpa repellendus, labore et nihil distinctio!
+                </p>
+              </div>
+            </Fade>
+            <Fade up>
+              <div className="singleNews">
+                <a href="#">
+                  <img src="./assets/images/dashboard/news/news-1.jpg" alt="" />
+                </a>
+                <a href="#" className="title">
+                  Whatever the news title be
+                </a>
+                <h4 className="date">
+                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                  2021
+                </h4>
+                <p className="description">
+                  tenetur. Lorem ipsum dolor, sit amet consectetur adipisicing
+                  elit. Voluptate doloribus rem, enim alias deleniti,
+                  perferendis at ipsum reprehenderit cupiditate ea, est dolorum
+                  aut iure nulla. Voluptas nesciunt nemo minus amet temporibus
+                  dolor pariatur voluptates culpa repellendus, labore et nihil
+                  distinctio!
+                </p>
+              </div>
+            </Fade>
           </div>
-          <div className="ctaBtn">
-            <a href="/news">
-              Read More&nbsp;&nbsp;
-              <i className="fas fa-long-arrow-alt-right"></i>
-            </a>
-          </div>
+          <Fade up>
+            <div className="ctaBtn">
+              <a href="/news">
+                Read More&nbsp;&nbsp;
+                <i className="fas fa-long-arrow-alt-right"></i>
+              </a>
+            </div>
+          </Fade>
         </div>
         <div className="section downloadsSection">
-          <h3 className="sectionTitle">
-            Download all <span>Event Documents</span>
-          </h3>
+          <Fade up>
+            <h3 className="sectionTitle">
+              Download all <span>Event Documents</span>
+            </h3>
+          </Fade>
           <div className="downloadsGrid">
-            <a href="#" className="singleDownload">
-              <div className="left">
-                <h4 className="title">Hult Prize 2022 Theme</h4>
-                <h5 className="date">
-                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                  2021
-                </h5>
-              </div>
-              <div className="right">
-                <a href="#" class="downloadBtn">
-                  Download
-                </a>
-              </div>
-            </a>
-            <a href="#" className="singleDownload">
-              <div className="left">
-                <h4 className="title">Hult Prize 2022 Theme</h4>
-                <h5 className="date">
-                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                  2021
-                </h5>
-              </div>
-              <div className="right">
-                <a href="#" class="downloadBtn">
-                  Download
-                </a>
-              </div>
-            </a>
-            <a href="#" className="singleDownload">
-              <div className="left">
-                <h4 className="title">Hult Prize 2022 Theme</h4>
-                <h5 className="date">
-                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                  2021
-                </h5>
-              </div>
-              <div className="right">
-                <a href="#" class="downloadBtn">
-                  Download
-                </a>
-              </div>
-            </a>
-            <a href="#" className="singleDownload">
-              <div className="left">
-                <h4 className="title">Hult Prize 2022 Theme</h4>
-                <h5 className="date">
-                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                  2021
-                </h5>
-              </div>
-              <div className="right">
-                <a href="#" class="downloadBtn">
-                  Download
-                </a>
-              </div>
-            </a>
+            <Fade up>
+              <a href="#" className="singleDownload">
+                <div className="left">
+                  <h4 className="title">Hult Prize 2022 Theme</h4>
+                  <h5 className="date">
+                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                    2021
+                  </h5>
+                </div>
+                <div className="right">
+                  <a href="#" class="downloadBtn">
+                    Download
+                  </a>
+                </div>
+              </a>
+            </Fade>
+            <Fade up>
+              <a href="#" className="singleDownload">
+                <div className="left">
+                  <h4 className="title">Hult Prize 2022 Theme</h4>
+                  <h5 className="date">
+                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                    2021
+                  </h5>
+                </div>
+                <div className="right">
+                  <a href="#" class="downloadBtn">
+                    Download
+                  </a>
+                </div>
+              </a>
+            </Fade>
+            <Fade up>
+              <a href="#" className="singleDownload">
+                <div className="left">
+                  <h4 className="title">Hult Prize 2022 Theme</h4>
+                  <h5 className="date">
+                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                    2021
+                  </h5>
+                </div>
+                <div className="right">
+                  <a href="#" class="downloadBtn">
+                    Download
+                  </a>
+                </div>
+              </a>
+            </Fade>
+            <Fade up>
+              <a href="#" className="singleDownload">
+                <div className="left">
+                  <h4 className="title">Hult Prize 2022 Theme</h4>
+                  <h5 className="date">
+                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
+                    2021
+                  </h5>
+                </div>
+                <div className="right">
+                  <a href="#" class="downloadBtn">
+                    Download
+                  </a>
+                </div>
+              </a>
+            </Fade>
           </div>
-          <div className="ctaBtn">
-            <a href="/news">
-              View All&nbsp;&nbsp;
-              <i className="fas fa-long-arrow-alt-right"></i>
-            </a>
-          </div>
+          <Fade up>
+            <div className="ctaBtn">
+              <a href="/news">
+                View All&nbsp;&nbsp;
+                <i className="fas fa-long-arrow-alt-right"></i>
+              </a>
+            </div>
+          </Fade>
         </div>
         <div className="section aboutHultSection">
-          <div className="logo">
-            <img
-              src="./assets/images/logos/bit-vertical-black.png"
-              alt="Hult Prize BITD 2022 Logo"
-            />
-          </div>
-          <div className="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            provident quas fugiat! Unde asperiores nihil harum odit sint
-            voluptates, accusamus magni quaerat cum necessitatibus? Iste
-            repellendus repellat perferendis nisi doloremque earum placeat
-            reiciendis autem, dicta, dolore pariatur neque labore qui quidem vel
-            enim recusandae odit minus. Ratione delectus repudiandae rerum.
-          </div>
+          <Fade left>
+            <div className="logo">
+              <img
+                src="./assets/images/logos/bit-vertical-black.png"
+                alt="Hult Prize BITD 2022 Logo"
+              />
+            </div>
+          </Fade>
+          <Fade right>
+            <div className="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+              provident quas fugiat! Unde asperiores nihil harum odit sint
+              voluptates, accusamus magni quaerat cum necessitatibus? Iste
+              repellendus repellat perferendis nisi doloremque earum placeat
+              reiciendis autem, dicta, dolore pariatur neque labore qui quidem
+              vel enim recusandae odit minus. Ratione delectus repudiandae
+              rerum.
+            </div>
+          </Fade>
         </div>
         <div className="section contactUsSection">
-          <h3 className="title">
-            Still got <span className="textTheme">mixed up</span> thoughts?
-            <br />
-            We are always here.
-          </h3>
-          <a href="/contact-us">Contact Us</a>
+          <Fade left>
+            <h3 className="title">
+              Still got <span className="textTheme">mixed up</span> thoughts?
+              <br />
+              We are always here.
+            </h3>
+          </Fade>
+          <Fade right>
+            <a href="/contact-us">Contact Us</a>
+          </Fade>
         </div>
         <div className="section sponsorsSection">
-          <h3 className="sectionTitle">
-            Our <span>Sponsors</span>
-          </h3>
+          <Fade up>
+            <h3 className="sectionTitle">
+              Our <span>Sponsors</span>
+            </h3>
+          </Fade>
           <div className="sponsorsList">
-            <div className="singleSponsor">
-              <img
-                src="./assets/images/logos/zomato.png"
-                alt="Zomato- Hult Prize BITD 2022 Sponsor"
-              />
-              <h4 className="name">Zomato</h4>
-              <h5 className="title">Food Partner</h5>
-            </div>
-            <div className="singleSponsor">
-              <img
-                src="./assets/images/logos/zomato.png"
-                alt="Zomato- Hult Prize BITD 2022 Sponsor"
-              />
-              <h4 className="name">Zomato</h4>
-              <h5 className="title">Food Partner</h5>
-            </div>
-            <div className="singleSponsor">
-              <img
-                src="./assets/images/logos/zomato.png"
-                alt="Zomato- Hult Prize BITD 2022 Sponsor"
-              />
-              <h4 className="name">Zomato</h4>
-              <h5 className="title">Food Partner</h5>
-            </div>
-            <div className="singleSponsor">
-              <img
-                src="./assets/images/logos/zomato.png"
-                alt="Zomato- Hult Prize BITD 2022 Sponsor"
-              />
-              <h4 className="name">Zomato</h4>
-              <h5 className="title">Food Partner</h5>
-            </div>
+            <Fade up>
+              <div className="singleSponsor">
+                <img
+                  src="./assets/images/logos/zomato.png"
+                  alt="Zomato- Hult Prize BITD 2022 Sponsor"
+                />
+                <h4 className="name">Zomato</h4>
+                <h5 className="title">Food Partner</h5>
+              </div>
+            </Fade>
+            <Fade up>
+              <div className="singleSponsor">
+                <img
+                  src="./assets/images/logos/zomato.png"
+                  alt="Zomato- Hult Prize BITD 2022 Sponsor"
+                />
+                <h4 className="name">Zomato</h4>
+                <h5 className="title">Food Partner</h5>
+              </div>
+            </Fade>
+            <Fade up>
+              <div className="singleSponsor">
+                <img
+                  src="./assets/images/logos/zomato.png"
+                  alt="Zomato- Hult Prize BITD 2022 Sponsor"
+                />
+                <h4 className="name">Zomato</h4>
+                <h5 className="title">Food Partner</h5>
+              </div>
+            </Fade>
+            <Fade up>
+              <div className="singleSponsor">
+                <img
+                  src="./assets/images/logos/zomato.png"
+                  alt="Zomato- Hult Prize BITD 2022 Sponsor"
+                />
+                <h4 className="name">Zomato</h4>
+                <h5 className="title">Food Partner</h5>
+              </div>
+            </Fade>
           </div>
         </div>
         <div className="section faqSection">
-          <h3 className="sectionTitle">
-            <span>Frequently</span> Asked Questions
-          </h3>
+          <Fade up>
+            <h3 className="sectionTitle">
+              <span>Frequently</span> Asked Questions
+            </h3>
+          </Fade>
           <section className="faqsList">
             <div className="container-fluid">
-              <div className="singleFaq">
-                {faqs.map((faq, i) => (
-                  <FAQ faq={faq} key={i} index={i} toggleFAQ={toggleFAQ} />
-                ))}
-              </div>
+              <Fade up>
+                <div className="singleFaq">
+                  {faqs.map((faq, i) => (
+                    <FAQ faq={faq} key={i} index={i} toggleFAQ={toggleFAQ} />
+                  ))}
+                </div>
+              </Fade>
             </div>
           </section>
         </div>

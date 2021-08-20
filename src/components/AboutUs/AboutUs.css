@@ -2,6 +2,34 @@
   padding: 10vh 10vw;
 }
 
+.aboutUsContainer .section.aboutHultSection, .aboutUsContainer .section.onCampusSection, .aboutUsContainer .section.hultPrizeBitdSection {
+  padding: 5vh 10vw;
+}
+
+.aboutUsContainer .section.aboutHultSection .title, .aboutUsContainer .section.onCampusSection .title, .aboutUsContainer .section.hultPrizeBitdSection .title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.aboutUsContainer .section.aboutHultSection .title span, .aboutUsContainer .section.onCampusSection .title span, .aboutUsContainer .section.hultPrizeBitdSection .title span {
+  color: var(--theme-clr);
+  font-weight: 500;
+}
+
+.aboutUsContainer .section.aboutHultSection .text, .aboutUsContainer .section.onCampusSection .text, .aboutUsContainer .section.hultPrizeBitdSection .text {
+  color: var(--light-black);
+  font-size: 0.95rem;
+  margin-top: 1em;
+}
+
+.aboutUsContainer .section.aboutHultSection {
+  padding: 15vh 10vw 5vh;
+}
+
+.aboutUsContainer .section.hultPrizeBitdSection {
+  padding: 5vh 10vw 0;
+}
+
 .aboutUsContainer .section.contactUsSection {
   padding: 0 10vw;
   position: relative;
@@ -61,6 +89,51 @@
   background-color: #fff;
   color: var(--theme-clr);
   border-color: #fff;
+}
+
+.aboutUsContainer .section.eventBulletinsSection {
+  padding: 0 10vw 15vh;
+}
+
+.aboutUsContainer .section.eventBulletinsSection .bulletinsList {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4em;
+}
+
+.aboutUsContainer .section.eventBulletinsSection .bulletinsList .singleBulletin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: var(--sec-clr);
+  padding: 45px 20px;
+  border-radius: 10px;
+}
+
+.aboutUsContainer .section.eventBulletinsSection .bulletinsList .singleBulletin i {
+  color: var(--theme-clr);
+  font-size: 3rem;
+}
+
+.aboutUsContainer .section.eventBulletinsSection .bulletinsList .singleBulletin .title {
+  margin-top: 1em;
+  font-size: 1.7rem;
+}
+
+.aboutUsContainer .section.eventBulletinsSection .bulletinsList .singleBulletin .desc {
+  color: var(--light-black);
+  font-size: 0.9rem;
+  margin-top: 1em;
 }
 
 @media only screen and (max-width: 992px) {

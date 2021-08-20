@@ -281,11 +281,10 @@
       .sponsorsList {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 2em;
+        grid-gap: 4em;
 
         .singleSponsor {
-          background-color: #fff;
-          box-shadow: 12px 12px 20px #d9d9d9;
+          background-color: var(--sec-clr);
           border-radius: 10px;
           padding: 15px;
           text-align: center;
@@ -511,10 +510,6 @@
 
         .sponsorsList {
           grid-template-columns: repeat(1, 1fr);
-
-          .singleSponsor {
-            box-shadow: 12px 12px 15px #d9d9d9;
-          }
         }
       }
 
