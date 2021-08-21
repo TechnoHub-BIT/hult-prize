@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 
 const Navbar = () => {
-  const {currentUser, logout} = useAuth();
+  const { currentUser, logout } = useAuth();
   const [navbarClass, toggleNavbar] = useState(false);
   const [menuIcon, setIcon] = useState(false);
 
@@ -24,7 +24,7 @@ const Navbar = () => {
             <div className="line line2"></div>
             <div className="line line3"></div>
           </div>
-          <Link href="/" className="logo">
+          <Link to="/" className="logo">
             <img src={HorizontalLogo} alt="Hult Prize BITD 2022 Logo" />
           </Link>
         </div>
@@ -34,12 +34,62 @@ const Navbar = () => {
               <img src={HorizontalLogo} alt="" />
             </a>
             <div className="links">
-              <Link to="/">Home</Link>
-              <Link to="/news">News</Link>
-              <Link to="/about-us">About</Link>
-              <Link to="/team">Team 2022</Link>
-              <Link to="/contact-us">Contact</Link>
-              { currentUser ? ( <Link onClick={logout}>Log Out</Link>):(null)}
+              <Link
+                to="/"
+                onClick={() => {
+                  toggleNavbar(!navbarClass);
+                  setIcon(!menuIcon);
+                }}
+              >
+                Home
+              </Link>
+              <Link
+                to="/news"
+                onClick={() => {
+                  toggleNavbar(!navbarClass);
+                  setIcon(!menuIcon);
+                }}
+              >
+                News
+              </Link>
+              <Link
+                to="/about-us"
+                onClick={() => {
+                  toggleNavbar(!navbarClass);
+                  setIcon(!menuIcon);
+                }}
+              >
+                About
+              </Link>
+              <Link
+                to="/team"
+                onClick={() => {
+                  toggleNavbar(!navbarClass);
+                  setIcon(!menuIcon);
+                }}
+              >
+                Team 2022
+              </Link>
+              <Link
+                to="/contact-us"
+                onClick={() => {
+                  toggleNavbar(!navbarClass);
+                  setIcon(!menuIcon);
+                }}
+              >
+                Contact
+              </Link>
+              {currentUser ? (
+                <a
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                    logout();
+                  }}
+                >
+                  Log Out
+                </a>
+              ) : null}
             </div>
           </div>
           <div className="navbarRight">

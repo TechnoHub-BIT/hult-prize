@@ -1,0 +1,35 @@
+.loginContainer {
+  .section {
+    padding: 10vh 10vw;
+
+    &.loginSection {
+      padding: 10vh 30vw;
+
+      form {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1.5em;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 922px) {
+  .loginContainer {
+    .section {
+      padding: 10vh 15px;
+
+      &.loginSection {
+        padding: 10vh 15px;
+
+        .sectionTitle {
+          margin: 0 0 5vh;
+        }
+      }
+    }
+  }
+}

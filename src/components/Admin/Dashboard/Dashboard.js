@@ -1,20 +1,13 @@
 import React from "react";
-import { Fade } from "react-reveal";
-import { Helmet } from "react-helmet";
+import "./Dashboard.css";
 import PageHeader from "../../PageHeader/PageHeader";
 import { Link } from "react-router-dom";
-
-
+import { Fade } from "react-reveal";
 
 const Dashboard = () => {
   return (
     <React.Fragment>
-      <Helmet>
-        <title>Hult Prize BITD 2022- Let's have a Talk</title>
-        <meta name="title" content="Hult Prize BITD 2022- Let's have a Talk" />
-        <meta name="description" content="" />
-      </Helmet>
-      <PageHeader title="DashBoard" />
+      <PageHeader title="Dashboard" />
       <div className="dashboardCont">
         <Fade up>
           <div className="buttons">

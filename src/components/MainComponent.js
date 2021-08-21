@@ -30,8 +30,6 @@ import config from "react-reveal/globals";
 import PrivateRoute from "../PrivateRoute";
 import { AuthProvider } from "../contexts/AuthContext";
 
-
-
 const MainComponent = () => {
   config({ ssrFadeout: true });
 
@@ -54,11 +52,15 @@ const MainComponent = () => {
 
           {/* Admin Pages */}
           <Route exact path="/login" component={Login} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/messages" component={Messages} />
-          <PrivateRoute exact path="/downloads" component={Downloads} />
-          <PrivateRoute exact path="/slider" component={Slider} />
-          <PrivateRoute exact path="/create-news" component={CreateNews} />
+          <PrivateRoute exact path="/admin/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/admin/messages" component={Messages} />
+          <PrivateRoute exact path="/admin/downloads" component={Downloads} />
+          <PrivateRoute exact path="/admin/slider" component={Slider} />
+          <PrivateRoute
+            exact
+            path="/admin/create-news"
+            component={CreateNews}
+          />
           {/* End Admin Pages */}
           <Footer />
         </AuthProvider>

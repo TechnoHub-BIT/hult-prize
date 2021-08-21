@@ -1,0 +1,32 @@
+.loginContainer .section {
+  padding: 10vh 10vw;
+}
+
+.loginContainer .section.loginSection {
+  padding: 10vh 30vw;
+}
+
+.loginContainer .section.loginSection form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1.5em;
+}
+
+.loginContainer .section.loginSection form button {
+  width: 100%;
+}
+
+@media only screen and (max-width: 922px) {
+  .loginContainer .section {
+    padding: 10vh 15px;
+  }
+  .loginContainer .section.loginSection {
+    padding: 10vh 15px;
+  }
+  .loginContainer .section.loginSection .sectionTitle {
+    margin: 0 0 5vh;
+  }
+}
+/*# sourceMappingURL=Login.css.map */

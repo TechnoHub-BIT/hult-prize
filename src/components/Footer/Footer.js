@@ -6,7 +6,7 @@ import { Fade } from "react-reveal";
 const Footer = () => {
   return (
     <React.Fragment>
-      <footer class="footer">
+      <footer className="footer">
         <div className="mainFooter">
           <div className="footerTop">
             <div className="description">
