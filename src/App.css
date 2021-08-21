@@ -17,6 +17,16 @@
   scroll-behavior: smooth;
 }
 
+::-moz-selection {
+  background-color: var(--theme-clr);
+  color: #fff;
+}
+
+::selection {
+  background-color: var(--theme-clr);
+  color: #fff;
+}
+
 .textWhite {
   color: #fff;
 }

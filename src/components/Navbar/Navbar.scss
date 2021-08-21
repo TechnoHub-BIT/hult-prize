@@ -75,7 +75,7 @@
 
 @media only screen and (max-width: 992px) {
   .navbar {
-    padding: 0 30px;
+    padding: 0 15px;
     height: 8vh;
 
     .mobileNavbar {
@@ -95,6 +95,7 @@
         .line {
           height: 3px;
           background-color: #fff;
+          border-radius: 5px;
           transition: 0.3s all ease;
         }
 
@@ -125,6 +126,9 @@
       }
 
       .logo {
+        display: flex;
+        align-items: center;
+
         img {
           width: 150px;
         }

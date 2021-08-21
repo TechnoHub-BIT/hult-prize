@@ -1,10 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AboutUs.css";
 import PageHeader from "../PageHeader/PageHeader";
+import FAQ from "./FAQ";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-reveal";
 
 const AboutUs = () => {
+  const [faqs, setfaqs] = useState([
+    {
+      question: "Who are the speakers?",
+      answer:
+        "<strong>TEDxBITD</strong> is aiming to bring together a group of numerous inspiring ideas to the main stage. To get a better knowledge of the speakers, <a href='/speakers'>visit here</a>, else stay connected with us on our social media handles.",
+      open: true,
+    },
+    {
+      question: "Who can attend TEDxBITD?",
+      answer:
+        "<strong>TEDxBITD</strong> is an independently organized event under the TEDx banner. Anyone who wishes to be a part of the first event can register and attend the event. <a href='/contact'>Contact us</a> for more information.",
+      open: false,
+    },
+    {
+      question: "Where is the event venue?",
+      answer:
+        "<strong>TEDxBITD</strong> is looking forward to hosting numerous esteemed speakers and a great audience via online platform. <a href='/contact'>Contact us</a> for more information.",
+      open: false,
+    },
+    {
+      question: "How long will be the event?",
+      answer:
+        "<strong>TEDxBITD</strong> is an all-day event, starting from 10:00 am onwards. Schedule will be uploaded <a href='/schedule'>here</a> soon.",
+      open: false,
+    },
+    {
+      question:
+        "When will the registrations start/end? Can tickets be bought at the door?",
+      answer:
+        "The registrations will start soon. Stay connected with us on our social media for recent updates. <a href='/contact'>Contact us</a> for more information.",
+      open: false,
+    },
+  ]);
+
+  const toggleFAQ = (index) => {
+    setfaqs(
+      faqs.map((faq, i) => {
+        if (i === index) {
+          faq.open = !faq.open;
+        } else {
+          faq.open = false;
+        }
+
+        return faq;
+      })
+    );
+  };
+
   return (
     <React.Fragment>
       <Helmet>
@@ -149,6 +198,24 @@ const AboutUs = () => {
               </div>
             </Fade>
           </div>
+        </div>
+        <div className="section faqSection">
+          <Fade up>
+            <h3 className="sectionTitle">
+              <span>Frequently</span> Asked Questions
+            </h3>
+          </Fade>
+          <section className="faqsList">
+            <div className="container-fluid">
+              <Fade up>
+                <div className="singleFaq">
+                  {faqs.map((faq, i) => (
+                    <FAQ faq={faq} key={i} index={i} toggleFAQ={toggleFAQ} />
+                  ))}
+                </div>
+              </Fade>
+            </div>
+          </section>
         </div>
       </div>
     </React.Fragment>

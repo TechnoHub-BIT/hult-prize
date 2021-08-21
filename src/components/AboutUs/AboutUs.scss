@@ -86,7 +86,8 @@
     }
 
     &.eventBulletinsSection {
-      padding: 0 10vw 15vh;
+      padding: 15vh 10vw 20vh;
+      background-color: var(--sec-clr);
 
       .bulletinsList {
         display: grid;
@@ -98,7 +99,7 @@
           flex-direction: column;
           justify-content: center;
           text-align: center;
-          background-color: var(--sec-clr);
+          background-color: #fff;
           padding: 45px 20px;
           border-radius: 10px;
 
@@ -120,6 +121,73 @@
         }
       }
     }
+
+    &.faqSection {
+      padding: 15vh 15vw 10vh;
+
+      .faqsList {
+        .singleFaq {
+          .faq {
+            margin: 15px 5px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+
+            .faqQuestion {
+              position: relative;
+              font-size: 1.1rem;
+              padding-right: 80px;
+              transition: all 0.3s ease;
+
+              &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                transform: translateY(-50%);
+                width: 30px;
+                height: 30px;
+                background-image: url("./arrow-down-mint.svg");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                transition: all 0.3s ease;
+              }
+            }
+
+            .faqAnswer {
+              opacity: 0;
+              max-height: 0;
+              color: var(--light-black);
+              overflow-y: hidden;
+              font-size: 0.95rem;
+              transition: all 0.3s ease;
+
+              a {
+                color: var(--theme-clr);
+              }
+            }
+
+            &.open {
+              .faqQuestion {
+                margin-bottom: 15px;
+
+                &::after {
+                  transform: translateY(-50%) rotate(180deg);
+                }
+              }
+
+              .faqAnswer {
+                max-height: 1000px;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -127,6 +195,29 @@
   .aboutUsContainer {
     .section {
       padding: 5vh 15px 10vh;
+
+      &.aboutHultSection,
+      &.onCampusSection,
+      &.hultPrizeBitdSection {
+        padding: 0 15px;
+
+        .title {
+          font-size: 1.8rem;
+        }
+
+        .text {
+          font-size: 0.9rem;
+        }
+      }
+
+      &.aboutHultSection {
+        padding: 10vh 15px 5vh;
+      }
+
+      &.hultPrizeBitdSection {
+        padding: 5vh 15px 0;
+        margin-bottom: -10vh;
+      }
 
       &.contactUsSection {
         padding: 5vh 10vw;
@@ -138,6 +229,34 @@
           margin-top: 2em;
           font-size: 0.8rem;
           padding: 8px 25px;
+        }
+      }
+
+      &.eventBulletinsSection {
+        padding: 10vh 15px;
+        margin-top: -10vh;
+
+        .bulletinsList {
+          grid-template-columns: repeat(1, 1fr);
+          grid-gap: 2em;
+        }
+      }
+
+      &.faqSection {
+        padding: 10vh 15px;
+
+        .faqsList {
+          .singleFaq {
+            .faq {
+              .faqQuestion {
+                font-size: 1rem;
+              }
+
+              .faqAnswer {
+                font-size: 0.8rem;
+              }
+            }
+          }
         }
       }
     }

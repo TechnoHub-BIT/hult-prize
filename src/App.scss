@@ -17,6 +17,11 @@
   scroll-behavior: smooth;
 }
 
+::selection {
+  background-color: var(--theme-clr);
+  color: #fff;
+}
+
 .textWhite {
   color: #fff;
 }
