@@ -5,7 +5,8 @@ import Home from "./Home/Home";
 import ContactUs from "./ContactUs/ContactUs";
 import AboutUs from "./AboutUs/AboutUs";
 import OurTeam from "./OurTeam/OurTeam";
-import News from "./News/News";
+import NewsList from "./News/NewsList/NewsList";
+import SingleNews from "./News/SingleNews/SingleNews";
 //End Pages
 
 //Common Components
@@ -36,7 +37,8 @@ const MainComponent = () => {
           <Route exact path="/about-us" component={AboutUs} />
           <Route exact path="/team" component={OurTeam} />
           <Route exact path="/our-team" component={OurTeam} />
-          <Route exact path="/news" component={News} />
+          <Route exact path="/news" component={NewsList} />
+          <Route exact path="/singlenews" component={SingleNews} />
           {/* End Pages */}
           <Footer />
         </AuthProvider>

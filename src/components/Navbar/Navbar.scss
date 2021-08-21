@@ -183,7 +183,11 @@
 
       .navbarRight {
         .social {
+          margin-top: 2em;
+
           a {
+            font-size: 1.4rem;
+
             &:hover {
               color: #000;
             }

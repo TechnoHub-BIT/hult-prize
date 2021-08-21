@@ -1,11 +1,10 @@
 import React from "react";
-import "./PageHeader.css";
 import { Fade } from "react-reveal";
 
 const PageHeader = (props) => {
   return (
     <React.Fragment>
-      <div className="pageHeader">
+      <div className="newsHeader">
         <Fade up>
           <h1 className="title">{props.title}</h1>
         </Fade>
@@ -13,6 +12,14 @@ const PageHeader = (props) => {
           <Fade up>
             <div className="breadcrumbItem">
               <a href="/">Home</a>
+            </div>
+          </Fade>
+          <Fade up>
+            <i className="fas fa-circle"></i>
+          </Fade>
+          <Fade up>
+            <div className="breadcrumbItem">
+              <a href="/news">News</a>
             </div>
           </Fade>
           <Fade up>

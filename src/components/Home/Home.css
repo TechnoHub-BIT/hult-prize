@@ -201,8 +201,6 @@
   background-color: #fff;
   padding: 15px;
   border-radius: 10px;
-  -webkit-box-shadow: 12px 12px 20px #c3c3c3;
-          box-shadow: 12px 12px 20px #c3c3c3;
   text-decoration: none;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
@@ -506,10 +504,6 @@
         grid-template-columns: repeat(1, 1fr);
     grid-gap: 1.5em;
   }
-  .homeContainer .section.downloadsSection .downloadsGrid .singleDownload {
-    -webkit-box-shadow: 12px 12px 15px #c3c3c3;
-            box-shadow: 12px 12px 15px #c3c3c3;
-  }
   .homeContainer .section.aboutHultSection {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -561,9 +555,10 @@
   .homeContainer .section.sponsorsSection .sponsorsList {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2em;
   }
   .homeContainer .section.faqSection {
-    padding: 5vh 15px;
+    padding: 0 15px 5vh;
   }
   .homeContainer .section.faqSection .faqsList .singleFaq .faq .faqQuestion {
     font-size: 1rem;

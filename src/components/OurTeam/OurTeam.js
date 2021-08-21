@@ -131,9 +131,9 @@ const OurTeam = () => {
                 name="Piyush Sahu"
                 post="Associate"
                 image="piyush-sahu"
-                facebook=""
-                instagram=""
-                linkedin=""
+                facebook="piyush.piyushsahu.75"
+                instagram="piyus_h655"
+                linkedin="piyush-sahu-aa95581a9"
               />
             </div>
           </div>
@@ -164,9 +164,9 @@ const OurTeam = () => {
                 name="Palak Dewangan"
                 post="Head"
                 image="palak-dewangan"
-                facebook=""
-                instagram=""
-                linkedin=""
+                facebook="palak.dewangan.58"
+                instagram="palak_.dewangan"
+                linkedin="palak-dewangan-352ba31a0"
               />
             </div>
           </div>

@@ -3,8 +3,6 @@ import "./Home.css";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import Image from "../../images/dashboard/carousel/hult-prize-cover.png";
-import Image2 from "../../images/dashboard/carousel/hult-prize-theme-cover.jpg";
 import FAQ from "./FAQ";
 import { Fade } from "react-reveal";
 
@@ -71,7 +69,12 @@ const Home = () => {
           >
             <div
               className="item"
-              style={{ backgroundImage: "url(" + Image2 + ")" }}
+              style={{
+                backgroundImage:
+                  "url('https://drive.google.com/uc?export=view&id=" +
+                  "1vIi-i6PjDTL9WvK1OAcRX-kUHtVDamVD" +
+                  "')",
+              }}
             >
               <div className="content">
                 <h2 className="heading textTheme">2021-22 Theme Revealed</h2>
@@ -83,7 +86,12 @@ const Home = () => {
             </div>
             <div
               className="item"
-              style={{ backgroundImage: "url(" + Image + ")" }}
+              style={{
+                backgroundImage:
+                  "url('https://drive.google.com/uc?export=view&id=" +
+                  "1ie1AwpLPK4LorIDVAIkh1XcSBHvQco0t" +
+                  "')",
+              }}
             >
               <div className="content">
                 <Fade up>

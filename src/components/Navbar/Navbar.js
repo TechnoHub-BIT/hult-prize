@@ -40,13 +40,25 @@ const Navbar = () => {
           </div>
           <div className="navbarRight">
             <div className="social">
-              <a href="https://facebook.com">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="https://instagram.com">
+              <a
+                href="https://instagram.com/hultprize_bitd/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="https://linkedin.com">
+              <a
+                href="https://linkedin.com/company/hult-prize-bit-durg/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-linkedin"></i>
               </a>
             </div>

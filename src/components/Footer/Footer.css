@@ -99,6 +99,9 @@
   .footer .mainFooter .footerTop .description p {
     width: 100%;
   }
+  .footer .mainFooter .footerTop .description .social a {
+    font-size: 1.4rem;
+  }
   .footer .mainFooter .footerBottom {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

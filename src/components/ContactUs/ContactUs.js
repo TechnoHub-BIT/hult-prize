@@ -55,17 +55,29 @@ const ContactUs = () => {
               </div>
               <div className="social">
                 <Fade left>
-                  <a href="https://facebook.com">
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-facebook-f"></i>
                   </a>
                 </Fade>
                 <Fade left>
-                  <a href="https://instagram.com">
+                  <a
+                    href="https://instagram.com/hultprize_bitd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
                 </Fade>
                 <Fade left>
-                  <a href="https://linkedin.com">
+                  <a
+                    href="https://linkedin.com/company/hult-prize-bit-durg/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-linkedin"></i>
                   </a>
                 </Fade>

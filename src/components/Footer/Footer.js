@@ -22,13 +22,25 @@ const Footer = () => {
               </Fade>
               <div className="social">
                 <Fade up>
-                  <a href="https://facebook.com">
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-facebook"></i>
                   </a>
-                  <a href="https://instagram.com">
+                  <a
+                    href="https://instagram.com/hultprize_bitd/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-instagram"></i>
                   </a>
-                  <a href="https://linkedin.com">
+                  <a
+                    href="https://linkedin.com/company/hult-prize-bit-durg/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-linkedin"></i>
                   </a>
                 </Fade>
@@ -44,8 +56,8 @@ const Footer = () => {
             <div className="links">
               <Fade up>
                 <a href="/news">Latest News</a>
+                <a href="/documents">Documents</a>
                 <a href="/team">Team 2022</a>
-                <a href="#">Contact Us</a>
               </Fade>
             </div>
           </div>
