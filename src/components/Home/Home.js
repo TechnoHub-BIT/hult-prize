@@ -7,6 +7,7 @@ import Image from "../../images/dashboard/carousel/hult-prize-cover.png";
 import Image2 from "../../images/dashboard/carousel/hult-prize-theme-cover.jpg";
 import FAQ from "./FAQ";
 import { Fade } from "react-reveal";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -255,10 +256,10 @@ const Home = () => {
           </div>
           <Fade up>
             <div className="ctaBtn">
-              <a href="/news">
+              <Link to="/news">
                 View All&nbsp;&nbsp;
                 <i className="fas fa-long-arrow-alt-right"></i>
-              </a>
+              </Link>
             </div>
           </Fade>
         </div>
@@ -292,7 +293,7 @@ const Home = () => {
             </h3>
           </Fade>
           <Fade right>
-            <a href="/contact-us">Contact Us</a>
+            <Link to="/contact-us">Contact Us</Link>
           </Fade>
         </div>
         <div className="section sponsorsSection">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import HorizontalLogo from "../../images/logos/horizontal-white.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [navbarClass, toggleNavbar] = useState(false);
@@ -27,15 +28,15 @@ const Navbar = () => {
         </div>
         <div className={"desktopNavbar " + navbarClass}>
           <div className="navbarLeft">
-            <a href="/" className="logo">
+            <a to="/" className="logo">
               <img src={HorizontalLogo} alt="" />
             </a>
             <div className="links">
-              <a href="/">Home</a>
-              <a href="/news">News</a>
-              <a href="/about-us">About</a>
-              <a href="/team">Team 2022</a>
-              <a href="/contact-us">Contact</a>
+              <Link to="/">Home</Link>
+              <Link to="/news">News</Link>
+              <Link to="/about-us">About</Link>
+              <Link to="/team">Team 2022</Link>
+              <Link to="/contact-us">Contact</Link>
             </div>
           </div>
           <div className="navbarRight">
