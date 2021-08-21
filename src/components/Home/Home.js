@@ -5,6 +5,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import FAQ from "./FAQ";
 import { Fade } from "react-reveal";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -263,10 +264,10 @@ const Home = () => {
           </div>
           <Fade up>
             <div className="ctaBtn">
-              <a href="/news">
+              <Link to="/news">
                 View All&nbsp;&nbsp;
                 <i className="fas fa-long-arrow-alt-right"></i>
-              </a>
+              </Link>
             </div>
           </Fade>
         </div>
@@ -300,7 +301,7 @@ const Home = () => {
             </h3>
           </Fade>
           <Fade right>
-            <a href="/contact-us">Contact Us</a>
+            <Link to="/contact-us">Contact Us</Link>
           </Fade>
         </div>
         <div className="section sponsorsSection">

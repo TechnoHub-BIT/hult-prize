@@ -1,10 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ContactUs.css";
+import AlertModal from "../AlertModal/AlertModal";
 import PageHeader from "../PageHeader/PageHeader";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-reveal";
+import { db } from "../../firebase";
 
 const ContactUs = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [number, setNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [reason, setReason] = useState("");
+  const [loader, setLoader] = useState(false);
+  const [modal, showModal] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoader(true);
+    var mnumber = Number(number);
+    if (number && firstName && lastName && message && reason && email) {
+      await db
+        .collection("contactus")
+        .add({
+          firstName,
+          lastName,
+          message,
+          mnumber,
+          email,
+          reason,
+          createdAt: new Date(),
+        })
+        .then(() => {
+          setLoader(false);
+          showModal(
+            <AlertModal
+              message="Your Message has been submitted. Thank you for your feedback!"
+              icon="successful.png"
+              reload="true"
+              close={closeModal}
+            />
+          );
+        })
+        .catch((error) => {
+          showModal(
+            <AlertModal
+              message={error.message}
+              icon="failed.png"
+              reload="true"
+              close={closeModal}
+            />
+          );
+          setLoader(false);
+        });
+    } else {
+      alert("Please fill all the details")
+      // showModal(
+      //   <AlertModal
+      //     message="Please fill all the details"
+      //     icon="failed.png"
+      //     reload="true"
+      //     close={closeModal}
+      //   />
+      // );
+    }
+  };
+
+  const closeModal = () => {
+    showModal("");
+  };
   return (
     <React.Fragment>
       <Helmet>
@@ -13,6 +78,7 @@ const ContactUs = () => {
         <meta name="description" content="" />
       </Helmet>
       <PageHeader title="Contact Us" />
+      {modal}
       <div className="contactUsContainer">
         <div className="section formSection">
           <Fade up>
@@ -94,15 +160,24 @@ const ContactUs = () => {
                       <input
                         type="text"
                         id="fname"
+                        onChange={(e) => setFirstName(e.target.value)}
+                        value={firstName}
                         placeholder="First Name"
                         autoFocus
+                        required
                       />
                       <label htmlFor="fname">First Name</label>
                     </div>
                   </Fade>
                   <Fade up>
                     <div className="inputGroup">
-                      <input type="text" id="lname" placeholder="Last Name" />
+                      <input
+                        type="text"
+                        id="lname"
+                        onChange={(e) => setLastName(e.target.value)}
+                        value={lastName}
+                        placeholder="Last Name"
+                      />
                       <label htmlFor="lname">Last Name</label>
                     </div>
                   </Fade>
@@ -110,13 +185,25 @@ const ContactUs = () => {
                 <div className="grid2 mt2">
                   <Fade up>
                     <div className="inputGroup">
-                      <input type="text" id="email" placeholder="Email" />
+                      <input
+                        type="email"
+                        id="email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                        placeholder="Email"
+                      />
                       <label htmlFor="email">Email</label>
                     </div>
                   </Fade>
                   <Fade up>
                     <div className="inputGroup">
-                      <input type="text" id="mobile" placeholder="Mobile No." />
+                      <input
+                        type="number"
+                        id="mobile"
+                        onChange={(e) => setNumber(e.target.value)}
+                        value={number}
+                        placeholder="Mobile No."
+                      />
                       <label htmlFor="mobile">Mobile No.</label>
                     </div>
                   </Fade>
@@ -130,19 +217,37 @@ const ContactUs = () => {
                   <div className="grid3" style={{ margin: "1.5em 0 0 0.5em" }}>
                     <Fade up>
                       <div className="inputRadio">
-                        <input type="radio" name="purpose" id="registration" />
+                        <input
+                          type="radio"
+                          onChange={(e) => setReason(e.target.value)}
+                          value="team-registraions"
+                          name="purpose"
+                          id="registration"
+                        />
                         <label htmlFor="registration">Team registration</label>
                       </div>
                     </Fade>
                     <Fade up>
                       <div className="inputRadio">
-                        <input type="radio" name="purpose" id="sponsorship" />
+                        <input
+                          type="radio"
+                          onChange={(e) => setReason(e.target.value)}
+                          value="team-sponsorship"
+                          name="purpose"
+                          id="sponsorship"
+                        />
                         <label htmlFor="sponsorship">Sponsorship</label>
                       </div>
                     </Fade>
                     <Fade up>
                       <div className="inputRadio">
-                        <input type="radio" name="purpose" id="recruitment" />
+                        <input
+                          type="radio"
+                          onChange={(e) => setReason(e.target.value)}
+                          value="team-recruitment"
+                          name="purpose"
+                          id="recruitment"
+                        />
                         <label htmlFor="recruitment">Team Recruitment</label>
                       </div>
                     </Fade>
@@ -154,6 +259,8 @@ const ContactUs = () => {
                       <input
                         type="text"
                         id="message"
+                        onChange={(e) => setMessage(e.target.value)}
+                        value={message}
                         placeholder="How can we help?"
                       />
                       <label htmlFor="message">How can we help?</label>
@@ -163,7 +270,12 @@ const ContactUs = () => {
                 <div className="mt2">
                   <Fade right>
                     <div className="inputGroup">
-                      <button type="button" style={{ alignSelf: "flex-end" }}>
+                      <button
+                        type="button"
+                        value="Submit"
+                        onClick={handleSubmit}
+                        style={{ alignSelf: "flex-end" }}
+                      >
                         Send Message
                       </button>
                     </div>
