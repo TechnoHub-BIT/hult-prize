@@ -8,6 +8,15 @@ import OurTeam from "./OurTeam/OurTeam";
 import News from "./News/News";
 //End Pages
 
+//Admin Pages
+import Login from "./Admin/Login/Login";
+import Dashboard from "./Admin/Dashboard/Dashboard";
+import Slider from "./Admin/Slider/Slider";
+import Downloads from "./Admin/Downloads/Downloads";
+import Messages from "./Admin/Messages/Messages";
+import CreateNews from "./Admin/News/CreateNews";
+//End Admin Pages
+
 //Common Components
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
@@ -19,6 +28,8 @@ import config from "react-reveal/globals";
 //Private Route
 import PrivateRoute from "../PrivateRoute";
 import { AuthProvider } from "../contexts/AuthContext";
+
+
 
 const MainComponent = () => {
   config({ ssrFadeout: true });
@@ -38,6 +49,15 @@ const MainComponent = () => {
           <Route exact path="/our-team" component={OurTeam} />
           <Route exact path="/news" component={News} />
           {/* End Pages */}
+
+          {/* Admin Pages */}
+          <Route exact path="/login" component={Login} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/messages" component={Messages} />
+          <PrivateRoute exact path="/downloads" component={Downloads} />
+          <PrivateRoute exact path="/slider" component={Slider} />
+          <PrivateRoute exact path="/create-news" component={CreateNews} />
+          {/* End Admin Pages */}
           <Footer />
         </AuthProvider>
       </Router>
