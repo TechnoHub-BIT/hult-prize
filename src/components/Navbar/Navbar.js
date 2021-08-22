@@ -81,6 +81,7 @@ const Navbar = () => {
               </Link>
               {currentUser ? (
                 <a
+                  href="javascript:void(0);"
                   onClick={() => {
                     toggleNavbar(!navbarClass);
                     setIcon(!menuIcon);

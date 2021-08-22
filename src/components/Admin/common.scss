@@ -1,6 +1,22 @@
+.adminDownloadsContainer,
+.adminSliderContainer,
 .loginContainer {
   .section {
     padding: 10vh 10vw;
+
+    &.formSection {
+      padding: 10vh 20vw;
+
+      form {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1.5em;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
 
     &.loginSection {
       padding: 10vh 30vw;
@@ -19,10 +35,13 @@
 }
 
 @media only screen and (max-width: 922px) {
+  .adminDownloadsContainer,
+  .adminSliderContainer,
   .loginContainer {
     .section {
       padding: 10vh 15px;
 
+      &.formSection,
       &.loginSection {
         padding: 10vh 15px;
 

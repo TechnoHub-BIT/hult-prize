@@ -11,18 +11,18 @@ const Dashboard = () => {
       <div className="dashboardCont">
         <Fade up>
           <div className="buttons">
-            <Link to="/downloads">
+            <Link to="/admin/downloads">
               <button type="button">Create Downloads</button>
             </Link>
-            <Link to="/messages">
+            <Link to="/admin/messages">
               <button type="button">View Received Messages</button>
             </Link>
           </div>
           <div className="buttons">
-            <Link to="/slider">
+            <Link to="/admin/slider">
               <button type="button">Create Slider</button>
             </Link>
-            <Link to="/create-news">
+            <Link to="/admin/create-news">
               <button type="button">Create News</button>
             </Link>
           </div>

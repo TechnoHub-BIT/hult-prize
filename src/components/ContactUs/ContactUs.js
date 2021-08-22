@@ -55,7 +55,7 @@ const ContactUs = () => {
           setLoader(false);
         });
     } else {
-      alert("Please fill all the details")
+      alert("Please fill all the details");
       // showModal(
       //   <AlertModal
       //     message="Please fill all the details"
@@ -162,11 +162,11 @@ const ContactUs = () => {
                         id="fname"
                         onChange={(e) => setFirstName(e.target.value)}
                         value={firstName}
-                        placeholder="First Name"
+                        placeholder="First Name*"
                         autoFocus
                         required
                       />
-                      <label htmlFor="fname">First Name</label>
+                      <label htmlFor="fname">First Name*</label>
                     </div>
                   </Fade>
                   <Fade up>
@@ -176,9 +176,10 @@ const ContactUs = () => {
                         id="lname"
                         onChange={(e) => setLastName(e.target.value)}
                         value={lastName}
-                        placeholder="Last Name"
+                        placeholder="Last Name*"
+                        required
                       />
-                      <label htmlFor="lname">Last Name</label>
+                      <label htmlFor="lname">Last Name*</label>
                     </div>
                   </Fade>
                 </div>
@@ -186,32 +187,34 @@ const ContactUs = () => {
                   <Fade up>
                     <div className="inputGroup">
                       <input
-                        type="email"
-                        id="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                        placeholder="Email"
+                        type="number"
+                        id="mobile"
+                        onChange={(e) => setNumber(e.target.value)}
+                        value={number}
+                        placeholder="Mobile No.*"
+                        required
                       />
-                      <label htmlFor="email">Email</label>
+                      <label htmlFor="mobile">Mobile No.*</label>
                     </div>
                   </Fade>
                   <Fade up>
                     <div className="inputGroup">
                       <input
-                        type="number"
-                        id="mobile"
-                        onChange={(e) => setNumber(e.target.value)}
-                        value={number}
-                        placeholder="Mobile No."
+                        type="email"
+                        id="email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                        placeholder="Email*"
+                        required
                       />
-                      <label htmlFor="mobile">Mobile No.</label>
+                      <label htmlFor="email">Email*</label>
                     </div>
                   </Fade>
                 </div>
                 <div className="checkBoxes mt2">
                   <Fade up>
                     <h5 style={{ fontSize: "1rem", fontWeight: "500" }}>
-                      Reason for contacting:
+                      Reason for contacting*:
                     </h5>
                   </Fade>
                   <div className="grid3" style={{ margin: "1.5em 0 0 0.5em" }}>
@@ -261,9 +264,10 @@ const ContactUs = () => {
                         id="message"
                         onChange={(e) => setMessage(e.target.value)}
                         value={message}
-                        placeholder="How can we help?"
+                        placeholder="How can we help?*"
+                        required
                       />
-                      <label htmlFor="message">How can we help?</label>
+                      <label htmlFor="message">How can we help?*</label>
                     </div>
                   </Fade>
                 </div>

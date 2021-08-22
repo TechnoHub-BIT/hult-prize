@@ -56,12 +56,9 @@ const MainComponent = () => {
           <PrivateRoute exact path="/admin/messages" component={Messages} />
           <PrivateRoute exact path="/admin/downloads" component={Downloads} />
           <PrivateRoute exact path="/admin/slider" component={Slider} />
-          <PrivateRoute
-            exact
-            path="/admin/create-news"
-            component={CreateNews}
-          />
+          <PrivateRoute exact path="/admin/create-news" component={CreateNews} />
           {/* End Admin Pages */}
+          
           <Footer />
         </AuthProvider>
       </Router>

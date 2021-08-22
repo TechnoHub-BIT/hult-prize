@@ -1,12 +1,10 @@
-import React from "react";
-import { Fade } from "react-reveal";
-import { Helmet } from "react-helmet";
-import { useState } from "react";
-import { Progress } from "reactstrap";
+import React, { useState } from "react";
+import "../common.css";
 import { db, storage } from "../../../firebase";
 import AlertModal from "../../AlertModal/AlertModal";
 import PageHeader from "../../PageHeader/PageHeader";
-
+import { Helmet } from "react-helmet";
+import { Fade } from "react-reveal";
 
 const Downloads = () => {
   const [title, setTitle] = useState("");
@@ -42,46 +40,45 @@ const Downloads = () => {
         // filename : file.name,
         title,
         description,
-        date
-      }
-        setLoading(
-          <div className="inputGroup progressBar">
-            <Progress animated color="info" value={100}>
-              Uploading...
-            </Progress>
-          </div>
-        );
-        await storage.ref(`/downloads/${file.name}`).put(file);
+        date,
+      };
+      setLoading(
+        <div className="inputGroup progressBar">
+          {/* <Progress animated color="info" value={100}>
+            Uploading...
+          </Progress> */}
+        </div>
+      );
+      await storage.ref(`/downloads/${file.name}`).put(file);
 
-        storage
-          .ref("downloads")
-          .child(file.name)
-          .getDownloadURL()
-          .then((url) => {
-            db.collection("Downloads")
-              .add(
-                application,
-                (application.url = url),
-                (application.filename = file.name)
-              )
-              .then(() => {
-                setURL(""),
-                  setFile(null),
-                  setTitle(""),
-                  setDescription(""),
-                  setDate(""),
-                  setLoading(null);
-                showModal(
-                  <AlertModal
-                    message="Speaker has been nominated successfully!"
-                    icon="successful.png"
-                    reload="true"
-                    close={closeModal}
-                  />
-                );
-              });
-          });
-      
+      storage
+        .ref("downloads")
+        .child(file.name)
+        .getDownloadURL()
+        .then((url) => {
+          db.collection("Downloads")
+            .add(
+              application,
+              (application.url = url),
+              (application.filename = file.name)
+            )
+            .then(() => {
+              setURL(""),
+                setFile(null),
+                setTitle(""),
+                setDescription(""),
+                setDate(""),
+                setLoading(null);
+              showModal(
+                <AlertModal
+                  message="Speaker has been nominated successfully!"
+                  icon="successful.png"
+                  reload="true"
+                  close={closeModal}
+                />
+              );
+            });
+        });
     } else {
       // If form submission failled
       showModal(
@@ -101,23 +98,20 @@ const Downloads = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>TEDxBITD - Speakers</title>
-        <meta
-          name="description"
-          content="Our speakers are the inspiration centers of TEDxBITD. We aim to bring speakers with inspirational stories and life-changing ideas worth spreading, to encourage great and meaningful conversations."
-        />
-        <meta
-          name="keywords"
-          content="ted,tedx,bit,durg,speakers,bitd,event,campus,college,bhilai"
-        />
+        <title>Hult Prize BITD 2022- Let's have a Talk</title>
+        <meta name="title" content="Hult Prize BITD 2022- Let's have a Talk" />
+        <meta name="description" content="" />
       </Helmet>
-     
+
       <div>
         <PageHeader title="Downloads" />
         {modal}
-        <div className="speakerCont">
-          <div className="speakerForm">
-            <Fade up>           
+        <div className="adminDownloadsContainer">
+          <div className="section formSection">
+            <h2 className="sectionTitle">
+              Upload <span>Event Documents</span>
+            </h2>
+            <Fade up>
               <form onSubmit={onSubmit}>
                 <Fade up>
                   <div className="inputGroup">
@@ -125,12 +119,16 @@ const Downloads = () => {
                       type="text"
                       name="title"
                       id="title"
-                      placeholder="Speaker Name*"
+                      placeholder="Title*"
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
+                      autoFocus
                       required
                     />
+                    <label htmlFor="title">Title*</label>
                   </div>
+                </Fade>
+                <Fade up>
                   <div className="inputGroup">
                     <input
                       type="text"
@@ -141,7 +139,10 @@ const Downloads = () => {
                       onChange={(e) => setDescription(e.target.value)}
                       required
                     />
+                    <label htmlFor="description">Description*</label>
                   </div>
+                </Fade>
+                <Fade up>
                   <div className="inputGroup">
                     <input
                       type="date"
@@ -152,23 +153,25 @@ const Downloads = () => {
                       onChange={(e) => setDate(e.target.value)}
                       required
                     />
+                    <label htmlFor="date">Date*</label>
                   </div>
+                </Fade>
+                <Fade up>
                   <div className="inputGroup">
-                    <label htmlFor="upload" style={{ marginLeft: "10px" }}>
-                      Upload document(if any):
-                    </label>
                     <input
                       type="file"
                       name="upload"
                       id="upload"
-                      placeholder="PDF upload*"
-                      style={{ paddingBottom: "45px" }}
+                      placeholder="Upload Document*"
                       onChange={handleChange}
                     />
+                    <label htmlFor="upload">Upload Document*</label>
                   </div>
+                </Fade>
+                <Fade up>
                   <div className="inputGroup">
                     <button type="submit">
-                      Submit&nbsp;&nbsp;<i className="fas fa-arrow-right"></i>
+                      Upload&nbsp;&nbsp;<i className="fas fa-upload"></i>
                     </button>
                   </div>
                 </Fade>
