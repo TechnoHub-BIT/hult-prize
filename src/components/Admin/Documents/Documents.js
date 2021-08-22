@@ -9,7 +9,6 @@ import { Fade } from "react-reveal";
 const Downloads = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
-  const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(null);
   const [file, setFile] = useState(null);
   const [url, setURL] = useState("");
@@ -44,13 +43,10 @@ const Downloads = () => {
   }
 
   const onSubmit = async (event) => {
-    if (title && date && description && file) {
+    if (title && date  && file) {
       event.preventDefault();
       const application = {
-        // url: url,
-        // filename : file.name,
         title,
-        description,
         date,
       };
       setLoading(
@@ -77,7 +73,6 @@ const Downloads = () => {
               setURL(""),
                 setFile(null),
                 setTitle(""),
-                setDescription(""),
                 setDate(""),
                 setLoading(null);
               showModal(
@@ -126,20 +121,6 @@ const Downloads = () => {
                     required
                   />
                   <label htmlFor="title">Title*</label>
-                </div>
-              </Fade>
-              <Fade up>
-                <div className="inputGroup">
-                  <input
-                    type="text"
-                    name="description"
-                    id="description"
-                    placeholder="Description*"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
-                  />
-                  <label htmlFor="description">Description*</label>
                 </div>
               </Fade>
               <Fade up>
