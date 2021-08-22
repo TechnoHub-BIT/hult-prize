@@ -36,7 +36,6 @@ const Downloads = () => {
       event.preventDefault();
       const application = {
         title,
-        description,
         date,
       };
       setLoading(
@@ -63,12 +62,11 @@ const Downloads = () => {
               setURL(""),
                 setFile(null),
                 setTitle(""),
-                setDescription(""),
                 setDate(""),
                 setLoading(null);
               showModal(
                 <AlertModal
-                  message="Speaker has been nominated successfully!"
+                  message="Downloads has been added successfully!"
                   icon="successful.png"
                   reload="true"
                   close={closeModal}
@@ -123,20 +121,6 @@ const Downloads = () => {
                       required
                     />
                     <label htmlFor="title">Title*</label>
-                  </div>
-                </Fade>
-                <Fade up>
-                  <div className="inputGroup">
-                    <input
-                      type="text"
-                      name="description"
-                      id="description"
-                      placeholder="Description*"
-                      value={description}
-                      onChange={(e) => setDescription(e.target.value)}
-                      required
-                    />
-                    <label htmlFor="description">Description*</label>
                   </div>
                 </Fade>
                 <Fade up>

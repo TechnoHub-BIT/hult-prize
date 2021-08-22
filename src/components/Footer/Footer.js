@@ -3,7 +3,6 @@ import "./Footer.css";
 import HorizontalLogo from "../../images/logos/horizontal-white.png";
 import { Link } from "react-router-dom";
 import { Fade } from "react-reveal";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (

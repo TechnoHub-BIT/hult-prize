@@ -7,8 +7,19 @@ import FAQ from "./FAQ";
 import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase";
+import Moment from "moment";
 
 const Home = () => {
+  const [downloads, setDownloads] = useState([]);
+  useEffect(() => {
+    db.collection("Downloads")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setDownloads(data);
+      });
+  }, []);
+
   const [slider, setSliders] = useState([]);
   useEffect(() => {
     db.collection("Slider")
@@ -197,70 +208,33 @@ const Home = () => {
             </h3>
           </Fade>
           <div className="downloadsGrid">
-            <Fade up>
-              <a href="#" className="singleDownload">
-                <div className="left">
-                  <h4 className="title">Hult Prize 2022 Theme</h4>
-                  <h5 className="date">
-                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                    2021
-                  </h5>
-                </div>
-                <div className="right">
-                  <a href="#" class="downloadBtn">
-                    Download
-                  </a>
-                </div>
-              </a>
-            </Fade>
-            <Fade up>
-              <a href="#" className="singleDownload">
-                <div className="left">
-                  <h4 className="title">Hult Prize 2022 Theme</h4>
-                  <h5 className="date">
-                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                    2021
-                  </h5>
-                </div>
-                <div className="right">
-                  <a href="#" class="downloadBtn">
-                    Download
-                  </a>
-                </div>
-              </a>
-            </Fade>
-            <Fade up>
-              <a href="#" className="singleDownload">
-                <div className="left">
-                  <h4 className="title">Hult Prize 2022 Theme</h4>
-                  <h5 className="date">
-                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                    2021
-                  </h5>
-                </div>
-                <div className="right">
-                  <a href="#" class="downloadBtn">
-                    Download
-                  </a>
-                </div>
-              </a>
-            </Fade>
-            <Fade up>
-              <a href="#" className="singleDownload">
-                <div className="left">
-                  <h4 className="title">Hult Prize 2022 Theme</h4>
-                  <h5 className="date">
-                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                    2021
-                  </h5>
-                </div>
-                <div className="right">
-                  <a href="#" class="downloadBtn">
-                    Download
-                  </a>
-                </div>
-              </a>
-            </Fade>
+            {downloads.map((item) => {
+              return (
+                <Fade up>
+                  <div className="singleDownload">
+                    <div className="left">
+                      <h4 className="title">{item.title}</h4>
+                      <h5 className="date">
+                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                        {item.date}
+                        {/* {Moment(item.createdAt.toDate().toString()).format(
+                          "lll"
+                        )} */}
+                      </h5>
+                    </div>
+                    <div className="right">
+                      <a
+                        href={`${item.url}`}
+                        target="_blank"
+                        class="downloadBtn"
+                      >
+                        Download
+                      </a>
+                    </div>
+                  </div>
+                </Fade>
+              );
+            })}
           </div>
           <Fade up>
             <div className="ctaBtn">
