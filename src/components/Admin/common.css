@@ -1,0 +1,72 @@
+.adminDownloadsContainer .section,
+.adminSliderContainer .section,
+.loginContainer .section {
+  padding: 10vh 10vw;
+}
+
+.adminDownloadsContainer .section.formSection,
+.adminSliderContainer .section.formSection,
+.loginContainer .section.formSection {
+  padding: 10vh 20vw;
+}
+
+.adminDownloadsContainer .section.formSection form,
+.adminSliderContainer .section.formSection form,
+.loginContainer .section.formSection form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1.5em;
+}
+
+.adminDownloadsContainer .section.formSection form button,
+.adminSliderContainer .section.formSection form button,
+.loginContainer .section.formSection form button {
+  width: 100%;
+}
+
+.adminDownloadsContainer .section.loginSection,
+.adminSliderContainer .section.loginSection,
+.loginContainer .section.loginSection {
+  padding: 10vh 30vw;
+}
+
+.adminDownloadsContainer .section.loginSection form,
+.adminSliderContainer .section.loginSection form,
+.loginContainer .section.loginSection form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1.5em;
+}
+
+.adminDownloadsContainer .section.loginSection form button,
+.adminSliderContainer .section.loginSection form button,
+.loginContainer .section.loginSection form button {
+  width: 100%;
+}
+
+@media only screen and (max-width: 922px) {
+  .adminDownloadsContainer .section,
+  .adminSliderContainer .section,
+  .loginContainer .section {
+    padding: 10vh 15px;
+  }
+  .adminDownloadsContainer .section.formSection, .adminDownloadsContainer .section.loginSection,
+  .adminSliderContainer .section.formSection,
+  .adminSliderContainer .section.loginSection,
+  .loginContainer .section.formSection,
+  .loginContainer .section.loginSection {
+    padding: 10vh 15px;
+  }
+  .adminDownloadsContainer .section.formSection .sectionTitle, .adminDownloadsContainer .section.loginSection .sectionTitle,
+  .adminSliderContainer .section.formSection .sectionTitle,
+  .adminSliderContainer .section.loginSection .sectionTitle,
+  .loginContainer .section.formSection .sectionTitle,
+  .loginContainer .section.loginSection .sectionTitle {
+    margin: 0 0 5vh;
+  }
+}
+/*# sourceMappingURL=common.css.map */

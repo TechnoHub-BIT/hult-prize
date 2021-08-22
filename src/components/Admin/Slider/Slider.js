@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import "../common.css";
 import { useHistory } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import PageHeader from "../../PageHeader/PageHeader";
-import { Fade } from "react-reveal";
 import AlertModal from "../../AlertModal/AlertModal";
 import { db } from "../../../firebase";
+import { Fade } from "react-reveal";
 
 const Slider = () => {
   const [title, setTitle] = useState("");
@@ -71,28 +71,26 @@ const Slider = () => {
 
   return (
     <React.Fragment>
-      <Helmet>
-        <title>Hult Prize BITD 2022- Let's have a Talk</title>
-        <meta name="title" content="Hult Prize BITD 2022- Let's have a Talk" />
-        <meta name="description" content="" />
-      </Helmet>
       <PageHeader title="Slider" />
       {modal}
-      <div className="loginCont">
-        <form>
-          <div className="grid2">
+      <div className="adminSliderContainer">
+        <div className="section formSection">
+          <h2 className="sectionTitle">
+            Upload <span>Slider Details</span>
+          </h2>
+          <form>
             <Fade up>
               <div className="inputGroup">
                 <input
                   type="text"
-                  id="subtitle"
+                  id="title"
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
-                  placeholder="First Name"
+                  placeholder="Title*"
                   autoFocus
                   required
                 />
-                <label htmlFor="fname">Title</label>
+                <label htmlFor="title">Title*</label>
               </div>
             </Fade>
             <Fade up>
@@ -102,23 +100,22 @@ const Slider = () => {
                   id="subtitle"
                   onChange={(e) => setSubTtile(e.target.value)}
                   value={subTitle}
-                  placeholder="Last Name"
+                  placeholder="Subtitle*"
+                  required
                 />
-                <label htmlFor="lname">Sub-Title</label>
+                <label htmlFor="subtitle">Subtitle*</label>
               </div>
             </Fade>
-          </div>
-          <div className="grid2 mt2">
             <Fade up>
               <div className="inputGroup">
                 <input
                   type="text"
-                  id="imageUrl"
+                  id="imageId"
                   onChange={(e) => setImageUrl(e.target.value)}
                   value={imageUrl}
-                  placeholder="Email"
+                  placeholder="Drive Image ID*"
                 />
-                <label htmlFor="image">Image-Url</label>
+                <label htmlFor="imageId">Drive Image ID*</label>
               </div>
             </Fade>
             <Fade up>
@@ -142,13 +139,11 @@ const Slider = () => {
                   id="hyperlink"
                   onChange={(e) => setHyperLink(e.target.value)}
                   value={hyperLink}
-                  placeholder="Mobile No."
+                  placeholder="Hyperlink*"
                 />
-                <label htmlFor="mobile">Hyper Link</label>
+                <label htmlFor="hyperlink">Hyperlink*</label>
               </div>
             </Fade>
-          </div>
-          <div className="mt2">
             <Fade right>
               <div className="inputGroup">
                 <button
@@ -157,12 +152,12 @@ const Slider = () => {
                   onClick={handleSubmit}
                   style={{ alignSelf: "flex-end" }}
                 >
-                  Create Slider
+                  Upload&nbsp;&nbsp;<i className="fas fa-upload"></i>
                 </button>
               </div>
             </Fade>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </React.Fragment>
   );

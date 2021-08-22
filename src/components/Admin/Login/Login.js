@@ -1,10 +1,9 @@
 import React, { useRef, useState } from "react";
-import "./Login.css";
+import "../common.css";
 import { useAuth } from "../../../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import PageHeader from "../../PageHeader/PageHeader";
 import AlertModal from "../../AlertModal/AlertModal";
-import { Helmet } from "react-helmet";
 import { Fade } from "react-reveal";
 
 const Login = () => {
@@ -44,11 +43,6 @@ const Login = () => {
 
   return (
     <React.Fragment>
-      <Helmet>
-        <title>Hult Prize BITD 2022- Let's have a Talk</title>
-        <meta name="title" content="Hult Prize BITD 2022- Let's have a Talk" />
-        <meta name="description" content="" />
-      </Helmet>
       <PageHeader title="Login" />
       {modal}
       <div className="loginContainer">
@@ -63,12 +57,12 @@ const Login = () => {
                   type="text"
                   name="username"
                   id="email"
-                  placeholder="Email"
+                  placeholder="Email*"
                   ref={emailRef}
                   autoFocus
                   required
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email*</label>
               </div>
             </Fade>
             <Fade up>
@@ -77,11 +71,11 @@ const Login = () => {
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Password"
+                  placeholder="Password*"
                   ref={passwordRef}
                   required
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password*</label>
               </div>
             </Fade>
             <Fade up>
