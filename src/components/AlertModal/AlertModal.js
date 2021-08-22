@@ -20,10 +20,17 @@ class AlertModal extends Component {
         <div className={this.state.modalClass}>
           <div className="modalContent">
             <div className="modalBody">
-              <img
-                src={"./assets/images/icons/" + this.props.icon}
-                alt="Status Icon"
-              />
+              {this.props.admin ? (
+                <img
+                  src={"../assets/images/icons/" + this.props.icon}
+                  alt="Status Icon"
+                />
+              ) : (
+                <img
+                  src={"./assets/images/icons/" + this.props.icon}
+                  alt="Status Icon"
+                />
+              )}
               <p>{this.props.message}</p>
               <div>
                 <button

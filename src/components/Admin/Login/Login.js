@@ -11,7 +11,6 @@ const Login = () => {
   const passwordRef = useRef();
   const { login } = useAuth();
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
   const history = useHistory();
 
   const [modal, showModal] = useState("");
@@ -25,7 +24,6 @@ const Login = () => {
 
     try {
       setError("");
-      setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       history.push("/admin/dashboard");
     } catch {
@@ -38,7 +36,6 @@ const Login = () => {
         />
       );
     }
-    setLoading(false);
   }
 
   return (
@@ -80,7 +77,7 @@ const Login = () => {
             </Fade>
             <Fade up>
               <div className="inputGroup">
-                <button disabled={loading} onClick={handleSubmit} type="submit">
+                <button onClick={handleSubmit} type="submit">
                   Login&nbsp;&nbsp;<i className="fas fa-arrow-right"></i>
                 </button>
               </div>

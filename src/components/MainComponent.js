@@ -13,7 +13,7 @@ import SingleNews from "./News/SingleNews/SingleNews";
 import Login from "./Admin/Login/Login";
 import Dashboard from "./Admin/Dashboard/Dashboard";
 import Slider from "./Admin/Slider/Slider";
-import Downloads from "./Admin/Downloads/Downloads";
+import Documents from "./Admin/Documents/Documents";
 import Messages from "./Admin/Messages/Messages";
 import CreateNews from "./Admin/News/CreateNews";
 //End Admin Pages
@@ -54,11 +54,15 @@ const MainComponent = () => {
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/admin/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/admin/messages" component={Messages} />
-          <PrivateRoute exact path="/admin/downloads" component={Downloads} />
+          <PrivateRoute exact path="/admin/documents" component={Documents} />
           <PrivateRoute exact path="/admin/slider" component={Slider} />
-          <PrivateRoute exact path="/admin/create-news" component={CreateNews} />
+          <PrivateRoute
+            exact
+            path="/admin/create-news"
+            component={CreateNews}
+          />
           {/* End Admin Pages */}
-          
+
           <Footer />
         </AuthProvider>
       </Router>
