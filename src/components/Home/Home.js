@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -6,8 +6,19 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import FAQ from "./FAQ";
 import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
+import { db } from "../../firebase";
 
 const Home = () => {
+  const [slider, setSliders] = useState([]);
+  useEffect(() => {
+    db.collection("Slider")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setSliders(data);
+      });
+  }, []);
+
   const [faqs, setfaqs] = useState([
     {
       question: "Who are the speakers?",
@@ -68,44 +79,33 @@ const Home = () => {
             autoplayTimeout="5000"
             loop="true"
           >
-            <div
-              className="item"
-              style={{
-                backgroundImage:
-                  "url('https://drive.google.com/uc?export=view&id=" +
-                  "1vIi-i6PjDTL9WvK1OAcRX-kUHtVDamVD" +
-                  "')",
-              }}
-            >
-              <div className="content">
-                <h2 className="heading textTheme">2021-22 Theme Revealed</h2>
-                <h2 className="subHeading textWhite">Download Brochure Now</h2>
-                <a href="#" className="ctaBtn">
-                  Download
-                </a>
-              </div>
-            </div>
-            <div
-              className="item"
-              style={{
-                backgroundImage:
-                  "url('https://drive.google.com/uc?export=view&id=" +
-                  "1ie1AwpLPK4LorIDVAIkh1XcSBHvQco0t" +
-                  "')",
-              }}
-            >
-              <div className="content">
-                <Fade up>
-                  <h2 className="heading textTheme">Registrations are Live!</h2>
-                  <h2 className="subHeading textWhite">
-                    On-Campus Program 2021-22
-                  </h2>
-                  <a href="#" className="ctaBtn">
-                    Register Now
-                  </a>
-                </Fade>
-              </div>
-            </div>
+            {slider.map((item) => {
+              return (
+                <>
+                  <div
+                    className="item"
+                    style={{
+                      backgroundImage:
+                        "url('https://drive.google.com/uc?export=view&id=" +
+                        `${item.imageUrl}` +
+                        "')",
+                    }}
+                  >
+                    <div className="content">
+                      <h2 className="heading textTheme">{item.title}</h2>
+                      <h2 className="subHeading textWhite">{item.subTitle}</h2>
+                      <a
+                        href={`${item.hyperLink}`}
+                        target="_blank"
+                        className="ctaBtn"
+                      >
+                        {item.buttonText}
+                      </a>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
           </OwlCarousel>
         </div>
         <div className="section latestNewsSection">

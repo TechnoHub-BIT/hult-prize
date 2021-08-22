@@ -11,6 +11,7 @@ const Slider = () => {
   const [subTitle, setSubTtile] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [hyperLink, setHyperLink] = useState("");
+  const [buttonText, setButtonText] = useState("");
   const [loader, setLoader] = useState(false);
   const history = useHistory();
 
@@ -23,7 +24,7 @@ const Slider = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(true);
-    if (title && subTitle && imageUrl && hyperLink) {
+    if (title && subTitle && imageUrl && hyperLink && buttonText) {
       await db
         .collection("Slider")
         .add({
@@ -31,12 +32,13 @@ const Slider = () => {
           subTitle,
           imageUrl,
           hyperLink,
+          buttonText
         })
         .then(() => {
           setLoader(false);
           showModal(
             <AlertModal
-              message="Your Message has been submitted. Thank you for your feedback!"
+              message="Slider has been created Sucessfully!"
               icon="successful.png"
               reload="true"
               close={closeModal}
@@ -123,6 +125,20 @@ const Slider = () => {
               <div className="inputGroup">
                 <input
                   type="text"
+                  id="buttonText"
+                  onChange={(e) => setButtonText(e.target.value)}
+                  value={buttonText}
+                  placeholder="Button Text"
+                  autoFocus
+                  required
+                />
+                <label htmlFor="buttonText">Button Text</label>
+              </div>
+            </Fade>
+            <Fade up>
+              <div className="inputGroup">
+                <input
+                  type="text"
                   id="hyperlink"
                   onChange={(e) => setHyperLink(e.target.value)}
                   value={hyperLink}
@@ -141,7 +157,7 @@ const Slider = () => {
                   onClick={handleSubmit}
                   style={{ alignSelf: "flex-end" }}
                 >
-                  Send Message
+                  Create Slider
                 </button>
               </div>
             </Fade>

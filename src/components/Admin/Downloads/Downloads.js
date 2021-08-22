@@ -11,7 +11,6 @@ import PageHeader from "../../PageHeader/PageHeader";
 const Downloads = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
-  const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(null);
   const [file, setFile] = useState(null);
   const [url, setURL] = useState("");
@@ -35,13 +34,10 @@ const Downloads = () => {
   }
 
   const onSubmit = async (event) => {
-    if (title && date && description && file) {
+    if (title && date && file) {
       event.preventDefault();
       const application = {
-        // url: url,
-        // filename : file.name,
         title,
-        description,
         date
       }
         setLoading(
@@ -68,7 +64,6 @@ const Downloads = () => {
                 setURL(""),
                   setFile(null),
                   setTitle(""),
-                  setDescription(""),
                   setDate(""),
                   setLoading(null);
                 showModal(
@@ -128,17 +123,6 @@ const Downloads = () => {
                       placeholder="Speaker Name*"
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div className="inputGroup">
-                    <input
-                      type="text"
-                      name="description"
-                      id="description"
-                      placeholder="Description*"
-                      value={description}
-                      onChange={(e) => setDescription(e.target.value)}
                       required
                     />
                   </div>
