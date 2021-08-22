@@ -11,7 +11,7 @@ const Dashboard = () => {
       <div className="dashboardCont">
         <Fade up>
           <div className="buttons">
-            <Link to="/admin/dashboard">
+            <Link to="/admin/downloads">
               <button type="button">Create Downloads</button>
             </Link>
             <Link to="/admin/messages">
