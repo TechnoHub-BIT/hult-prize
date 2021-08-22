@@ -47,7 +47,7 @@ const MainComponent = () => {
           <Route exact path="/team" component={OurTeam} />
           <Route exact path="/our-team" component={OurTeam} />
           <Route exact path="/news" component={NewsList} />
-          <Route exact path="/singlenews" component={SingleNews} />
+          <Route exact path="/news/:id" component={SingleNews} />
           {/* End Pages */}
 
           {/* Admin Pages */}

@@ -155,7 +155,7 @@ const CreateNews = () => {
                   onClick={handleSubmit}
                   style={{ alignSelf: "flex-end" }}
                 >
-                  Send Message
+                  Create News
                 </button>
               </div>
             </Fade>
