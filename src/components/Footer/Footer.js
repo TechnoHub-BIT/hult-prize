@@ -50,14 +50,22 @@ const Footer = () => {
             <div className="links">
               <Fade up>
                 <Link to="/">Home</Link>
+              </Fade>
+              <Fade up>
                 <Link to="/about-us">About Hult Prize BITD</Link>
+              </Fade>
+              <Fade up>
                 <Link to="/contact-us">Contact Us</Link>
               </Fade>
             </div>
             <div className="links">
               <Fade up>
                 <Link to="/news">Latest News</Link>
+              </Fade>
+              <Fade up>
                 <Link to="/documents">Documents</Link>
+              </Fade>
+              <Fade up>
                 <Link to="/team">Team 2022</Link>
               </Fade>
             </div>

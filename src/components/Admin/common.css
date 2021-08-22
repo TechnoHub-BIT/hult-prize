@@ -1,17 +1,20 @@
 .adminDocumentsContainer .section,
 .adminSliderContainer .section,
+.adminNewsContainer .section,
 .loginContainer .section {
   padding: 10vh 10vw;
 }
 
 .adminDocumentsContainer .section.formSection,
 .adminSliderContainer .section.formSection,
+.adminNewsContainer .section.formSection,
 .loginContainer .section.formSection {
   padding: 10vh 20vw;
 }
 
 .adminDocumentsContainer .section.formSection form,
 .adminSliderContainer .section.formSection form,
+.adminNewsContainer .section.formSection form,
 .loginContainer .section.formSection form {
   display: -ms-grid;
   display: grid;
@@ -22,18 +25,21 @@
 
 .adminDocumentsContainer .section.formSection form button,
 .adminSliderContainer .section.formSection form button,
+.adminNewsContainer .section.formSection form button,
 .loginContainer .section.formSection form button {
   width: 100%;
 }
 
 .adminDocumentsContainer .section.loginSection,
 .adminSliderContainer .section.loginSection,
+.adminNewsContainer .section.loginSection,
 .loginContainer .section.loginSection {
   padding: 10vh 30vw;
 }
 
 .adminDocumentsContainer .section.loginSection form,
 .adminSliderContainer .section.loginSection form,
+.adminNewsContainer .section.loginSection form,
 .loginContainer .section.loginSection form {
   display: -ms-grid;
   display: grid;
@@ -44,6 +50,7 @@
 
 .adminDocumentsContainer .section.loginSection form button,
 .adminSliderContainer .section.loginSection form button,
+.adminNewsContainer .section.loginSection form button,
 .loginContainer .section.loginSection form button {
   width: 100%;
 }
@@ -51,12 +58,15 @@
 @media only screen and (max-width: 922px) {
   .adminDocumentsContainer .section,
   .adminSliderContainer .section,
+  .adminNewsContainer .section,
   .loginContainer .section {
     padding: 10vh 15px;
   }
   .adminDocumentsContainer .section.formSection, .adminDocumentsContainer .section.loginSection,
   .adminSliderContainer .section.formSection,
   .adminSliderContainer .section.loginSection,
+  .adminNewsContainer .section.formSection,
+  .adminNewsContainer .section.loginSection,
   .loginContainer .section.formSection,
   .loginContainer .section.loginSection {
     padding: 10vh 15px;
@@ -64,6 +74,8 @@
   .adminDocumentsContainer .section.formSection .sectionTitle, .adminDocumentsContainer .section.loginSection .sectionTitle,
   .adminSliderContainer .section.formSection .sectionTitle,
   .adminSliderContainer .section.loginSection .sectionTitle,
+  .adminNewsContainer .section.formSection .sectionTitle,
+  .adminNewsContainer .section.loginSection .sectionTitle,
   .loginContainer .section.formSection .sectionTitle,
   .loginContainer .section.loginSection .sectionTitle {
     margin: 0 0 5vh;

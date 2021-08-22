@@ -15,7 +15,7 @@ import Dashboard from "./Admin/Dashboard/Dashboard";
 import Slider from "./Admin/Slider/Slider";
 import Documents from "./Admin/Documents/Documents";
 import Messages from "./Admin/Messages/Messages";
-import CreateNews from "./Admin/News/CreateNews";
+import CreateNews from "./Admin/News/News";
 //End Admin Pages
 
 //Common Components
@@ -56,11 +56,7 @@ const MainComponent = () => {
           <PrivateRoute exact path="/admin/messages" component={Messages} />
           <PrivateRoute exact path="/admin/documents" component={Documents} />
           <PrivateRoute exact path="/admin/slider" component={Slider} />
-          <PrivateRoute
-            exact
-            path="/admin/create-news"
-            component={CreateNews}
-          />
+          <PrivateRoute exact path="/admin/news" component={CreateNews} />
           {/* End Admin Pages */}
 
           <Footer />

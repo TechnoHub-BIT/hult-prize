@@ -32,7 +32,7 @@ const CreateNews = () => {
           content,
           imageUrl,
           date,
-          source
+          source,
         })
         .then(() => {
           setLoader(false);
@@ -71,16 +71,14 @@ const CreateNews = () => {
 
   return (
     <React.Fragment>
-      <Helmet>
-        <title>Hult Prize BITD 2022- Let's have a Talk</title>
-        <meta name="title" content="Hult Prize BITD 2022- Let's have a Talk" />
-        <meta name="description" content="" />
-      </Helmet>
       <PageHeader title="Slider" />
       {modal}
-      <div className="loginCont">
-        <form>
-          <div className="grid2">
+      <div className="adminNewsContainer">
+        <div className="section formSection">
+          <h2 className="sectionTitle">
+            Upload <span>News</span>
+          </h2>
+          <form method="post">
             <Fade up>
               <div className="inputGroup">
                 <input
@@ -107,8 +105,6 @@ const CreateNews = () => {
                 <label htmlFor="content">Content</label>
               </div>
             </Fade>
-          </div>
-          <div className="grid2 mt2">
             <Fade up>
               <div className="inputGroup">
                 <input
@@ -145,8 +141,6 @@ const CreateNews = () => {
                 <label htmlFor="source">Source</label>
               </div>
             </Fade>
-          </div>
-          <div className="mt2">
             <Fade right>
               <div className="inputGroup">
                 <button
@@ -159,8 +153,8 @@ const CreateNews = () => {
                 </button>
               </div>
             </Fade>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </React.Fragment>
   );

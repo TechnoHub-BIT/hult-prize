@@ -1,5 +1,6 @@
 .adminDocumentsContainer,
 .adminSliderContainer,
+.adminNewsContainer,
 .loginContainer {
   .section {
     padding: 10vh 10vw;
@@ -37,6 +38,7 @@
 @media only screen and (max-width: 922px) {
   .adminDocumentsContainer,
   .adminSliderContainer,
+  .adminNewsContainer,
   .loginContainer {
     .section {
       padding: 10vh 15px;

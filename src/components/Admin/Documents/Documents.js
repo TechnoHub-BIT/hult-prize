@@ -112,7 +112,7 @@ const Downloads = () => {
             Upload <span>Event Documents</span>
           </h2>
           <Fade up>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} method="post">
               <Fade up>
                 <div className="inputGroup">
                   <input

@@ -92,29 +92,27 @@ const Home = () => {
           >
             {slider.map((item) => {
               return (
-                <>
-                  <div
-                    className="item"
-                    style={{
-                      backgroundImage:
-                        "url('https://drive.google.com/uc?export=view&id=" +
-                        `${item.imageUrl}` +
-                        "')",
-                    }}
-                  >
-                    <div className="content">
-                      <h2 className="heading textTheme">{item.title}</h2>
-                      <h2 className="subHeading textWhite">{item.subTitle}</h2>
-                      <a
-                        href={`${item.hyperLink}`}
-                        target="_blank"
-                        className="ctaBtn"
-                      >
-                        {item.buttonText}
-                      </a>
-                    </div>
+                <div
+                  className="item"
+                  style={{
+                    backgroundImage:
+                      "url('https://drive.google.com/uc?export=view&id=" +
+                      `${item.imageUrl}` +
+                      "')",
+                  }}
+                >
+                  <div className="content">
+                    <h2 className="heading textTheme">{item.title}</h2>
+                    <h2 className="subHeading textWhite">{item.subTitle}</h2>
+                    <a
+                      href={`${item.hyperLink}`}
+                      target="_blank"
+                      className="ctaBtn"
+                    >
+                      {item.buttonText}
+                    </a>
                   </div>
-                </>
+                </div>
               );
             })}
           </OwlCarousel>
@@ -226,7 +224,7 @@ const Home = () => {
                       <a
                         href={`${item.url}`}
                         target="_blank"
-                        class="downloadBtn"
+                        className="downloadBtn"
                       >
                         Download
                       </a>
@@ -240,7 +238,7 @@ const Home = () => {
             <div className="ctaBtn">
               <Link to="/news">
                 View All&nbsp;&nbsp;
-                <i className="fas fa-long-arrow-alt-right"></i>
+                <i className="fas fa-chevron-down"></i>
               </Link>
             </div>
           </Fade>

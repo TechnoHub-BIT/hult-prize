@@ -30,9 +30,9 @@ const Navbar = () => {
         </div>
         <div className={"desktopNavbar " + navbarClass}>
           <div className="navbarLeft">
-            <a to="/" className="logo">
+            <Link to="/" className="logo">
               <img src={HorizontalLogo} alt="" />
-            </a>
+            </Link>
             {currentUser ? (
               <div className="links">
                 <Link
