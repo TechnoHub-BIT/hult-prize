@@ -30,6 +30,21 @@ const Home = () => {
       });
   }, []);
 
+  const [news, setNews] = useState([]);
+  useEffect(() => {
+    const fetchdata = async () => {
+      db.collection("News").onSnapshot(function (data) {
+        setNews(
+          data.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }))
+        );
+      });
+    };
+    fetchdata();
+  }, []);
+
   const [faqs, setfaqs] = useState([
     {
       question: "Who are the speakers?",
@@ -127,71 +142,31 @@ const Home = () => {
             </h3>
           </Fade>
           <div className="newsGrid">
-            <Fade up>
-              <div className="singleNews">
-                <a href="#">
-                  <img src="./assets/images/dashboard/news/news-1.jpg" alt="" />
-                </a>
-                <a href="#" className="title">
-                  Whatever the news title be
-                </a>
-                <h4 className="date">
-                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                  2021
-                </h4>
-                <p className="description">
-                  tenetur. Lorem ipsum dolor, sit amet consectetur adipisicing
-                  elit. Voluptate doloribus rem, enim alias deleniti,
-                  perferendis at ipsum reprehenderit cupiditate ea, est dolorum
-                  aut iure nulla. Voluptas nesciunt nemo minus amet temporibus
-                  dolor pariatur voluptates culpa repellendus, labore et nihil
-                  distinctio!
-                </p>
-              </div>
-            </Fade>
-            <Fade down>
-              <div className="singleNews">
-                <a href="#">
-                  <img src="./assets/images/dashboard/news/news-1.jpg" alt="" />
-                </a>
-                <a href="#" className="title">
-                  Whatever the news title be
-                </a>
-                <h4 className="date">
-                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                  2021
-                </h4>
-                <p className="description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Voluptate doloribus rem, enim alias deleniti, perferendis at
-                  ipsum reprehenderit cupiditate ea, est dolorum aut iure nulla.
-                  Voluptas nesciunt nemo minus amet temporibus dolor pariatur
-                  voluptates culpa repellendus, labore et nihil distinctio!
-                </p>
-              </div>
-            </Fade>
-            <Fade up>
-              <div className="singleNews">
-                <a href="#">
-                  <img src="./assets/images/dashboard/news/news-1.jpg" alt="" />
-                </a>
-                <a href="#" className="title">
-                  Whatever the news title be
-                </a>
-                <h4 className="date">
-                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                  2021
-                </h4>
-                <p className="description">
-                  tenetur. Lorem ipsum dolor, sit amet consectetur adipisicing
-                  elit. Voluptate doloribus rem, enim alias deleniti,
-                  perferendis at ipsum reprehenderit cupiditate ea, est dolorum
-                  aut iure nulla. Voluptas nesciunt nemo minus amet temporibus
-                  dolor pariatur voluptates culpa repellendus, labore et nihil
-                  distinctio!
-                </p>
-              </div>
-            </Fade>
+          {news.map((item, index) => {
+              return (
+                <Fade up>
+                  <div className="singleNews" key={index}>
+                    <Link to={`/news/` + `${item.id}`}>
+                      <img
+                        src={
+                          `https://drive.google.com/uc?export=view&id=` +
+                          `${item.imageUrl}`
+                        }
+                        alt={item.title}
+                      />
+                    </Link>
+                    <Link to={`/news/` + `${item.id}`} className="title">
+                      {item.title}
+                    </Link>
+                    <h4 className="date">
+                      <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                      {Moment(item.date).format("DD MMMM YYYY")}
+                    </h4>
+                    <p className="description">{item.content}</p>
+                  </div>
+                </Fade>
+              );
+            })}
           </div>
           <Fade up>
             <div style={{ textAlign: "center" }}>

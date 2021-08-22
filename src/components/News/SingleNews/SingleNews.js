@@ -67,7 +67,6 @@ const SingleNews = () => {
       <NewsHeader title={news.title} imageId={news.imageUrl} date={news.date} />
       {modal}
       <div className="singleNewsContainer">
-        {news.date}
         <div className="section newsSection">
           <div className="content">{news.content}</div>
           source : {news.source}
