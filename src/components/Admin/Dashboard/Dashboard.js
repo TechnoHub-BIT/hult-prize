@@ -22,7 +22,7 @@ const Dashboard = () => {
             <Link to="/admin/slider">
               <button type="button">Create Slider</button>
             </Link>
-            <Link to="/admin/create-news">
+            <Link to="/admin/news">
               <button type="button">Create News</button>
             </Link>
           </div>

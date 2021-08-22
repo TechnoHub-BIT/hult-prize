@@ -3,7 +3,7 @@
   height: 60vh;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0 100%;
+  background-position: center;
   background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,6 +37,12 @@
   z-index: 2;
 }
 
+.newsHeader .date {
+  color: #cccaca;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
 .newsHeader .breadcrumbs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,7 +50,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 0.5em;
+  margin-top: 1.5em;
   z-index: 2;
 }
 

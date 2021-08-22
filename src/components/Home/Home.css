@@ -70,23 +70,26 @@
   padding: 10vh 10vw;
 }
 
-.homeContainer .section .ctaBtn {
-  text-align: center;
-  margin: 8vh 0 0;
+.homeContainer .section .hideBtn {
+  display: none;
 }
 
-.homeContainer .section .ctaBtn a {
-  text-decoration: none;
+.homeContainer .section .ctaBtn {
+  display: inline-block;
+  text-align: center;
+  margin: 8vh 0 0;
   font-size: 0.9rem;
+  text-decoration: none;
   padding: 10px 30px;
   background: transparent;
   color: var(--theme-clr);
   border: 2px solid var(--theme-clr);
+  cursor: pointer;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
 
-.homeContainer .section .ctaBtn a:hover {
+.homeContainer .section .ctaBtn:hover {
   background-color: var(--theme-clr);
   color: #fff;
 }

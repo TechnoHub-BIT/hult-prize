@@ -64,23 +64,26 @@
   .section {
     padding: 10vh 10vw;
 
+    .hideBtn {
+      display: none;
+    }
+
     .ctaBtn {
+      display: inline-block;
       text-align: center;
       margin: 8vh 0 0;
+      font-size: 0.9rem;
+      text-decoration: none;
+      padding: 10px 30px;
+      background: transparent;
+      color: var(--theme-clr);
+      border: 2px solid var(--theme-clr);
+      cursor: pointer;
+      transition: 0.3s all ease;
 
-      a {
-        text-decoration: none;
-        font-size: 0.9rem;
-        padding: 10px 30px;
-        background: transparent;
-        color: var(--theme-clr);
-        border: 2px solid var(--theme-clr);
-        transition: 0.3s all ease;
-
-        &:hover {
-          background-color: var(--theme-clr);
-          color: #fff;
-        }
+      &:hover {
+        background-color: var(--theme-clr);
+        color: #fff;
       }
     }
 

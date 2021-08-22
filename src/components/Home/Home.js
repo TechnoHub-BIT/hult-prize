@@ -7,7 +7,7 @@ import FAQ from "./FAQ";
 import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase";
-import moment from "moment";
+import Moment from "moment";
 
 const Home = () => {
   const [downloads, setDownloads] = useState([]);
@@ -77,6 +77,9 @@ const Home = () => {
       })
     );
   };
+
+  const [documentsLength, setLength] = useState(6);
+  const [ctaBtn, toggleBtn] = useState("");
 
   return (
     <React.Fragment>
@@ -191,13 +194,14 @@ const Home = () => {
             </Fade>
           </div>
           <Fade up>
-            <div className="ctaBtn">
-              <a href="/news">
+            <div style={{ textAlign: "center" }}>
+              <Link to="/news" className="ctaBtn">
                 Read More&nbsp;&nbsp;
-                <i className="fas fa-long-arrow-alt-right"></i>
-              </a>
+                <i className="fas fa-chevron-right"></i>
+              </Link>
             </div>
           </Fade>
+          <Fade up></Fade>
         </div>
         <div className="section downloadsSection">
           <Fade up>
@@ -206,39 +210,48 @@ const Home = () => {
             </h3>
           </Fade>
           <div className="downloadsGrid">
-            {downloads.map((item) => {
-              return (
-                <Fade up>
-                  <div className="singleDownload">
-                    <div className="left">
-                      <h4 className="title">{item.title}</h4>
-                      <h5 className="date">
-                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-                        {moment(item.date).format('DD MMMM YYYY')};
-                      </h5>
+            {downloads.map((item, index) => {
+              if (index < documentsLength)
+                return (
+                  <Fade up>
+                    <div className="singleDownload">
+                      <div className="left">
+                        <h4 className="title">{item.title}</h4>
+                        <h5 className="date">
+                          <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                          {Moment(item.date).format("DD MMMM YYYY")}
+                        </h5>
+                      </div>
+                      <div className="right">
+                        <a
+                          href={`${item.url}`}
+                          target="_blank"
+                          className="downloadBtn"
+                        >
+                          Download
+                        </a>
+                      </div>
                     </div>
-                    <div className="right">
-                      <a
-                        href={`${item.url}`}
-                        target="_blank"
-                        className="downloadBtn"
-                      >
-                        Download
-                      </a>
-                    </div>
-                  </div>
-                </Fade>
-              );
+                  </Fade>
+                );
             })}
           </div>
-          <Fade up>
-            <div className="ctaBtn">
-              <Link to="/news">
-                View All&nbsp;&nbsp;
-                <i className="fas fa-chevron-down"></i>
-              </Link>
-            </div>
-          </Fade>
+          {downloads.length > documentsLength ? (
+            <Fade up>
+              <div className={ctaBtn} style={{ textAlign: "center" }}>
+                <div
+                  className="ctaBtn"
+                  onClick={() => {
+                    setLength(9);
+                    toggleBtn("hideBtn");
+                  }}
+                >
+                  View All&nbsp;&nbsp;
+                  <i className="fas fa-chevron-down"></i>
+                </div>
+              </div>
+            </Fade>
+          ) : null}
         </div>
         <div className="section aboutHultSection">
           <Fade left>

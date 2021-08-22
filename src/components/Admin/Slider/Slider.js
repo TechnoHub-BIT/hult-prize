@@ -32,7 +32,7 @@ const Slider = () => {
           subTitle,
           imageUrl,
           hyperLink,
-          buttonText
+          buttonText,
         })
         .then(() => {
           setLoader(false);
@@ -126,7 +126,6 @@ const Slider = () => {
                   onChange={(e) => setButtonText(e.target.value)}
                   value={buttonText}
                   placeholder="Button Text"
-                  autoFocus
                   required
                 />
                 <label htmlFor="buttonText">Button Text</label>

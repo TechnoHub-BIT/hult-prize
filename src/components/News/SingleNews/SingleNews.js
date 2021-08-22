@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./SingleNews.css";
 import NewsHeader from "./NewsHeader/NewsHeader";
-import { Helmet } from "react-helmet";
-import { Fade } from "react-reveal";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -17,6 +15,9 @@ import {
 } from "react-share";
 import { useParams } from "react-router-dom";
 import { db } from "../../../firebase";
+import AlertModal from "../../AlertModal/AlertModal";
+import { Helmet } from "react-helmet";
+import { Fade } from "react-reveal";
 
 const SingleNews = () => {
   const shareUrl = "";
@@ -24,6 +25,11 @@ const SingleNews = () => {
 
   const { id } = useParams();
   const [news, setNews] = useState("");
+
+  const [modal, showModal] = useState("");
+  const closeModal = () => {
+    showModal("");
+  };
 
   useEffect(() => {
     const ref = db.collection("News").doc(id);
@@ -41,40 +47,28 @@ const SingleNews = () => {
       } else
         showModal(
           <AlertModal
-            message="This is not a Valid Test Link!"
-            icon="exclamation"
-            leftBtn="Go to Home"
-            rightBtn="View other News"
-            action={() => {
-              history.push("/home");
-            }}
-            close={() => {
-              history.push("/news");
-            }}
+            admin="true"
+            message="This is not a valid News Link!"
+            icon="exclamation.png"
+            reload="true"
+            close={closeModal}
           />
         );
     });
   }, []);
+
   return (
     <React.Fragment>
       <Helmet>
-        <title>Hult Prize BITD 2022- Whatever the news title be</title>
-        <meta
-          name="title"
-          content="Hult Prize BITD 2022- Whatever the news title be"
-        />
-        <meta name="description" content="" />
+        <title>{"Hult Prize BITD 2022- " + news.title}</title>
+        <meta name="title" content={"Hult Prize BITD 2022- " + news.title} />
+        <meta name="description" content={news.content} />
       </Helmet>
-      <NewsHeader title={news.title} />
+      <NewsHeader title={news.title} imageId={news.imageUrl} date={news.date} />
+      {modal}
       <div className="singleNewsContainer">
         {news.date}
         <div className="section newsSection">
-          <img
-            src={
-              `https://drive.google.com/uc?export=view&id=` + `${news.imageUrl}`
-            }
-            alt={news.title}
-          />
           <div className="content">{news.content}</div>
           source : {news.source}
           <div className="shareButtons">
