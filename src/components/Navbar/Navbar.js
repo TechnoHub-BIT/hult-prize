@@ -33,53 +33,35 @@ const Navbar = () => {
             <a to="/" className="logo">
               <img src={HorizontalLogo} alt="" />
             </a>
-            <div className="links">
-              <Link
-                to="/"
-                onClick={() => {
-                  toggleNavbar(!navbarClass);
-                  setIcon(!menuIcon);
-                }}
-              >
-                Home
-              </Link>
-              <Link
-                to="/news"
-                onClick={() => {
-                  toggleNavbar(!navbarClass);
-                  setIcon(!menuIcon);
-                }}
-              >
-                News
-              </Link>
-              <Link
-                to="/about-us"
-                onClick={() => {
-                  toggleNavbar(!navbarClass);
-                  setIcon(!menuIcon);
-                }}
-              >
-                About
-              </Link>
-              <Link
-                to="/team"
-                onClick={() => {
-                  toggleNavbar(!navbarClass);
-                  setIcon(!menuIcon);
-                }}
-              >
-                Team 2022
-              </Link>
-              <Link
-                to="/contact-us"
-                onClick={() => {
-                  toggleNavbar(!navbarClass);
-                  setIcon(!menuIcon);
-                }}
-              >
-                Contact
-              </Link>
-              {currentUser ? (
+            {currentUser ? (
+              <div className="links">
+                <Link
+                  to="/admin/dashboard"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  to="/admin/documents"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Documents
+                </Link>
+                <Link
+                  to="/admin/slider"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Slider
+                </Link>
                 <a
                   href="javascript:void(0);"
                   onClick={() => {
@@ -90,8 +72,56 @@ const Navbar = () => {
                 >
                   Log Out
                 </a>
-              ) : null}
-            </div>
+              </div>
+            ) : (
+              <div className="links">
+                <Link
+                  to="/"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/news"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  News
+                </Link>
+                <Link
+                  to="/about-us"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  About
+                </Link>
+                <Link
+                  to="/team"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Team 2022
+                </Link>
+                <Link
+                  to="/contact-us"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Contact
+                </Link>
+              </div>
+            )}
           </div>
           <div className="navbarRight">
             <div className="social">

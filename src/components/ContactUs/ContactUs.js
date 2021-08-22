@@ -13,12 +13,10 @@ const ContactUs = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [reason, setReason] = useState("");
-  const [loader, setLoader] = useState(false);
   const [modal, showModal] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoader(true);
     var mnumber = Number(number);
     if (number && firstName && lastName && message && reason && email) {
       await db
@@ -33,10 +31,9 @@ const ContactUs = () => {
           createdAt: new Date(),
         })
         .then(() => {
-          setLoader(false);
           showModal(
             <AlertModal
-              message="Your Message has been submitted. Thank you for your feedback!"
+              message="Your message has been submitted. Thank you for your feedback!"
               icon="successful.png"
               reload="true"
               close={closeModal}
@@ -52,19 +49,15 @@ const ContactUs = () => {
               close={closeModal}
             />
           );
-          setLoader(false);
         });
-    } else {
-      alert("Please fill all the details");
-      // showModal(
-      //   <AlertModal
-      //     message="Please fill all the details"
-      //     icon="failed.png"
-      //     reload="true"
-      //     close={closeModal}
-      //   />
-      // );
-    }
+    } else
+      showModal(
+        <AlertModal
+          message="Please fill all the details"
+          icon="exclamation.png"
+          close={closeModal}
+        />
+      );
   };
 
   const closeModal = () => {
@@ -223,7 +216,7 @@ const ContactUs = () => {
                         <input
                           type="radio"
                           onChange={(e) => setReason(e.target.value)}
-                          value="team-registraions"
+                          value="Team registration"
                           name="purpose"
                           id="registration"
                         />
@@ -235,7 +228,7 @@ const ContactUs = () => {
                         <input
                           type="radio"
                           onChange={(e) => setReason(e.target.value)}
-                          value="team-sponsorship"
+                          value="Sponsorship"
                           name="purpose"
                           id="sponsorship"
                         />
@@ -247,7 +240,7 @@ const ContactUs = () => {
                         <input
                           type="radio"
                           onChange={(e) => setReason(e.target.value)}
-                          value="team-recruitment"
+                          value="Team Recruitment"
                           name="purpose"
                           id="recruitment"
                         />

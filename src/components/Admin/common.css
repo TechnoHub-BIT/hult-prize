@@ -1,16 +1,16 @@
-.adminDownloadsContainer .section,
+.adminDocumentsContainer .section,
 .adminSliderContainer .section,
 .loginContainer .section {
   padding: 10vh 10vw;
 }
 
-.adminDownloadsContainer .section.formSection,
+.adminDocumentsContainer .section.formSection,
 .adminSliderContainer .section.formSection,
 .loginContainer .section.formSection {
   padding: 10vh 20vw;
 }
 
-.adminDownloadsContainer .section.formSection form,
+.adminDocumentsContainer .section.formSection form,
 .adminSliderContainer .section.formSection form,
 .loginContainer .section.formSection form {
   display: -ms-grid;
@@ -20,19 +20,19 @@
   grid-gap: 1.5em;
 }
 
-.adminDownloadsContainer .section.formSection form button,
+.adminDocumentsContainer .section.formSection form button,
 .adminSliderContainer .section.formSection form button,
 .loginContainer .section.formSection form button {
   width: 100%;
 }
 
-.adminDownloadsContainer .section.loginSection,
+.adminDocumentsContainer .section.loginSection,
 .adminSliderContainer .section.loginSection,
 .loginContainer .section.loginSection {
   padding: 10vh 30vw;
 }
 
-.adminDownloadsContainer .section.loginSection form,
+.adminDocumentsContainer .section.loginSection form,
 .adminSliderContainer .section.loginSection form,
 .loginContainer .section.loginSection form {
   display: -ms-grid;
@@ -42,26 +42,26 @@
   grid-gap: 1.5em;
 }
 
-.adminDownloadsContainer .section.loginSection form button,
+.adminDocumentsContainer .section.loginSection form button,
 .adminSliderContainer .section.loginSection form button,
 .loginContainer .section.loginSection form button {
   width: 100%;
 }
 
 @media only screen and (max-width: 922px) {
-  .adminDownloadsContainer .section,
+  .adminDocumentsContainer .section,
   .adminSliderContainer .section,
   .loginContainer .section {
     padding: 10vh 15px;
   }
-  .adminDownloadsContainer .section.formSection, .adminDownloadsContainer .section.loginSection,
+  .adminDocumentsContainer .section.formSection, .adminDocumentsContainer .section.loginSection,
   .adminSliderContainer .section.formSection,
   .adminSliderContainer .section.loginSection,
   .loginContainer .section.formSection,
   .loginContainer .section.loginSection {
     padding: 10vh 15px;
   }
-  .adminDownloadsContainer .section.formSection .sectionTitle, .adminDownloadsContainer .section.loginSection .sectionTitle,
+  .adminDocumentsContainer .section.formSection .sectionTitle, .adminDocumentsContainer .section.loginSection .sectionTitle,
   .adminSliderContainer .section.formSection .sectionTitle,
   .adminSliderContainer .section.loginSection .sectionTitle,
   .loginContainer .section.formSection .sectionTitle,
