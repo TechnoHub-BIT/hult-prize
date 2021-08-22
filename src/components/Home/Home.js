@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -6,8 +6,30 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import FAQ from "./FAQ";
 import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
+import { db } from "../../firebase";
+import Moment from "moment";
 
 const Home = () => {
+  const [downloads, setDownloads] = useState([]);
+  useEffect(() => {
+    db.collection("Downloads")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setDownloads(data);
+      });
+  }, []);
+
+  const [slider, setSliders] = useState([]);
+  useEffect(() => {
+    db.collection("Slider")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setSliders(data);
+      });
+  }, []);
+
   const [faqs, setfaqs] = useState([
     {
       question: "Who are the speakers?",
@@ -68,44 +90,33 @@ const Home = () => {
             autoplayTimeout="5000"
             loop="true"
           >
-            <div
-              className="item"
-              style={{
-                backgroundImage:
-                  "url('https://drive.google.com/uc?export=view&id=" +
-                  "1vIi-i6PjDTL9WvK1OAcRX-kUHtVDamVD" +
-                  "')",
-              }}
-            >
-              <div className="content">
-                <h2 className="heading textTheme">2021-22 Theme Revealed</h2>
-                <h2 className="subHeading textWhite">Download Brochure Now</h2>
-                <a href="#" className="ctaBtn">
-                  Download
-                </a>
-              </div>
-            </div>
-            <div
-              className="item"
-              style={{
-                backgroundImage:
-                  "url('https://drive.google.com/uc?export=view&id=" +
-                  "1ie1AwpLPK4LorIDVAIkh1XcSBHvQco0t" +
-                  "')",
-              }}
-            >
-              <div className="content">
-                <Fade up>
-                  <h2 className="heading textTheme">Registrations are Live!</h2>
-                  <h2 className="subHeading textWhite">
-                    On-Campus Program 2021-22
-                  </h2>
-                  <a href="#" className="ctaBtn">
-                    Register Now
-                  </a>
-                </Fade>
-              </div>
-            </div>
+            {slider.map((item) => {
+              return (
+                <>
+                  <div
+                    className="item"
+                    style={{
+                      backgroundImage:
+                        "url('https://drive.google.com/uc?export=view&id=" +
+                        `${item.imageUrl}` +
+                        "')",
+                    }}
+                  >
+                    <div className="content">
+                      <h2 className="heading textTheme">{item.title}</h2>
+                      <h2 className="subHeading textWhite">{item.subTitle}</h2>
+                      <a
+                        href={`${item.hyperLink}`}
+                        target="_blank"
+                        className="ctaBtn"
+                      >
+                        {item.buttonText}
+                      </a>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
           </OwlCarousel>
         </div>
         <div className="section latestNewsSection">
@@ -197,70 +208,33 @@ const Home = () => {
             </h3>
           </Fade>
           <div className="downloadsGrid">
-            <Fade up>
-              <a href="#" className="singleDownload">
-                <div className="left">
-                  <h4 className="title">Hult Prize 2022 Theme</h4>
-                  <h5 className="date">
-                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                    2021
-                  </h5>
-                </div>
-                <div className="right">
-                  <a href="#" class="downloadBtn">
-                    Download
-                  </a>
-                </div>
-              </a>
-            </Fade>
-            <Fade up>
-              <a href="#" className="singleDownload">
-                <div className="left">
-                  <h4 className="title">Hult Prize 2022 Theme</h4>
-                  <h5 className="date">
-                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                    2021
-                  </h5>
-                </div>
-                <div className="right">
-                  <a href="#" class="downloadBtn">
-                    Download
-                  </a>
-                </div>
-              </a>
-            </Fade>
-            <Fade up>
-              <a href="#" className="singleDownload">
-                <div className="left">
-                  <h4 className="title">Hult Prize 2022 Theme</h4>
-                  <h5 className="date">
-                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                    2021
-                  </h5>
-                </div>
-                <div className="right">
-                  <a href="#" class="downloadBtn">
-                    Download
-                  </a>
-                </div>
-              </a>
-            </Fade>
-            <Fade up>
-              <a href="#" className="singleDownload">
-                <div className="left">
-                  <h4 className="title">Hult Prize 2022 Theme</h4>
-                  <h5 className="date">
-                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;18 Aug,
-                    2021
-                  </h5>
-                </div>
-                <div className="right">
-                  <a href="#" class="downloadBtn">
-                    Download
-                  </a>
-                </div>
-              </a>
-            </Fade>
+            {downloads.map((item) => {
+              return (
+                <Fade up>
+                  <div className="singleDownload">
+                    <div className="left">
+                      <h4 className="title">{item.title}</h4>
+                      <h5 className="date">
+                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                        {item.date}
+                        {/* {Moment(item.createdAt.toDate().toString()).format(
+                          "lll"
+                        )} */}
+                      </h5>
+                    </div>
+                    <div className="right">
+                      <a
+                        href={`${item.url}`}
+                        target="_blank"
+                        class="downloadBtn"
+                      >
+                        Download
+                      </a>
+                    </div>
+                  </div>
+                </Fade>
+              );
+            })}
           </div>
           <Fade up>
             <div className="ctaBtn">

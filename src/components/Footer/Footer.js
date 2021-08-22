@@ -49,16 +49,16 @@ const Footer = () => {
             </div>
             <div className="links">
               <Fade up>
-                <a href="/">Home</a>
-                <a href="/about-us">About Hult Prize BITD</a>
-                <a href="/contact-us">Contact Us</a>
+                <Link to="/">Home</Link>
+                <Link to="/about-us">About Hult Prize BITD</Link>
+                <Link to="/contact-us">Contact Us</Link>
               </Fade>
             </div>
             <div className="links">
               <Fade up>
-                <a href="/news">Latest News</a>
-                <a href="/documents">Documents</a>
-                <a href="/team">Team 2022</a>
+                <Link to="/news">Latest News</Link>
+                <Link to="/documents">Documents</Link>
+                <Link to="/team">Team 2022</Link>
               </Fade>
             </div>
           </div>
@@ -69,9 +69,9 @@ const Footer = () => {
             <Fade right>
               <div>
                 Developed by-{" "}
-                <a href="/team#technicalTeam" className="textTheme">
+                <Link to="/team#technicalTeam" className="textTheme">
                   Hult Prize Technical Team
-                </a>
+                </Link>
               </div>
             </Fade>
           </div>
