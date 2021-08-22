@@ -7,7 +7,7 @@ import FAQ from "./FAQ";
 import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase";
-import Moment from "moment";
+import moment from "moment";
 
 const Home = () => {
   const [downloads, setDownloads] = useState([]);
@@ -216,10 +216,7 @@ const Home = () => {
                       <h4 className="title">{item.title}</h4>
                       <h5 className="date">
                         <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-                        {item.date}
-                        {/* {Moment(item.createdAt.toDate().toString()).format(
-                          "lll"
-                        )} */}
+                        {moment(item.date).format('DD MMMM YYYY')};
                       </h5>
                     </div>
                     <div className="right">
