@@ -224,7 +224,7 @@ const Home = () => {
                 <div
                   className="ctaBtn"
                   onClick={() => {
-                    setLength(9);
+                    setLength(downloads.length);
                     toggleBtn("hideBtn");
                   }}
                 >

@@ -28,7 +28,7 @@ const SingleMember = (props) => {
             {props.facebook ? (
               <Fade up>
                 <a
-                  href={props.facebook}
+                  href={"https://facebook.com/" + props.facebook}
                   className="link"
                   target="_blank"
                   rel="noopener noreferrer"

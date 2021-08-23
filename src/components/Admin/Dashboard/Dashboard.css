@@ -1,1 +1,74 @@
-/* No CSS *//*# sourceMappingURL=Dashboard.css.map */
+.dashboardContainer .section {
+  padding: 10vh 10vw;
+}
+
+.dashboardContainer .section.navigationSection .cardsGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+}
+
+.dashboardContainer .section.navigationSection .cardsGrid .singleCard {
+  background-color: var(--sec-clr);
+  padding: 15px 30px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.dashboardContainer .section.navigationSection .cardsGrid .singleCard .title {
+  font-size: 1.1rem;
+}
+
+.dashboardContainer .section.navigationSection .cardsGrid .singleCard .total {
+  color: var(--light-black);
+  font-size: 0.85rem;
+}
+
+.dashboardContainer .section.navigationSection .cardsGrid .singleCard .button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  text-decoration: none;
+  background-color: var(--theme-clr);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  margin-top: 1em;
+  width: 100px;
+  text-align: center;
+}
+
+.dashboardContainer .section.navigationSection .cardsGrid .singleCard:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+@media only screen and (max-width: 992px) {
+  .dashboardContainer .section {
+    padding: 5vh 15px 10vh;
+  }
+  .dashboardContainer .section.navigationSection .cardsGrid {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2em;
+  }
+  .dashboardContainer .section.navigationSection .cardsGrid .singleCard {
+    padding: 15px 20px;
+  }
+}
+/*# sourceMappingURL=Dashboard.css.map */

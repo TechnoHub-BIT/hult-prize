@@ -3,48 +3,47 @@ import "./Dashboard.css";
 import PageHeader from "../../PageHeader/PageHeader";
 import { Link } from "react-router-dom";
 import { Fade } from "react-reveal";
-import ReactSummernote from "react-summernote";
-import "react-summernote/dist/react-summernote.css";
-import "bootstrap/js/dist/modal";
-import "bootstrap/js/dist/tooltip";
-import "bootstrap/js/dist/dropdown";
-import "bootstrap/dist/css/bootstrap.css";
 
 const Dashboard = () => {
   return (
     <React.Fragment>
       <PageHeader title="Admin Dashboard" />
       <div className="dashboardContainer">
-        <ReactSummernote
-          options={{
-            lang: "en-US",
-            height: 500,
-            dialogsInBody: true,
-            toolbar: [
-              ["font", ["bold", "underline"]],
-              ["para", ["paragraph"]],
-              ["insert", ["link"]],
-            ],
-          }}
-        />
-        <Fade up>
-          <div className="buttons">
-            <Link to="/admin/documents">
-              <button type="button">View Downloads</button>
-            </Link>
-            <Link to="/admin/messages">
-              <button type="button">View Received Messages</button>
-            </Link>
+        <div className="section navigationSection">
+          <h2 className="sectionTitle">
+            Manage <span>Website</span>
+          </h2>
+          <div className="cardsGrid">
+            <div className="singleCard">
+              <h3 className="title">Uploaded Documents</h3>
+              <h4 className="total">7 Documents</h4>
+              <Link to="/admin/documents" className="button">
+                <i className="fas fa-wrench"></i>&nbsp;&nbsp;Manage
+              </Link>
+            </div>
+            <div className="singleCard">
+              <h3 className="title">Received Messages</h3>
+              <h4 className="total">9 Messages</h4>
+              <Link to="/admin/messages" className="button">
+                <i className="fas fa-eye"></i>&nbsp;&nbsp;View
+              </Link>
+            </div>
+            <div className="singleCard">
+              <h3 className="title">Created Sliders</h3>
+              <h4 className="total">4 Sliders</h4>
+              <Link to="/admin/slider" className="button">
+                <i className="fas fa-wrench"></i>&nbsp;&nbsp;Manage
+              </Link>
+            </div>
+            <div className="singleCard">
+              <h3 className="title">Uploaded News</h3>
+              <h4 className="total">3 News</h4>
+              <Link to="/admin/news" className="button">
+                <i className="fas fa-wrench"></i>&nbsp;&nbsp;Manage
+              </Link>
+            </div>
           </div>
-          <div className="buttons">
-            <Link to="/admin/slider">
-              <button type="button">Create Slider</button>
-            </Link>
-            <Link to="/admin/news">
-              <button type="button">Create News</button>
-            </Link>
-          </div>
-        </Fade>
+        </div>
       </div>
     </React.Fragment>
   );

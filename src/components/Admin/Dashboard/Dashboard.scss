@@ -1,15 +1,69 @@
 .dashboardContainer {
-  //   button {
-  //     padding: 10px 30px;
-  //     background-color: #fff;
-  //     color: var(--sec-theme);
-  //     border: 2px solid var(--sec-theme);
-  //     border-radius: 4px;
-  //     transition: 0.3s all ease;
+  .section {
+    padding: 10vh 10vw;
 
-  //     &:hover {
-  //       color: #fff;
-  //       background-color: var(--sec-theme);
-  //     }
-  //   }
+    &.navigationSection {
+      .cardsGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2em;
+
+        .singleCard {
+          background-color: var(--sec-clr);
+          padding: 15px 30px;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          backface-visibility: hidden;
+          transition: 0.3s all ease;
+
+          .title {
+            font-size: 1.1rem;
+          }
+
+          .total {
+            color: var(--light-black);
+            font-size: 0.85rem;
+          }
+
+          .button {
+            align-self: flex-end;
+            text-decoration: none;
+            background-color: var(--theme-clr);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            margin-top: 1em;
+            width: 100px;
+            text-align: center;
+          }
+
+          &:hover {
+            transform: scale(1.03);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .dashboardContainer {
+    .section {
+      padding: 5vh 15px 10vh;
+
+      &.navigationSection {
+        .cardsGrid {
+          grid-template-columns: repeat(1, 1fr);
+          grid-gap: 2em;
+
+          .singleCard {
+            padding: 15px 20px;
+          }
+        }
+      }
+    }
+  }
 }

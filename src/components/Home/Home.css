@@ -230,8 +230,8 @@
 }
 
 .homeContainer .section.downloadsSection .downloadsGrid .singleDownload:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  -webkit-transform: scale(1.03) !important;
+          transform: scale(1.03) !important;
 }
 
 .homeContainer .section.aboutHultSection {
