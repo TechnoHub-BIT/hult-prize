@@ -85,40 +85,46 @@ const Home = () => {
     <React.Fragment>
       <div className="homeContainer">
         <div className="mainCarousel">
-          <OwlCarousel
-            className="owl-carousel"
-            items={1}
-            dots="false"
-            autoplay="true"
-            autoplayTimeout="5000"
-            loop="true"
-          >
-            {slider.map((item) => {
-              return (
-                <div
-                  className="item"
-                  style={{
-                    backgroundImage:
-                      "url('https://drive.google.com/uc?export=view&id=" +
-                      `${item.imageUrl}` +
-                      "')",
-                  }}
-                >
-                  <div className="content">
-                    <h2 className="heading textTheme">{item.title}</h2>
-                    <h2 className="subHeading textWhite">{item.subTitle}</h2>
-                    <a
-                      href={`${item.hyperLink}`}
-                      target="_blank"
-                      className="ctaBtn"
+          {slider.length && (
+            <Fade>
+              <OwlCarousel
+                className="owl-carousel"
+                items={1}
+                dots="false"
+                autoplay="true"
+                autoplayTimeout="5000"
+                loop="true"
+              >
+                {slider.map((item) => {
+                  return (
+                    <div
+                      className="item"
+                      style={{
+                        backgroundImage:
+                          "url('https://drive.google.com/uc?export=view&id=" +
+                          `${item.imageUrl}` +
+                          "')",
+                      }}
                     >
-                      {item.buttonText}
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-          </OwlCarousel>
+                      <div className="content">
+                        <h2 className="heading textTheme">{item.title}</h2>
+                        <h2 className="subHeading textWhite">
+                          {item.subTitle}
+                        </h2>
+                        <a
+                          href={`${item.hyperLink}`}
+                          target="_blank"
+                          className="ctaBtn"
+                        >
+                          {item.buttonText}
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })}
+              </OwlCarousel>
+            </Fade>
+          )}
         </div>
         <div className="section latestNewsSection">
           <Fade up>
