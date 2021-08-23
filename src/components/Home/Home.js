@@ -101,7 +101,7 @@ const Home = () => {
       <div className="homeContainer">
         <div className="mainCarousel">
           {slider.length && (
-            <Fade>
+            <Fade down>
               <OwlCarousel
                 className="owl-carousel"
                 items={1}
@@ -148,30 +148,31 @@ const Home = () => {
             </h3>
           </Fade>
           <div className="newsGrid">
-          {news.map((item, index) => {
-              return (
-                <Fade up>
-                  <div className="singleNews" key={index}>
-                    <Link to={`/news/` + `${item.id}`}>
-                      <img
-                        src={
-                          `https://drive.google.com/uc?export=view&id=` +
-                          `${item.imageUrl}`
-                        }
-                        alt={item.title}
-                      />
-                    </Link>
-                    <Link to={`/news/` + `${item.id}`} className="title">
-                      {item.title}
-                    </Link>
-                    <h4 className="date">
-                      <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-                      {Moment(item.date).format("DD MMMM YYYY")}
-                    </h4>
-                    <p className="description">{item.content}</p>
-                  </div>
-                </Fade>
-              );
+            {news.map((item, index) => {
+              if (index < 3)
+                return (
+                  <Fade up>
+                    <div className="singleNews" key={index}>
+                      <Link to={`/news/` + `${item.id}`}>
+                        <img
+                          src={
+                            `https://drive.google.com/uc?export=view&id=` +
+                            `${item.imageUrl}`
+                          }
+                          alt={item.title}
+                        />
+                      </Link>
+                      <Link to={`/news/` + `${item.id}`} className="title">
+                        {item.title}
+                      </Link>
+                      <h4 className="date">
+                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                        {Moment(item.date).format("DD MMMM YYYY")}
+                      </h4>
+                      <p className="description">{item.content}</p>
+                    </div>
+                  </Fade>
+                );
             })}
           </div>
           <Fade up>

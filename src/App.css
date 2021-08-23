@@ -178,8 +178,6 @@ button {
   width: min-content;
   white-space: nowrap;
   color: #fff;
-  outline: none;
-  cursor: pointer;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
