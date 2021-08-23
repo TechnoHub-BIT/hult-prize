@@ -35,7 +35,72 @@
   }
 }
 
-@media only screen and (max-width: 922px) {
+.adminListContainer {
+  .section {
+    &.adminListSection {
+      padding: 10vh 20vw;
+
+      .createBtn {
+        padding: 7px 25px;
+        background-color: var(--theme-clr);
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .adminList {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 2em;
+
+        .singleItem {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          background-color: #fff;
+          padding: 1em;
+
+          .title {
+            font-size: 1rem;
+            width: 60%;
+
+            .date {
+              display: block;
+              color: var(--light-black);
+              font-size: 0.8rem;
+              margin-top: 1em;
+            }
+          }
+
+          .actionBtn {
+            background-color: #fccedc;
+            color: var(--theme-clr);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            transition: 0.3s all ease;
+
+            &:hover {
+              color: #fff;
+              background-color: var(--theme-clr);
+            }
+          }
+
+          &:nth-child(even) {
+            background-color: var(--sec-clr);
+          }
+
+          &:hover {
+            background-color: #eff0f1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
   .adminDocumentsContainer,
   .adminSliderContainer,
   .adminNewsContainer,
@@ -49,6 +114,32 @@
 
         .sectionTitle {
           margin: 0 0 5vh;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .adminListContainer {
+    .section {
+      &.adminListSection {
+        padding: 5vh 15px 10vh;
+
+        .adminList {
+          .singleItem {
+            flex-direction: column;
+            padding: 1em 15px;
+
+            .title {
+              width: 100%;
+            }
+
+            .actionBtn {
+              margin-top: 0.5em;
+              align-self: stretch;
+            }
+          }
         }
       }
     }

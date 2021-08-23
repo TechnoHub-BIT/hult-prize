@@ -153,7 +153,11 @@ const Home = () => {
           <div className="newsGrid">
             {news.map((item, index) => {
               if (index < 3) {
-                console.log(item.content.length);
+                let newsContent;
+                item.content.length < 300
+                  ? (newsContent = item.content)
+                  : (newsContent = item.content.substring(0, 300) + "...");
+
                 return (
                   <Fade up>
                     <div className="singleNews" key={index}>
@@ -175,7 +179,7 @@ const Home = () => {
                       </h4>
                       <p
                         dangerouslySetInnerHTML={{
-                          __html: item.content,
+                          __html: newsContent,
                         }}
                         className="description"
                       ></p>

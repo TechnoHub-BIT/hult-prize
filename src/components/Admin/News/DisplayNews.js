@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { db, storage } from "../../../firebase";
+import { db } from "../../../firebase";
 import PageHeader from "../../PageHeader/PageHeader";
-import { Fade } from "react-reveal";
 import Moment from "moment";
-import { Button } from "reactstrap";
-import AlertModal from "../../AlertModal/AlertModal";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { Fade } from "react-reveal";
 
 export default function DisplayNews() {
   const [news, setNews] = useState([]);
+
   const history = useHistory();
   useEffect(() => {
     const fetchdata = async () => {
@@ -29,71 +28,49 @@ export default function DisplayNews() {
   const deleteNews = async (id) => {
     await db.collection("News").doc(id).delete();
     history.push("/admin/news");
-    //   .then(() => {
-    //     showModal("");
-    //   })
-    //   .catch((error) => {
-    //     showModal("");
-    //     alert(error.message);
-    //   });
   };
 
-  //       const closeModal = () => {
-  //         showModal("");
-  //       };
-
-  //       //Modal
-  //   const [modal, showModal] = useState("");
-  //   const deleteDocumentModal = (id) => {
-  //     showModal(
-  //       <AlertModal
-  //         message="Are you sure you want to delete this document?"
-  //         icon="delete"
-  //         leftBtn="Delete"
-  //         rightBtn="Cancel"
-  //         actionParam={id}
-  //         action={deleteDocument}
-  //         close={closeModal}
-  //       />
-  //     );
-  //   };
   return (
     <div>
-      <PageHeader title="Manage Documents" />
-      {/* {modal} */}
-      <div className="newsGrid">
-        {news.map((item, index) => {
-          return (
-            <Fade up>
-              <div className="singleNews" key={index}>
-                <img
-                  src={
-                    `https://drive.google.com/uc?export=view&id=` +
-                    `${item.imageUrl}`
-                  }
-                  alt={item.title}
-                />
-                {item.title}
-                <h4 className="date">
-                  <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-                  {Moment(item.date).format("DD MMMM YYYY")}
-                </h4>
-                <p className="description">
-                  {" "}
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: item.content,
-                    }}
-                    className="newsDetails"
-                  ></div>
-                </p>
-                <Button type="button" onClick={() => deleteNews(item.id)}>
-                  Delete
-                </Button>
-              </div>
-            </Fade>
-          );
-        })}
+      <PageHeader title="Manage News" />
+      <div className="adminListContainer">
+        <div className="section adminListSection">
+          <Fade up>
+            <h2 className="sectionTitle">
+              Manage <span>News</span>
+            </h2>
+          </Fade>
+          <Fade up>
+            <Link to="/admin/create-news" className="createBtn">
+              <i className="fas fa-plus"></i>&nbsp;&nbsp;Create new News
+            </Link>
+          </Fade>
+          <div className="adminList">
+            {news.map((item, index) => {
+              return (
+                <Fade up>
+                  <div className="singleItem" key={index}>
+                    <h3 className="title">
+                      {item.title}
+                      <br />
+                      <span className="date">
+                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                        {Moment(item.date).format("DD MMMM YYYY")}
+                      </span>
+                    </h3>
+                    <button
+                      type="button"
+                      className="actionBtn"
+                      onClick={() => deleteNews(item.id)}
+                    >
+                      <i className="far fa-trash-alt"></i>&nbsp;&nbsp;Delete
+                    </button>
+                  </div>
+                </Fade>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -63,7 +63,7 @@ const Navbar = () => {
                   Documents
                 </Link>
                 <Link
-                  to="/admin/slider"
+                  to="/admin/sliders"
                   onClick={() => {
                     toggleNavbar(!navbarClass);
                     setIcon(!menuIcon);

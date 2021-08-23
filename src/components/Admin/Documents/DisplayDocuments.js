@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { db, storage } from "../../../firebase";
 import PageHeader from "../../PageHeader/PageHeader";
-import { Fade } from "react-reveal";
 import Moment from "moment";
-import { Button } from "reactstrap";
-import AlertModal from "../../AlertModal/AlertModal";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+import { Fade } from "react-reveal";
 
 export default function DisplayDocuments() {
   const [downloads, setDownloads] = useState([]);
+
   const history = useHistory();
   useEffect(() => {
     const fetchdata = async () => {
@@ -30,70 +29,49 @@ export default function DisplayDocuments() {
     await db.collection("Documents").doc(id).delete();
     await storage.ref("documents").child(filename).delete();
     history.push("/admin/documents");
-    //   .then(() => {
-    //     showModal("");
-    //   })
-    //   .catch((error) => {
-    //     showModal("");
-    //     alert(error.message);
-    //   });
   };
 
-  //       const closeModal = () => {
-  //         showModal("");
-  //       };
-
-  //       //Modal
-  //   const [modal, showModal] = useState("");
-  //   const deleteDocumentModal = (id) => {
-  //     showModal(
-  //       <AlertModal
-  //         message="Are you sure you want to delete this document?"
-  //         icon="delete"
-  //         leftBtn="Delete"
-  //         rightBtn="Cancel"
-  //         actionParam={id}
-  //         action={deleteDocument}
-  //         close={closeModal}
-  //       />
-  //     );
-  //   };
   return (
     <div>
       <PageHeader title="Manage Documents" />
-      {/* {modal} */}
-      <div className="downloadsGrid">
-        {downloads.map((item, index) => {
-          return (
-            <Fade up>
-              <div className="singleDownload">
-                <div className="left">
-                  <h4 className="title">{item.title}</h4>
-                  <h5 className="date">
-                    <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-                    {Moment(item.date).format("DD MMMM YYYY")}
-                  </h5>
-                </div>
-                <div className="right">
-                  <a
-                    href={`${item.url}`}
-                    target="_blank"
-                    className="downloadBtn"
-                  >
-                    Download
-                  </a>
-
-                  <Button
-                    type="button"
-                    onClick={() => deleteDocument(item.id, item.filename)}
-                  >
-                    Delete
-                  </Button>
-                </div>
-              </div>
-            </Fade>
-          );
-        })}
+      <div className="adminListContainer">
+        <div className="section adminListSection">
+          <Fade up>
+            <h2 className="sectionTitle">
+              Manage <span>Documents</span>
+            </h2>
+          </Fade>
+          <Fade up>
+            <Link to="/admin/create-document" className="createBtn">
+              <i className="fas fa-upload"></i>&nbsp;&nbsp;Upload new Document
+            </Link>
+          </Fade>
+          <div className="adminList">
+            {downloads.map((item, index) => {
+              return (
+                <Fade up>
+                  <div className="singleItem" key={index}>
+                    <h3 className="title">
+                      {item.title}
+                      <br />
+                      <span className="date">
+                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                        {Moment(item.date).format("DD MMMM YYYY")}
+                      </span>
+                    </h3>
+                    <button
+                      type="button"
+                      className="actionBtn"
+                      onClick={() => deleteDocument(item.id, item.filename)}
+                    >
+                      <i className="far fa-trash-alt"></i>&nbsp;&nbsp;Delete
+                    </button>
+                  </div>
+                </Fade>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

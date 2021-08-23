@@ -31,14 +31,20 @@
           .button {
             align-self: flex-end;
             text-decoration: none;
-            background-color: var(--theme-clr);
-            color: #fff;
+            background-color: #fccedc;
+            color: var(--theme-clr);
             padding: 5px 10px;
             border-radius: 5px;
             font-size: 0.75rem;
             margin-top: 1em;
             width: 100px;
             text-align: center;
+            transition: 0.3s all ease;
+
+            &:hover {
+              color: #fff;
+              background-color: var(--theme-clr);
+            }
           }
 
           &:hover {
@@ -53,7 +59,7 @@
 @media only screen and (max-width: 992px) {
   .dashboardContainer {
     .section {
-      padding: 5vh 15px 10vh;
+      padding: 5vh 15px 10vh !important;
 
       &.navigationSection {
         .cardsGrid {
@@ -62,6 +68,28 @@
 
           .singleCard {
             padding: 15px 20px;
+
+            &:hover {
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboardContainer {
+    .section {
+      padding: 10vh 10vw;
+
+      &.navigationSection {
+        .cardsGrid {
+          .singleCard {
+            .button {
+              width: 100%;
+            }
           }
         }
       }

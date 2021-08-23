@@ -57,12 +57,28 @@ const MainComponent = () => {
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/admin/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/admin/messages" component={Messages} />
-          <PrivateRoute exact path="/admin/documents" component={DisplayDocuments} />
-          <PrivateRoute exact path="/admin/slider" component={DisplaySliders} />
+          <PrivateRoute
+            exact
+            path="/admin/documents"
+            component={DisplayDocuments}
+          />
+          <PrivateRoute
+            exact
+            path="/admin/sliders"
+            component={DisplaySliders}
+          />
           <PrivateRoute exact path="/admin/news" component={DisplayNews} />
-          <PrivateRoute exact path="/admin/create/documents" component={Documents} />
-          <PrivateRoute exact path="/admin/create/slider" component={Slider} />
-          <PrivateRoute exact path="/admin/create/news" component={CreateNews} />
+          <PrivateRoute
+            exact
+            path="/admin/create-document"
+            component={Documents}
+          />
+          <PrivateRoute exact path="/admin/create-slider" component={Slider} />
+          <PrivateRoute
+            exact
+            path="/admin/create-news"
+            component={CreateNews}
+          />
           {/* End Admin Pages */}
 
           <Footer />

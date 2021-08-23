@@ -44,14 +44,21 @@
   -ms-flex-item-align: end;
       align-self: flex-end;
   text-decoration: none;
-  background-color: var(--theme-clr);
-  color: #fff;
+  background-color: #fccedc;
+  color: var(--theme-clr);
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.75rem;
   margin-top: 1em;
   width: 100px;
   text-align: center;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.dashboardContainer .section.navigationSection .cardsGrid .singleCard .button:hover {
+  color: #fff;
+  background-color: var(--theme-clr);
 }
 
 .dashboardContainer .section.navigationSection .cardsGrid .singleCard:hover {
@@ -61,7 +68,7 @@
 
 @media only screen and (max-width: 992px) {
   .dashboardContainer .section {
-    padding: 5vh 15px 10vh;
+    padding: 5vh 15px 10vh !important;
   }
   .dashboardContainer .section.navigationSection .cardsGrid {
     -ms-grid-columns: (1fr)[1];
@@ -70,6 +77,19 @@
   }
   .dashboardContainer .section.navigationSection .cardsGrid .singleCard {
     padding: 15px 20px;
+  }
+  .dashboardContainer .section.navigationSection .cardsGrid .singleCard:hover {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboardContainer .section {
+    padding: 10vh 10vw;
+  }
+  .dashboardContainer .section.navigationSection .cardsGrid .singleCard .button {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=Dashboard.css.map */

@@ -55,7 +55,77 @@
   width: 100%;
 }
 
-@media only screen and (max-width: 922px) {
+.adminListContainer .section.adminListSection {
+  padding: 10vh 20vw;
+}
+
+.adminListContainer .section.adminListSection .createBtn {
+  padding: 7px 25px;
+  background-color: var(--theme-clr);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.adminListContainer .section.adminListSection .adminList {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  margin-top: 2em;
+}
+
+.adminListContainer .section.adminListSection .adminList .singleItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #fff;
+  padding: 1em;
+}
+
+.adminListContainer .section.adminListSection .adminList .singleItem .title {
+  font-size: 1rem;
+  width: 60%;
+}
+
+.adminListContainer .section.adminListSection .adminList .singleItem .title .date {
+  display: block;
+  color: var(--light-black);
+  font-size: 0.8rem;
+  margin-top: 1em;
+}
+
+.adminListContainer .section.adminListSection .adminList .singleItem .actionBtn {
+  background-color: #fccedc;
+  color: var(--theme-clr);
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.adminListContainer .section.adminListSection .adminList .singleItem .actionBtn:hover {
+  color: #fff;
+  background-color: var(--theme-clr);
+}
+
+.adminListContainer .section.adminListSection .adminList .singleItem:nth-child(even) {
+  background-color: var(--sec-clr);
+}
+
+.adminListContainer .section.adminListSection .adminList .singleItem:hover {
+  background-color: #eff0f1;
+}
+
+@media only screen and (max-width: 992px) {
   .adminDocumentsContainer .section,
   .adminSliderContainer .section,
   .adminNewsContainer .section,
@@ -79,6 +149,28 @@
   .loginContainer .section.formSection .sectionTitle,
   .loginContainer .section.loginSection .sectionTitle {
     margin: 0 0 5vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .adminListContainer .section.adminListSection {
+    padding: 5vh 15px 10vh;
+  }
+  .adminListContainer .section.adminListSection .adminList .singleItem {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 1em 15px;
+  }
+  .adminListContainer .section.adminListSection .adminList .singleItem .title {
+    width: 100%;
+  }
+  .adminListContainer .section.adminListSection .adminList .singleItem .actionBtn {
+    margin-top: 0.5em;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
   }
 }
 /*# sourceMappingURL=common.css.map */
