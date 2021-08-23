@@ -45,6 +45,15 @@ const Navbar = () => {
                   Dashboard
                 </Link>
                 <Link
+                  to="/admin/news"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  News
+                </Link>
+                <Link
                   to="/admin/documents"
                   onClick={() => {
                     toggleNavbar(!navbarClass);

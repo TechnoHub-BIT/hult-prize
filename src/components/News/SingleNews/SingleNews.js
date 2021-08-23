@@ -68,7 +68,14 @@ const SingleNews = () => {
       {modal}
       <div className="singleNewsContainer">
         <div className="section newsSection">
-          <div className="content">{news.content}</div>
+          <div className="content">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: news.content,
+              }}
+              className="newsDetails"
+            ></div>
+          </div>
           source : {news.source}
           <div className="shareButtons">
             <h6>Share on:</h6>

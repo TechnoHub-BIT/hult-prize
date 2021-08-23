@@ -12,7 +12,7 @@ import Moment from "moment";
 const Home = () => {
   const [downloads, setDownloads] = useState([]);
   useEffect(() => {
-    db.collection("Downloads")
+    db.collection("Downloads").orderBy("date", "desc")
       .get()
       .then((querySnapshot) => {
         const data = querySnapshot.docs.map((doc) => doc.data());
@@ -33,7 +33,7 @@ const Home = () => {
   const [news, setNews] = useState([]);
   useEffect(() => {
     const fetchdata = async () => {
-      db.collection("News").onSnapshot(function (data) {
+      db.collection("News").orderBy("date", "desc").onSnapshot(function (data) {
         setNews(
           data.docs.map((doc) => ({
             ...doc.data(),

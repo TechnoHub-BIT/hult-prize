@@ -10,7 +10,7 @@ const NewsList = () => {
   const [news, setNews] = useState([]);
   useEffect(() => {
     const fetchdata = async () => {
-      db.collection("News").onSnapshot(function (data) {
+      db.collection("News").orderBy("date", "desc").onSnapshot(function (data) {
         setNews(
           data.docs.map((doc) => ({
             ...doc.data(),
@@ -58,7 +58,15 @@ const NewsList = () => {
                       <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
                       {Moment(item.date).format("DD MMMM YYYY")}
                     </h4>
-                    <p className="description">{item.content}</p>
+                    <p className="description">
+                      {" "}
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.content,
+                        }}
+                        className="newsDetails"
+                      ></div>
+                    </p>
                   </div>
                 </Fade>
               );
