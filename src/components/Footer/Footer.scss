@@ -69,8 +69,11 @@
       font-size: 0.85rem;
       margin-top: 7vh;
 
-      a {
-        text-decoration: none;
+      .developedBy {
+        a {
+          color: var(--theme-clr);
+          text-decoration: none;
+        }
       }
     }
   }

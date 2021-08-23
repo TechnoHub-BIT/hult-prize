@@ -240,11 +240,11 @@ const ContactUs = () => {
                         <input
                           type="radio"
                           onChange={(e) => setReason(e.target.value)}
-                          value="Team Recruitment"
+                          value="Mentorship"
                           name="purpose"
                           id="recruitment"
                         />
-                        <label htmlFor="recruitment">Team Recruitment</label>
+                        <label htmlFor="recruitment">Mentorship</label>
                       </div>
                     </Fade>
                   </div>

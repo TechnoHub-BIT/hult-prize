@@ -80,7 +80,8 @@
   margin-top: 7vh;
 }
 
-.footer .mainFooter .footerBottom a {
+.footer .mainFooter .footerBottom .developedBy a {
+  color: var(--theme-clr);
   text-decoration: none;
 }
 

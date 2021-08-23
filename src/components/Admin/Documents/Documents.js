@@ -44,7 +44,7 @@ const Downloads = () => {
   }
 
   const onSubmit = async (event) => {
-    if (title && date  && file) {
+    if (title && date && file) {
       event.preventDefault();
       const application = {
         title,

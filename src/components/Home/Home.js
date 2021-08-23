@@ -50,34 +50,39 @@ const Home = () => {
 
   const [faqs, setfaqs] = useState([
     {
-      question: "Who are the speakers?",
+      question: "Who can participate?",
       answer:
-        "<strong>TEDxBITD</strong> is aiming to bring together a group of numerous inspiring ideas to the main stage. To get a better knowledge of the speakers, <a href='/speakers'>visit here</a>, else stay connected with us on our social media handles.",
+        "Students from any college under CSVTU are invited to form teams of 3-4. You are considered a student if, at the time of application submission, you have not yet graduated. Alumni and faculty are not allowed to be official team members.",
       open: true,
     },
     {
-      question: "Who can attend TEDxBITD?",
+      question: "How do I register for the Hult Prize?",
       answer:
-        "<strong>TEDxBITD</strong> is an independently organized event under the TEDx banner. Anyone who wishes to be a part of the first event can register and attend the event. <a href='/contact'>Contact us</a> for more information.",
+        "To register for the On-campus BIT Durg Hult Prize event, the registrations will be open soon. To get quick updates, stay in touch with us on our social media handles.",
       open: false,
     },
     {
-      question: "Where is the event venue?",
+      question: "What happens to the teams who don’t win the competition?",
       answer:
-        "<strong>TEDxBITD</strong> is looking forward to hosting numerous esteemed speakers and a great audience via online platform. <a href='/contact'>Contact us</a> for more information.",
+        "Teams that compete in their local Hult Prize On-campus competition and do not win can still apply to participate in one of the +25 Regional Summits through the general Hult Prize application window.",
       open: false,
     },
     {
-      question: "How long will be the event?",
+      question: "How will the teams be judged at the Hult Prize On-campus?",
       answer:
-        "<strong>TEDxBITD</strong> is an all-day event, starting from 10:00 am onwards. Schedule will be uploaded <a href='/schedule'>here</a> soon.",
+        "The Hult Prize BITD team brings esteemed judges every year to analyze and judge the teams. The criteria set for the judgment will be explained to the teams before the event.",
       open: false,
     },
     {
-      question:
-        "When will the registrations start/end? Can tickets be bought at the door?",
+      question: "Do participants get any resources? If yes, then what?",
       answer:
-        "The registrations will start soon. Stay connected with us on our social media for recent updates. <a href='/contact'>Contact us</a> for more information.",
+        "A wide range of resources is made accessible to students who decide to enter the Hult Prize, including one million dollars in start-up capital to the winner along with an ecosystem that constitutes mentors, judges, and others via the Hult Prize Accelerator Program.<br /><br />Alongside the resources provided by the Hult Prize, the BIT- D Team will be readily available to address any difficulties faced by the teams.",
+      open: false,
+    },
+    {
+      question: "What if a team cannot afford the costs?",
+      answer:
+        "One of the most important parts of being an entrepreneur is the ability to raise funds.<br /><br />Historically, selected teams have not had an issue coming up with the funding required to attend one of our regional events. Oftentimes universities afford the costs associated with travel and lodging, and in other cases, teams have crowdfunded their way to the city of their choice.<br /><br />Think of this as the first challenge you will face as an up-and-coming start-up.",
       open: false,
     },
   ]);
