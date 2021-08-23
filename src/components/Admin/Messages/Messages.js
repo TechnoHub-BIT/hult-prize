@@ -1,73 +1,59 @@
-import React ,{useState,useEffect}from "react";
-import { Fade } from "react-reveal";
-import { Helmet } from "react-helmet";
+import React, { useState, useEffect } from "react";
 import PageHeader from "../../PageHeader/PageHeader";
 import { db } from "../../../firebase";
 import Moment from "moment";
+import { Fade } from "react-reveal";
 
 const Messages = () => {
+  const [messages, setMessages] = useState([]);
+  useEffect(() => {
+    db.collection("contactus")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        setMessages(data);
+      });
+  }, []);
 
-    const [messages, setMessages] = useState([]);
-    useEffect(() => {
-         db.collection("contactus")
-          .get()
-          .then((querySnapshot) => {
-            const data = querySnapshot.docs.map((doc) => doc.data());
-            setMessages(data);
-          });
-    }, []);
-
-    let counter = 0;
-
-    return(
-        <React.Fragment>
-              <Helmet>
-        <title>Hult Prize BITD 2022- Let's have a Talk</title>
-        <meta name="title" content="Hult Prize BITD 2022- Let's have a Talk" />
-        <meta name="description" content="" />
-      </Helmet>
+  return (
+    <React.Fragment>
       <PageHeader title="Messages" />
-            <div className="messagesListCont">
-                <div className="messages">
-                    {messages?.map((data, i) => {
-                        counter++;
-                        return (
-                            <Fade up key={i}>      
-                                <div className="singleMessage">
-                                    <div className="up">
-                                        <div className="firstname">{data.firstname}</div>
-                                        <div className="lastname">{data.lastname}</div>
-                                        <div className="mname">{data.mnumber}</div>
-                                        <div className="email">{data.email}</div>
-                                        <div className="firstname">{data.reason}</div>
-                                        <div className="date">Received on: {Moment(data.createdAt.toDate().toString()).format('lll')}</div>
-                                    </div>
-                                    <div className="down">
-                                        <p>
-                                            {data.message}
-                                        </p>
-                                    </div>
-                                </div>
-                            </Fade>
-                        );
-                    })}
-                </div>
-                {
-                    counter === 0 ?
-                        <Fade up>
-                            no messages
-                            {/* <Alert color="danger" style={{ textAlign: "center", padding: "1.5em 0" }}>
-                                Oops! Looks like there are no received messages at the moment!
-                                <br /><br />
-                                <a href="/dashboard"><ButtonToggle color="danger">Go Back</ButtonToggle></a>
-                            </Alert> */}
-                        </Fade>
-                                :
-                        null
-                }
-            </div>
-        </React.Fragment>
-    )
+      <div className="adminListContainer">
+        <div className="section adminListSection">
+          <h2 className="sectionTitle">
+            View <span>Messages</span>
+          </h2>
+          <div className="messagesList">
+            {messages?.map((data, index) => {
+              return (
+                <Fade up key={index}>
+                  <div className="singleMessage">
+                    <div className="left">
+                      <h3 className="title">
+                        {data.firstName + " " + data.lastName}
+                        <span className="date">{data.mnumber}</span>
+                        <span className="date">{data.email}</span>
+                        <span className="date">{data.reason}</span>
+                      </h3>
+                    </div>
+                    <div className="right">
+                      <h3 className="title">
+                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                        {Moment(data.createdAt.toDate().toString()).format(
+                          "lll"
+                        )}
+                      </h3>
+                      <p className="message">{data.message}</p>
+                    </div>
+                  </div>
+                </Fade>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
 };
 
 export default Messages;

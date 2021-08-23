@@ -40,6 +40,7 @@ const SingleNews = () => {
           id: doc.id,
           title: news.title,
           imageUrl: news.imageUrl,
+          shortDescription: news.shortDescription,
           content: news.content,
           date: news.date,
           source: news.source,
@@ -62,7 +63,7 @@ const SingleNews = () => {
       <Helmet>
         <title>{"Hult Prize BITD 2022- " + news.title}</title>
         <meta name="title" content={"Hult Prize BITD 2022- " + news.title} />
-        <meta name="description" content={news.content} />
+        <meta name="description" content={news.shortDescription} />
       </Helmet>
       <NewsHeader title={news.title} imageId={news.imageUrl} date={news.date} />
       {modal}
@@ -76,7 +77,7 @@ const SingleNews = () => {
               className="newsDetails"
             ></div>
           </div>
-          source : {news.source}
+          <div className="source">Source: {news.source}</div>
           <div className="shareButtons">
             <h6>Share on:</h6>
             <FacebookShareButton url={shareUrl} quote={shareText}>

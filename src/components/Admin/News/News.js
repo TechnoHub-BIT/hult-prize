@@ -18,6 +18,7 @@ const CreateNews = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [date, setDate] = useState("");
   const [source, setSource] = useState("");
+  const [shortDescription, setShortDescription] = useState("");
   const [loader, setLoader] = useState(false);
   const history = useHistory();
   const newsContent = (param) => {
@@ -36,13 +37,14 @@ const CreateNews = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(true);
-    if (title && content && imageUrl && date && source) {
+    if (title && content && imageUrl && date && source && shortDescription ) {
       await db
         .collection("News")
         .add({
           title,
           content,
           imageUrl,
+          shortDescription,
           date,
           source,
         })
@@ -121,6 +123,18 @@ const CreateNews = () => {
                 }}
                 onChange={onChange}
               />
+            </Fade>
+            <Fade up>
+              <div className="inputGroup">
+                <input
+                  type="text"
+                  id="shortDescription"
+                  onChange={(e) => setShortDescription(e.target.value)}
+                  value={shortDescription}
+                  placeholder="Short Description"
+                />
+                <label htmlFor="shortDescription">Short Description</label>
+              </div>
             </Fade>
             <Fade up>
               <div className="inputGroup">

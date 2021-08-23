@@ -30,6 +30,7 @@
 
     &.hultPrizeBitdSection {
       padding: 5vh 10vw 0;
+      margin-bottom: -10vh;
     }
 
     &.contactUsSection {
@@ -88,6 +89,7 @@
     &.eventBulletinsSection {
       padding: 15vh 10vw 20vh;
       background-color: var(--sec-clr);
+      margin-top: -5vh;
 
       .bulletinsList {
         display: grid;
@@ -216,7 +218,7 @@
 
       &.hultPrizeBitdSection {
         padding: 5vh 15px 0;
-        margin-bottom: -10vh;
+        margin-bottom: -15vh;
       }
 
       &.contactUsSection {

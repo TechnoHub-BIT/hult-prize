@@ -96,6 +96,47 @@
           }
         }
       }
+
+      .messagesList {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+        .singleMessage {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr 2fr);
+          grid-gap: 2em;
+          background-color: #fff;
+          padding: 1em;
+
+          .title {
+            font-size: 1rem;
+
+            .date {
+              display: block;
+              color: var(--light-black);
+              font-size: 0.8rem;
+              margin-top: 1em;
+
+              &:not(:first-child) {
+                margin-top: 0.5em;
+              }
+            }
+          }
+
+          .message {
+            color: var(--light-black);
+            font-size: 0.8rem;
+          }
+
+          &:nth-child(even) {
+            background-color: var(--sec-clr);
+          }
+
+          &:hover {
+            background-color: #eff0f1;
+          }
+        }
+      }
     }
   }
 }

@@ -10,14 +10,16 @@ const NewsList = () => {
   const [news, setNews] = useState([]);
   useEffect(() => {
     const fetchdata = async () => {
-      db.collection("News").orderBy("date", "desc").onSnapshot(function (data) {
-        setNews(
-          data.docs.map((doc) => ({
-            ...doc.data(),
-            id: doc.id,
-          }))
-        );
-      });
+      db.collection("News")
+        .orderBy("date", "desc")
+        .onSnapshot(function (data) {
+          setNews(
+            data.docs.map((doc) => ({
+              ...doc.data(),
+              id: doc.id,
+            }))
+          );
+        });
     };
     fetchdata();
   }, []);
@@ -52,20 +54,18 @@ const NewsList = () => {
                       />
                     </Link>
                     <Link to={`/news/` + `${item.id}`} className="title">
-                      {item.title}
+                      {item.title.length < 50
+                        ? item.title
+                        : item.title.substring(0, 50) + "..."}
                     </Link>
                     <h4 className="date">
                       <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
                       {Moment(item.date).format("DD MMMM YYYY")}
                     </h4>
                     <p className="description">
-                      {" "}
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: item.content,
-                        }}
-                        className="newsDetails"
-                      ></div>
+                      {item.shortDescription.length < 300
+                        ? item.shortDescription
+                        : item.shortDescription.substring(0, 300) + "..."}
                     </p>
                   </div>
                 </Fade>

@@ -152,12 +152,7 @@ const Home = () => {
           </Fade>
           <div className="newsGrid">
             {news.map((item, index) => {
-              if (index < 3) {
-                let newsContent;
-                item.content.length < 300
-                  ? (newsContent = item.content)
-                  : (newsContent = item.content.substring(0, 300) + "...");
-
+              if (index < 3)
                 return (
                   <Fade up>
                     <div className="singleNews" key={index}>
@@ -171,22 +166,22 @@ const Home = () => {
                         />
                       </Link>
                       <Link to={`/news/` + `${item.id}`} className="title">
-                        {item.title}
+                        {item.title.length < 50
+                          ? item.title
+                          : item.title.substring(0, 50) + "..."}
                       </Link>
                       <h4 className="date">
                         <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
                         {Moment(item.date).format("DD MMMM YYYY")}
                       </h4>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: newsContent,
-                        }}
-                        className="description"
-                      ></p>
+                      <p className="description">
+                        {item.shortDescription.length < 300
+                          ? item.shortDescription
+                          : item.shortDescription.substring(0, 300) + "..."}
+                      </p>
                     </div>
                   </Fade>
                 );
-              }
             })}
           </div>
           <Fade up>
@@ -282,7 +277,7 @@ const Home = () => {
             <Link to="/contact-us">Contact Us</Link>
           </Fade>
         </div>
-        <div className="section sponsorsSection">
+        {/* <div className="section sponsorsSection">
           <Fade up>
             <h3 className="sectionTitle">
               Our <span>Sponsors</span>
@@ -309,28 +304,8 @@ const Home = () => {
                 <h5 className="title">Food Partner</h5>
               </div>
             </Fade>
-            <Fade up>
-              <div className="singleSponsor">
-                <img
-                  src="./assets/images/logos/zomato.png"
-                  alt="Zomato- Hult Prize BITD 2022 Sponsor"
-                />
-                <h4 className="name">Zomato</h4>
-                <h5 className="title">Food Partner</h5>
-              </div>
-            </Fade>
-            <Fade up>
-              <div className="singleSponsor">
-                <img
-                  src="./assets/images/logos/zomato.png"
-                  alt="Zomato- Hult Prize BITD 2022 Sponsor"
-                />
-                <h4 className="name">Zomato</h4>
-                <h5 className="title">Food Partner</h5>
-              </div>
-            </Fade>
           </div>
-        </div>
+        </div> */}
         <div className="section faqSection">
           <Fade up>
             <h3 className="sectionTitle">

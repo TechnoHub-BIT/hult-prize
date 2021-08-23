@@ -24,7 +24,7 @@ export default function DisplaySliders() {
 
   const deleteSlider = async (id) => {
     await db.collection("Slider").doc(id).delete();
-    history.push("/admin/slider");
+    history.push("/admin/sliders");
   };
 
   return (

@@ -28,6 +28,7 @@
 
 .aboutUsContainer .section.hultPrizeBitdSection {
   padding: 5vh 10vw 0;
+  margin-bottom: -10vh;
 }
 
 .aboutUsContainer .section.contactUsSection {
@@ -94,6 +95,7 @@
 .aboutUsContainer .section.eventBulletinsSection {
   padding: 15vh 10vw 20vh;
   background-color: var(--sec-clr);
+  margin-top: -5vh;
 }
 
 .aboutUsContainer .section.eventBulletinsSection .bulletinsList {
@@ -222,7 +224,7 @@
   }
   .aboutUsContainer .section.hultPrizeBitdSection {
     padding: 5vh 15px 0;
-    margin-bottom: -10vh;
+    margin-bottom: -15vh;
   }
   .aboutUsContainer .section.contactUsSection {
     padding: 5vh 10vw;

@@ -125,6 +125,51 @@
   background-color: #eff0f1;
 }
 
+.adminListContainer .section.adminListSection .messagesList {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+}
+
+.adminListContainer .section.adminListSection .messagesList .singleMessage {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr 2fr)[1];
+      grid-template-columns: repeat(1, 1fr 2fr);
+  grid-gap: 2em;
+  background-color: #fff;
+  padding: 1em;
+}
+
+.adminListContainer .section.adminListSection .messagesList .singleMessage .title {
+  font-size: 1rem;
+}
+
+.adminListContainer .section.adminListSection .messagesList .singleMessage .title .date {
+  display: block;
+  color: var(--light-black);
+  font-size: 0.8rem;
+  margin-top: 1em;
+}
+
+.adminListContainer .section.adminListSection .messagesList .singleMessage .title .date:not(:first-child) {
+  margin-top: 0.5em;
+}
+
+.adminListContainer .section.adminListSection .messagesList .singleMessage .message {
+  color: var(--light-black);
+  font-size: 0.8rem;
+}
+
+.adminListContainer .section.adminListSection .messagesList .singleMessage:nth-child(even) {
+  background-color: var(--sec-clr);
+}
+
+.adminListContainer .section.adminListSection .messagesList .singleMessage:hover {
+  background-color: #eff0f1;
+}
+
 @media only screen and (max-width: 992px) {
   .adminDocumentsContainer .section,
   .adminSliderContainer .section,
