@@ -19,7 +19,7 @@ const NewsHeader = (props) => {
         </Fade>
         <Fade up>
           <h3 className="date">
-            Posted on-&nbsp;&nbsp;
+            Posted on -&nbsp;&nbsp;
             <span>{Moment(props.date).format("DD MMMM YYYY")}</span>
           </h3>
         </Fade>
