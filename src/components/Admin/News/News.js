@@ -5,6 +5,12 @@ import PageHeader from "../../PageHeader/PageHeader";
 import { Fade } from "react-reveal";
 import AlertModal from "../../AlertModal/AlertModal";
 import { db } from "../../../firebase";
+import ReactSummernote from "react-summernote";
+import "react-summernote/dist/react-summernote.css";
+import "bootstrap/js/dist/modal";
+import "bootstrap/js/dist/tooltip";
+import "bootstrap/js/dist/dropdown";
+import "bootstrap/dist/css/bootstrap.css";
 
 const CreateNews = () => {
   const [title, setTitle] = useState("");
@@ -14,6 +20,12 @@ const CreateNews = () => {
   const [source, setSource] = useState("");
   const [loader, setLoader] = useState(false);
   const history = useHistory();
+  const newsContent = (param) => {
+    setContent(param);
+  };
+  const onChange = (value) => {
+    newsContent(value);
+  };
 
   const [modal, showModal] = useState("");
 
@@ -94,16 +106,21 @@ const CreateNews = () => {
               </div>
             </Fade>
             <Fade up>
-              <div className="inputGroup">
-                <input
-                  type="text"
-                  id="content"
-                  onChange={(e) => setContent(e.target.value)}
-                  value={content}
-                  placeholder="Content"
-                />
-                <label htmlFor="content">Content</label>
-              </div>
+              <ReactSummernote
+                value={content}
+                id="content"
+                options={{
+                  lang: "en-US",
+                  height: 500,
+                  dialogsInBody: true,
+                  toolbar: [
+                    ["font", ["bold", "underline"]],
+                    ["para", ["paragraph"]],
+                    ["insert", ["link"]],
+                  ],
+                }}
+                onChange={onChange}
+              />
             </Fade>
             <Fade up>
               <div className="inputGroup">

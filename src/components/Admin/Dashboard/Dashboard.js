@@ -3,30 +3,12 @@ import "./Dashboard.css";
 import PageHeader from "../../PageHeader/PageHeader";
 import { Link } from "react-router-dom";
 import { Fade } from "react-reveal";
-import ReactSummernote from "react-summernote";
-import "react-summernote/dist/react-summernote.css";
-import "bootstrap/js/dist/modal";
-import "bootstrap/js/dist/tooltip";
-import "bootstrap/js/dist/dropdown";
-import "bootstrap/dist/css/bootstrap.css";
 
 const Dashboard = () => {
   return (
     <React.Fragment>
       <PageHeader title="Admin Dashboard" />
       <div className="dashboardContainer">
-        <ReactSummernote
-          options={{
-            lang: "en-US",
-            height: 500,
-            dialogsInBody: true,
-            toolbar: [
-              ["font", ["bold", "underline"]],
-              ["para", ["paragraph"]],
-              ["insert", ["link"]],
-            ],
-          }}
-        />
         <Fade up>
           <div className="buttons">
             <Link to="/admin/documents">

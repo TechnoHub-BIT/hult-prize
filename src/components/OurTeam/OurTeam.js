@@ -65,7 +65,7 @@ const OurTeam = () => {
               />
               <SingleMember
                 name="Bavisetti Narayan"
-                post="Associate"
+                post="Head"
                 image="bavisetti-narayan"
                 facebook="Narayan.bavisetti"
                 instagram="bavisettinarayan"
