@@ -5,6 +5,7 @@ import AlertModal from "../../AlertModal/AlertModal";
 import PageHeader from "../../PageHeader/PageHeader";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-reveal";
+import { Progress } from "reactstrap";
 
 const Downloads = () => {
   const [title, setTitle] = useState("");
@@ -51,19 +52,19 @@ const Downloads = () => {
       };
       setLoading(
         <div className="inputGroup progressBar">
-          {/* <Progress animated color="info" value={100}>
+          <Progress animated color="info" value={100}>
             Uploading...
-          </Progress> */}
+          </Progress>
         </div>
       );
-      await storage.ref(`/downloads/${file.name}`).put(file);
+      await storage.ref(`/documents/${file.name}`).put(file);
 
       storage
-        .ref("downloads")
+        .ref("documents")
         .child(file.name)
         .getDownloadURL()
         .then((url) => {
-          db.collection("Downloads")
+          db.collection("Documents")
             .add(
               application,
               (application.url = url),
@@ -150,6 +151,7 @@ const Downloads = () => {
                   <label htmlFor="upload">Upload Document*</label>
                 </div>
               </Fade>
+              {loading}
               <Fade up>
                 <div className="inputGroup">
                   <button type="submit">

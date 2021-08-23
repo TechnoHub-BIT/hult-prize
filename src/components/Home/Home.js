@@ -12,7 +12,7 @@ import Moment from "moment";
 const Home = () => {
   const [downloads, setDownloads] = useState([]);
   useEffect(() => {
-    db.collection("Downloads")
+    db.collection("Documents")
       .orderBy("date", "desc")
       .get()
       .then((querySnapshot) => {
