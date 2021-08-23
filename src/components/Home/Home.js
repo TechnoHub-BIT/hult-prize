@@ -169,7 +169,7 @@ const Home = () => {
                         <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
                         {Moment(item.date).format("DD MMMM YYYY")}
                       </h4>
-                      <p className="description">{item.content}</p>
+                      <p className="description"> {item.shortDescription}</p>
                     </div>
                   </Fade>
                 );

@@ -60,12 +60,7 @@ const NewsList = () => {
                     </h4>
                     <p className="description">
                       {" "}
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: item.content,
-                        }}
-                        className="newsDetails"
-                      ></div>
+                      {item.shortDescription}
                     </p>
                   </div>
                 </Fade>

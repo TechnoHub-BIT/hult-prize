@@ -78,15 +78,7 @@ export default function DisplayNews() {
                   <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
                   {Moment(item.date).format("DD MMMM YYYY")}
                 </h4>
-                <p className="description">
-                  {" "}
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: item.content,
-                    }}
-                    className="newsDetails"
-                  ></div>
-                </p>
+                <p className="description">{item.shortDescription}</p>
                 <Button type="button" onClick={() => deleteNews(item.id)}>
                   Delete
                 </Button>
