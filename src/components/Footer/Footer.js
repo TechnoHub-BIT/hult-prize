@@ -62,9 +62,9 @@ const Footer = () => {
               <Fade up>
                 <Link to="/news">Latest News</Link>
               </Fade>
-              <Fade up>
+              {/* <Fade up>
                 <Link to="/documents">Documents</Link>
-              </Fade>
+              </Fade> */}
               <Fade up>
                 <Link to="/team">Team 2022</Link>
               </Fade>
