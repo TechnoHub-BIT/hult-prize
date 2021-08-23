@@ -125,10 +125,10 @@ const Slider = () => {
                   id="buttonText"
                   onChange={(e) => setButtonText(e.target.value)}
                   value={buttonText}
-                  placeholder="Button Text"
+                  placeholder="Button Text*"
                   required
                 />
-                <label htmlFor="buttonText">Button Text</label>
+                <label htmlFor="buttonText">Button Text*</label>
               </div>
             </Fade>
             <Fade up>

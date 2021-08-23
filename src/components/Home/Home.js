@@ -12,7 +12,8 @@ import Moment from "moment";
 const Home = () => {
   const [downloads, setDownloads] = useState([]);
   useEffect(() => {
-    db.collection("Documents").orderBy("date", "desc")
+    db.collection("Documents")
+      .orderBy("date", "desc")
       .get()
       .then((querySnapshot) => {
         const data = querySnapshot.docs.map((doc) => doc.data());
@@ -33,14 +34,16 @@ const Home = () => {
   const [news, setNews] = useState([]);
   useEffect(() => {
     const fetchdata = async () => {
-      db.collection("News").orderBy("date", "desc").onSnapshot(function (data) {
-        setNews(
-          data.docs.map((doc) => ({
-            ...doc.data(),
-            id: doc.id,
-          }))
-        );
-      });
+      db.collection("News")
+        .orderBy("date", "desc")
+        .onSnapshot(function (data) {
+          setNews(
+            data.docs.map((doc) => ({
+              ...doc.data(),
+              id: doc.id,
+            }))
+          );
+        });
     };
     fetchdata();
   }, []);
@@ -149,7 +152,8 @@ const Home = () => {
           </Fade>
           <div className="newsGrid">
             {news.map((item, index) => {
-              if (index < 3)
+              if (index < 3) {
+                console.log(item.content.length);
                 return (
                   <Fade up>
                     <div className="singleNews" key={index}>
@@ -173,6 +177,7 @@ const Home = () => {
                     </div>
                   </Fade>
                 );
+              }
             })}
           </div>
           <Fade up>
