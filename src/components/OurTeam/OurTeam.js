@@ -119,6 +119,7 @@ const OurTeam = () => {
                 post="Head"
                 image="piyush-gupta"
                 instagram="pi_u_shhh"
+                linkedin="piyush-gupta-41494021a"
                 data-aos="fade-up"
               />
 
