@@ -4,12 +4,17 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import FAQ from "./FAQ";
-import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase";
 import Moment from "moment";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
+  AOS.init({
+    duration: 1000,
+  });
+
   const [downloads, setDownloads] = useState([]);
   useEffect(() => {
     db.collection("Documents")
@@ -109,7 +114,7 @@ const Home = () => {
       <div className="homeContainer">
         <div className="mainCarousel">
           {slider.length && (
-            <Fade down>
+            <div data-aos="fade-down">
               <OwlCarousel
                 className="owl-carousel"
                 items={1}
@@ -146,141 +151,125 @@ const Home = () => {
                   );
                 })}
               </OwlCarousel>
-            </Fade>
+            </div>
           )}
         </div>
         <div className="section latestNewsSection">
-          <Fade up>
-            <h3 className="sectionTitle">
-              <span>Latest</span> News & Updates
-            </h3>
-          </Fade>
+          <h3 className="sectionTitle" data-aos="fade-up">
+            <span>Latest</span> News & Updates
+          </h3>
           <div className="newsGrid">
             {news.map((item, index) => {
               if (index < 3)
                 return (
-                  <Fade up>
-                    <div className="singleNews" key={index}>
-                      <Link to={`/news/` + `${item.id}`}>
-                        <img
-                          src={
-                            `https://drive.google.com/uc?export=view&id=` +
-                            `${item.imageUrl}`
-                          }
-                          alt={item.title}
-                        />
-                      </Link>
-                      <Link to={`/news/` + `${item.id}`} className="title">
-                        {item.title.length < 50
-                          ? item.title
-                          : item.title.substring(0, 50) + "..."}
-                      </Link>
-                      <h4 className="date">
-                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-                        {Moment(item.date).format("DD MMMM YYYY")}
-                      </h4>
-                      <p className="description">
-                        {item.shortDescription.length < 300
-                          ? item.shortDescription
-                          : item.shortDescription.substring(0, 300) + "..."}
-                      </p>
-                    </div>
-                  </Fade>
+                  <div className="singleNews" data-aos="fade-up" key={index}>
+                    <Link to={`/news/` + `${item.id}`}>
+                      <img
+                        src={
+                          `https://drive.google.com/uc?export=view&id=` +
+                          `${item.imageUrl}`
+                        }
+                        alt={item.title}
+                      />
+                    </Link>
+                    <Link to={`/news/` + `${item.id}`} className="title">
+                      {item.title.length < 50
+                        ? item.title
+                        : item.title.substring(0, 50) + "..."}
+                    </Link>
+                    <h4 className="date">
+                      <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                      {Moment(item.date).format("DD MMMM YYYY")}
+                    </h4>
+                    <p className="description">
+                      {item.shortDescription.length < 300
+                        ? item.shortDescription
+                        : item.shortDescription.substring(0, 300) + "..."}
+                    </p>
+                  </div>
                 );
             })}
           </div>
-          <Fade up>
-            <div style={{ textAlign: "center" }}>
-              <Link to="/news" className="ctaBtn">
-                Read More&nbsp;&nbsp;
-                <i className="fas fa-chevron-right"></i>
-              </Link>
-            </div>
-          </Fade>
-          <Fade up></Fade>
+          <div style={{ textAlign: "center" }} data-aos="fade-up">
+            <Link to="/news" className="ctaBtn">
+              Read More&nbsp;&nbsp;
+              <i className="fas fa-chevron-right"></i>
+            </Link>
+          </div>
         </div>
         <div className="section downloadsSection">
-          <Fade up>
-            <h3 className="sectionTitle">
-              Download all <span>Event Documents</span>
-            </h3>
-          </Fade>
+          <h3 className="sectionTitle" data-aos="fade-up">
+            Download all <span>Event Documents</span>
+          </h3>
           <div className="downloadsGrid">
             {downloads.map((item, index) => {
               if (index < documentsLength)
                 return (
-                  <Fade up>
-                    <div className="singleDownload">
-                      <div className="left">
-                        <h4 className="title">{item.title}</h4>
-                        <h5 className="date">
-                          <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-                          {Moment(item.date).format("DD MMMM YYYY")}
-                        </h5>
-                      </div>
-                      <div className="right">
-                        <a
-                          href={`${item.url}`}
-                          target="_blank"
-                          className="downloadBtn"
-                        >
-                          Download
-                        </a>
-                      </div>
+                  <div className="singleDownload" data-aos="fade-up">
+                    <div className="left">
+                      <h4 className="title">{item.title}</h4>
+                      <h5 className="date">
+                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                        {Moment(item.date).format("DD MMMM YYYY")}
+                      </h5>
                     </div>
-                  </Fade>
+                    <div className="right">
+                      <a
+                        href={`${item.url}`}
+                        target="_blank"
+                        className="downloadBtn"
+                      >
+                        Download
+                      </a>
+                    </div>
+                  </div>
                 );
             })}
           </div>
           {downloads.length > documentsLength ? (
-            <Fade up>
-              <div className={ctaBtn} style={{ textAlign: "center" }}>
-                <div
-                  className="ctaBtn"
-                  onClick={() => {
-                    setLength(downloads.length);
-                    toggleBtn("hideBtn");
-                  }}
-                >
-                  View All&nbsp;&nbsp;
-                  <i className="fas fa-chevron-down"></i>
-                </div>
+            <div
+              className={ctaBtn}
+              style={{ textAlign: "center" }}
+              data-aos="fade-up"
+            >
+              <div
+                className="ctaBtn"
+                onClick={() => {
+                  setLength(downloads.length);
+                  toggleBtn("hideBtn");
+                }}
+              >
+                View All&nbsp;&nbsp;
+                <i className="fas fa-chevron-down"></i>
               </div>
-            </Fade>
+            </div>
           ) : null}
         </div>
         <div className="section aboutHultSection">
-          <Fade left>
-            <div className="logo">
-              <img
-                src="./assets/images/logos/bit-vertical-black.png"
-                alt="Hult Prize BITD 2022 Logo"
-              />
-            </div>
-          </Fade>
-          <Fade right>
-            <div className="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-              provident quas fugiat! Unde asperiores nihil harum odit sint
-              voluptates, accusamus magni quaerat cum necessitatibus? Iste
-              repellendus repellat perferendis nisi doloremque earum placeat
-              reiciendis autem, dicta, dolore pariatur neque labore qui quidem
-              vel enim recusandae odit minus. Ratione delectus repudiandae
-              rerum.
-            </div>
-          </Fade>
+          <div className="logo" data-aos="fade-right">
+            <img
+              src="./assets/images/logos/bit-vertical-black.png"
+              alt="Hult Prize BITD 2022 Logo"
+            />
+          </div>
+          <div className="text" data-aos="fade-left">
+            Our generation has been left with the biggest challenges to fix -
+            education, unemployment, poverty, and many more. But we are also the
+            most aware, capable, and knowledgeable generation. We value quality
+            over quantity, and we believe in change. We have incredible ideas -
+            capable of transformation. All we need is a platform. The Hult Prize
+            is that platform for us to lead a generation to change the world.
+          </div>
         </div>
         <div className="section contactUsSection">
-          <Fade left>
-            <h3 className="title">
-              Still got <span className="textTheme">mixed up</span> thoughts?
-              <br />
-              We are always here.
-            </h3>
-          </Fade>
-          <Fade right>
-            <Link to="/contact-us">Contact Us</Link>
-          </Fade>
+          <h3 className="title" data-aos="fade-right">
+            Still got <span className="textTheme">mixed up</span> thoughts?
+            <br />
+            We are always here.
+          </h3>
+          <Link to="/contact-us" data-aos="fade-left">
+            Contact Us
+          </Link>
         </div>
         {/* <div className="section sponsorsSection">
           <Fade up>
@@ -312,20 +301,16 @@ const Home = () => {
           </div>
         </div> */}
         <div className="section faqSection">
-          <Fade up>
-            <h3 className="sectionTitle">
-              <span>Frequently</span> Asked Questions
-            </h3>
-          </Fade>
+          <h3 className="sectionTitle" data-aos="fade-up">
+            <span>Frequently</span> Asked Questions
+          </h3>
           <section className="faqsList">
             <div className="container-fluid">
-              <Fade up>
-                <div className="singleFaq">
-                  {faqs.map((faq, i) => (
-                    <FAQ faq={faq} key={i} index={i} toggleFAQ={toggleFAQ} />
-                  ))}
-                </div>
-              </Fade>
+              <div className="singleFaq" data-aos="fade-up">
+                {faqs.map((faq, i) => (
+                  <FAQ faq={faq} key={i} index={i} toggleFAQ={toggleFAQ} />
+                ))}
+              </div>
             </div>
           </section>
         </div>

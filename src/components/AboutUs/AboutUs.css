@@ -16,10 +16,20 @@
   font-weight: 500;
 }
 
+.aboutUsContainer .section.aboutHultSection .subtitle, .aboutUsContainer .section.onCampusSection .subtitle, .aboutUsContainer .section.hultPrizeBitdSection .subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 7vh;
+}
+
 .aboutUsContainer .section.aboutHultSection .text, .aboutUsContainer .section.onCampusSection .text, .aboutUsContainer .section.hultPrizeBitdSection .text {
   color: var(--light-black);
   font-size: 0.95rem;
   margin-top: 1em;
+}
+
+.aboutUsContainer .section.aboutHultSection .text a, .aboutUsContainer .section.onCampusSection .text a, .aboutUsContainer .section.hultPrizeBitdSection .text a {
+  color: var(--theme-clr);
 }
 
 .aboutUsContainer .section.aboutHultSection {

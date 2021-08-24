@@ -61,8 +61,8 @@
   color: #fff;
 }
 
-.footer .mainFooter .footerTop .links div:not(:first-child) {
-  margin-top: 0.5em;
+.footer .mainFooter .footerTop .links a:not(:first-child) {
+  margin-top: 1em;
 }
 
 .footer .mainFooter .footerBottom {

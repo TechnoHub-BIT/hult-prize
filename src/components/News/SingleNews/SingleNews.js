@@ -17,9 +17,14 @@ import { useParams } from "react-router-dom";
 import { db } from "../../../firebase";
 import AlertModal from "../../AlertModal/AlertModal";
 import { Helmet } from "react-helmet";
-import { Fade } from "react-reveal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SingleNews = () => {
+  AOS.init({
+    duration: 1000,
+  });
+
   const shareUrl = "";
   const shareText = "";
 
@@ -69,7 +74,7 @@ const SingleNews = () => {
       {modal}
       <div className="singleNewsContainer">
         <div className="section newsSection">
-          <div className="content">
+          <div className="content" data-aos="fade-up">
             <div
               dangerouslySetInnerHTML={{
                 __html: news.content,
@@ -77,8 +82,10 @@ const SingleNews = () => {
               className="newsDetails"
             ></div>
           </div>
-          <div className="source">Source: {news.source}</div>
-          <div className="shareButtons">
+          <div className="source" data-aos="fade-up">
+            Source: {news.source}
+          </div>
+          <div className="shareButtons" data-aos="fade-up">
             <h6>Share on:</h6>
             <FacebookShareButton url={shareUrl} quote={shareText}>
               <FacebookIcon size="32" round={true} />

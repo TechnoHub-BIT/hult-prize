@@ -205,6 +205,8 @@
   padding: 15px;
   border-radius: 10px;
   text-decoration: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
@@ -230,8 +232,8 @@
 }
 
 .homeContainer .section.downloadsSection .downloadsGrid .singleDownload:hover {
-  -webkit-transform: scale(1.03) !important;
-          transform: scale(1.03) !important;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 .homeContainer .section.aboutHultSection {
@@ -305,10 +307,6 @@
   font-weight: 600;
 }
 
-.homeContainer .section.contactUsSection div {
-  z-index: 2;
-}
-
 .homeContainer .section.contactUsSection a {
   color: #fff;
   background-color: var(--theme-clr);
@@ -316,6 +314,7 @@
   padding: 10px 30px;
   text-decoration: none;
   border: 2px solid var(--theme-clr);
+  z-index: 2;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }

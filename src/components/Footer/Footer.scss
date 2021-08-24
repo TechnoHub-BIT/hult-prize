@@ -51,11 +51,9 @@
           &:hover {
             color: #fff;
           }
-        }
 
-        div {
           &:not(:first-child) {
-            margin-top: 0.5em;
+            margin-top: 1em;
           }
         }
       }

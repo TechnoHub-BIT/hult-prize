@@ -92,6 +92,12 @@
   text-decoration: none;
   margin-left: 1.5em;
   font-size: 0.9rem;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.contactUsContainer .section.formSection .content .details .header .links .link a:hover {
+  color: #fa949d;
 }
 
 .contactUsContainer .section.formSection .content .details .header .links .link:not(:first-child) {

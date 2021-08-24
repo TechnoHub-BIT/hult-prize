@@ -1,26 +1,27 @@
 import React from "react";
 import "./PageHeader.css";
-import { Fade } from "react-reveal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PageHeader = (props) => {
+  AOS.init({
+    duration: 1000,
+  });
+
   return (
     <React.Fragment>
       <div className="pageHeader">
-        <Fade up>
-          <h1 className="title">{props.title}</h1>
-        </Fade>
+        <h1 className="title" data-aos="fade-up">
+          {props.title}
+        </h1>
         <div className="breadcrumbs">
-          <Fade up>
-            <div className="breadcrumbItem">
-              <a href="/">Home</a>
-            </div>
-          </Fade>
-          <Fade up>
-            <i className="fas fa-circle"></i>
-          </Fade>
-          <Fade up>
-            <div className="breadcrumbItem active">{props.title}</div>
-          </Fade>
+          <div className="breadcrumbItem" data-aos="fade-up">
+            <a href="/">Home</a>
+          </div>
+          <i className="fas fa-circle" data-aos="fade-up"></i>
+          <div className="breadcrumbItem active" data-aos="fade-up">
+            {props.title}
+          </div>
         </div>
       </div>
     </React.Fragment>

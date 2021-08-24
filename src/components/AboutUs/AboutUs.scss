@@ -17,10 +17,20 @@
         }
       }
 
+      .subtitle {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 7vh;
+      }
+
       .text {
         color: var(--light-black);
         font-size: 0.95rem;
         margin-top: 1em;
+
+        a {
+          color: var(--theme-clr);
+        }
       }
     }
 
