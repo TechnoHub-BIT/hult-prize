@@ -22,11 +22,13 @@ const Footer = () => {
                 data-aos="fade-up"
               />
               <p data-aos="fade-up">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laboriosam quidem voluptatibus corrupti ex, numquam ullam rem
-                eaque repudiandae ipsum perspiciatis tempore architecto nihil
-                unde quibusdam, dolore ducimus, rerum esse. Officiis illo, velit
-                amet nihil animi voluptatem totam voluptates unde ipsa.
+                Our generation has been left with the biggest challenges to fix
+                - education, unemployment, poverty, and many more. But we are
+                also the most aware, capable, and knowledgeable generation. We
+                value quality over quantity, and we believe in change. We have
+                incredible ideas - capable of transformation. All we need is a
+                platform. The Hult Prize is that platform for us to lead a
+                generation to change the world.
               </p>
               <div className="social">
                 <a

@@ -217,13 +217,15 @@ const AboutUs = () => {
             The Hult Prize 2022- <span>"Getting The World Back To Work"</span>
           </h2>
           <p className="text" data-aos="fade-up">
-            The 2022 Hult Prize will focus on
-            <u>
-              <i>
-                Creating two thousand jobs by 2024 by thinking global and acting
-                local
-              </i>
-            </u>
+            The 2022 Hult Prize will focus on{" "}
+            <a
+              href="https://firebasestorage.googleapis.com/v0/b/hult-prize-7296c.appspot.com/o/documents%2FHult%20Prize%202022%20Theme_compressed.pdf?alt=media&token=a82a8dc2-6d01-4151-ab4d-dc2ca3d8fcfc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Creating two thousand jobs by 2024 by thinking global and acting
+              local
+            </a>
             . A challenge addressing the global crisis of unemployment in need
             of integral attention and innovative solutions.
             <br />
