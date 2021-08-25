@@ -1,11 +1,16 @@
 import React from "react";
 import { Fade } from "react-reveal";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const SingleMember = (props) => {
+  AOS.init({
+    duration: 1000,
+  });
   return (
     <React.Fragment>
       <div className="singleMember">
-        <div className="memberImage">
+        <div className="memberImage" data-aos={props.aos}>
           <img
             src={"./assets/images/team/" + props.image + ".png"}
             alt={props.name}

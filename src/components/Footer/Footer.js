@@ -85,7 +85,7 @@ const Footer = () => {
           <div className="footerBottom">
             <div>Copyright &copy; Hult Prize BITD 2022</div>
             <div className="developedBy">
-              Developed by-{" "}
+              Developed by{" "}-{" "}
               <Link to="/team#technicalTeam" className="textTheme">
                 Hult Prize Technical Team
               </Link>
