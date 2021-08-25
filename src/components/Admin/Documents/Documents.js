@@ -19,17 +19,20 @@ const Downloads = () => {
     showModal("");
   };
 
-  const types = [
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-    "application/pdf",
-    "application/doc",
-    "application/msword",
-  ];
+  // const types = [
+  //   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  //   "application/pdf",
+  //   "application/doc",
+  //   "application/msword",
+  //   "application/zip",
+  //   "application/x-rar-compressed",
+  //   "application/octet-stream",
+  // ];
 
   function handleChange(e) {
     const fileUpload = e.target.files[0];
-    if (fileUpload && types.includes(fileUpload.type))
-      setFile(e.target.files[0]);
+    // if (fileUpload && types.includes(fileUpload.type))
+    if (fileUpload) setFile(e.target.files[0]);
     else {
       setFile(null);
       showModal(
@@ -44,7 +47,7 @@ const Downloads = () => {
   }
 
   const onSubmit = async (event) => {
-    if (title && date  && file) {
+    if (title && date && file) {
       event.preventDefault();
       const application = {
         title,

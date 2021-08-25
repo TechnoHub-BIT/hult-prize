@@ -77,6 +77,11 @@
                   text-decoration: none;
                   margin-left: 1.5em;
                   font-size: 0.9rem;
+                  transition: 0.3s all ease;
+
+                  &:hover {
+                    color: #fa949d;
+                  }
                 }
 
                 &:not(:first-child) {

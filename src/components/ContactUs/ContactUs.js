@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import "./ContactUs.css";
 import AlertModal from "../AlertModal/AlertModal";
 import PageHeader from "../PageHeader/PageHeader";
-import { Helmet } from "react-helmet";
-import { Fade } from "react-reveal";
 import { db } from "../../firebase";
+import { Helmet } from "react-helmet";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactUs = () => {
+  AOS.init({
+    duration: 1000,
+  });
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [number, setNumber] = useState("");
@@ -67,216 +72,195 @@ const ContactUs = () => {
     <React.Fragment>
       <Helmet>
         <title>Hult Prize BITD 2022- Let's have a Talk</title>
-        <meta name="title" content="Hult Prize BITD 2022- Let's have a Talk" />
-        <meta name="description" content="" />
+        <meta name="title" content="Contact Us | Hult Prize BITD 2022" />
+        <meta
+          name="description"
+          content="Looking for someone to answer your queries? Send us a message and connect with us here. Our team of volunteers will help you guide your way through the Hult Prize 2022 competition. We will get you the help you need."
+        />
       </Helmet>
       <PageHeader title="Contact Us" />
       {modal}
       <div className="contactUsContainer">
         <div className="section formSection">
-          <Fade up>
-            <h3 className="sectionTitle">
-              Let's have a <span>Talk</span>
-            </h3>
-          </Fade>
+          <h3 className="sectionTitle" data-aos="fade-up">
+            Let's have a <span>Talk</span>
+          </h3>
           <div className="content">
             <div className="details">
               <div className="header">
-                <Fade up>
-                  <h4 className="title">Contact Information</h4>
-                </Fade>
-                <Fade up>
-                  <h5 className="subtitle">
-                    Fill up the form and our team will get back to you within 24
-                    hours.
-                  </h5>
-                </Fade>
+                <h4 className="title" data-aos="fade-up">
+                  Contact Information
+                </h4>
+                <h5 className="subtitle" data-aos="fade-up">
+                  Fill up the form and our team will get back to you within 24
+                  hours.
+                </h5>
                 <div className="links">
-                  <Fade up>
-                    <div className="link">
-                      <i className="fas fa-phone-alt"></i>
-                      <a href="#">+91-9999999999</a>
-                    </div>
-                  </Fade>
-                  <Fade up>
-                    <div className="link">
-                      <i className="fas fa-envelope"></i>
-                      <a href="#">support@hultprizebitd.in</a>
-                    </div>
-                  </Fade>
-                  <Fade up>
-                    <div className="link">
-                      <i className="fas fa-map-marker-alt"></i>
-                      <a href="#">Bhilai Institue of Technology, Durg</a>
-                    </div>
-                  </Fade>
+                  <div className="link" data-aos="fade-up">
+                    <i className="fas fa-phone-alt"></i>
+                    <a href="tel:+918234993336">+91-8234993336</a>
+                  </div>
+                  <div className="link" data-aos="fade-up">
+                    <i className="fas fa-envelope"></i>
+                    <a href="mailto:hultprize@gmail.com">hultprize@gmail.com</a>
+                  </div>
+                  <div className="link" data-aos="fade-up">
+                    <i className="fas fa-map-marker-alt"></i>
+                    <a
+                      href="https://goo.gl/maps/5JyQq2DaKvn5YZYG7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Bhilai Institue of Technology, Durg
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="social">
-                <Fade left>
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                </Fade>
-                <Fade left>
-                  <a
-                    href="https://instagram.com/hultprize_bitd/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                </Fade>
-                <Fade left>
-                  <a
-                    href="https://linkedin.com/company/hult-prize-bit-durg/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-linkedin"></i>
-                  </a>
-                </Fade>
+                <a
+                  href="https://facebook.com/bitd.hultprize/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-aos="fade-up"
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="https://instagram.com/hultprize_bitd/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-aos="fade-up"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://linkedin.com/company/hult-prize-bit-durg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-aos="fade-up"
+                >
+                  <i className="fab fa-linkedin"></i>
+                </a>
               </div>
             </div>
             <div className="form">
-              <Fade up>
-                <h4 className="title">Send us a Message</h4>
-              </Fade>
+              <h4 className="title" data-aos="fade-up">
+                Send us a Message
+              </h4>
               <form>
                 <div className="grid2">
-                  <Fade up>
-                    <div className="inputGroup">
-                      <input
-                        type="text"
-                        id="fname"
-                        onChange={(e) => setFirstName(e.target.value)}
-                        value={firstName}
-                        placeholder="First Name*"
-                        autoFocus
-                        required
-                      />
-                      <label htmlFor="fname">First Name*</label>
-                    </div>
-                  </Fade>
-                  <Fade up>
-                    <div className="inputGroup">
-                      <input
-                        type="text"
-                        id="lname"
-                        onChange={(e) => setLastName(e.target.value)}
-                        value={lastName}
-                        placeholder="Last Name*"
-                        required
-                      />
-                      <label htmlFor="lname">Last Name*</label>
-                    </div>
-                  </Fade>
+                  <div className="inputGroup" data-aos="fade-up">
+                    <input
+                      type="text"
+                      id="fname"
+                      onChange={(e) => setFirstName(e.target.value)}
+                      value={firstName}
+                      placeholder="First Name*"
+                      autoFocus
+                      required
+                    />
+                    <label htmlFor="fname">First Name*</label>
+                  </div>
+                  <div className="inputGroup" data-aos="fade-up">
+                    <input
+                      type="text"
+                      id="lname"
+                      onChange={(e) => setLastName(e.target.value)}
+                      value={lastName}
+                      placeholder="Last Name*"
+                      required
+                    />
+                    <label htmlFor="lname">Last Name*</label>
+                  </div>
                 </div>
                 <div className="grid2 mt2">
-                  <Fade up>
-                    <div className="inputGroup">
-                      <input
-                        type="number"
-                        id="mobile"
-                        onChange={(e) => setNumber(e.target.value)}
-                        value={number}
-                        placeholder="Mobile No.*"
-                        required
-                      />
-                      <label htmlFor="mobile">Mobile No.*</label>
-                    </div>
-                  </Fade>
-                  <Fade up>
-                    <div className="inputGroup">
-                      <input
-                        type="email"
-                        id="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                        placeholder="Email*"
-                        required
-                      />
-                      <label htmlFor="email">Email*</label>
-                    </div>
-                  </Fade>
+                  <div className="inputGroup" data-aos="fade-up">
+                    <input
+                      type="number"
+                      id="mobile"
+                      onChange={(e) => setNumber(e.target.value)}
+                      value={number}
+                      placeholder="Mobile No.*"
+                      required
+                    />
+                    <label htmlFor="mobile">Mobile No.*</label>
+                  </div>
+                  <div className="inputGroup" data-aos="fade-up">
+                    <input
+                      type="email"
+                      id="email"
+                      onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      placeholder="Email*"
+                      required
+                    />
+                    <label htmlFor="email">Email*</label>
+                  </div>
                 </div>
                 <div className="checkBoxes mt2">
-                  <Fade up>
-                    <h5 style={{ fontSize: "1rem", fontWeight: "500" }}>
-                      Reason for contacting*:
-                    </h5>
-                  </Fade>
+                  <h5
+                    style={{ fontSize: "1rem", fontWeight: "500" }}
+                    data-aos="fade-up"
+                  >
+                    Reason for contacting*:
+                  </h5>
                   <div className="grid3" style={{ margin: "1.5em 0 0 0.5em" }}>
-                    <Fade up>
-                      <div className="inputRadio">
-                        <input
-                          type="radio"
-                          onChange={(e) => setReason(e.target.value)}
-                          value="Team registration"
-                          name="purpose"
-                          id="registration"
-                        />
-                        <label htmlFor="registration">Team registration</label>
-                      </div>
-                    </Fade>
-                    <Fade up>
-                      <div className="inputRadio">
-                        <input
-                          type="radio"
-                          onChange={(e) => setReason(e.target.value)}
-                          value="Sponsorship"
-                          name="purpose"
-                          id="sponsorship"
-                        />
-                        <label htmlFor="sponsorship">Sponsorship</label>
-                      </div>
-                    </Fade>
-                    <Fade up>
-                      <div className="inputRadio">
-                        <input
-                          type="radio"
-                          onChange={(e) => setReason(e.target.value)}
-                          value="Team Recruitment"
-                          name="purpose"
-                          id="recruitment"
-                        />
-                        <label htmlFor="recruitment">Team Recruitment</label>
-                      </div>
-                    </Fade>
+                    <div className="inputRadio" data-aos="fade-up">
+                      <input
+                        type="radio"
+                        onChange={(e) => setReason(e.target.value)}
+                        value="Team registration"
+                        name="purpose"
+                        id="registration"
+                      />
+                      <label htmlFor="registration">Team registration</label>
+                    </div>
+                    <div className="inputRadio" data-aos="fade-up">
+                      <input
+                        type="radio"
+                        onChange={(e) => setReason(e.target.value)}
+                        value="Sponsorship"
+                        name="purpose"
+                        id="sponsorship"
+                      />
+                      <label htmlFor="sponsorship">Sponsorship</label>
+                    </div>
+                    <div className="inputRadio" data-aos="fade-up">
+                      <input
+                        type="radio"
+                        onChange={(e) => setReason(e.target.value)}
+                        value="Mentorship"
+                        name="purpose"
+                        id="recruitment"
+                      />
+                      <label htmlFor="recruitment">Mentorship</label>
+                    </div>
                   </div>
                 </div>
                 <div className="mt2">
-                  <Fade up>
-                    <div className="inputGroup textarea">
-                      <input
-                        type="text"
-                        id="message"
-                        onChange={(e) => setMessage(e.target.value)}
-                        value={message}
-                        placeholder="How can we help?*"
-                        required
-                      />
-                      <label htmlFor="message">How can we help?*</label>
-                    </div>
-                  </Fade>
+                  <div className="inputGroup textarea" data-aos="fade-up">
+                    <input
+                      type="text"
+                      id="message"
+                      onChange={(e) => setMessage(e.target.value)}
+                      value={message}
+                      placeholder="How can we help?*"
+                      required
+                    />
+                    <label htmlFor="message">How can we help?*</label>
+                  </div>
                 </div>
                 <div className="mt2">
-                  <Fade right>
-                    <div className="inputGroup">
-                      <button
-                        type="button"
-                        value="Submit"
-                        onClick={handleSubmit}
-                        style={{ alignSelf: "flex-end" }}
-                      >
-                        Send Message
-                      </button>
-                    </div>
-                  </Fade>
+                  <div className="inputGroup" data-aos="fade-left">
+                    <button
+                      type="button"
+                      value="Submit"
+                      onClick={handleSubmit}
+                      style={{ alignSelf: "flex-end" }}
+                    >
+                      Send Message
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>

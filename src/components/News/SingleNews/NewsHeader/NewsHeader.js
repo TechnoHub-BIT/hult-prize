@@ -1,8 +1,14 @@
 import React from "react";
 import Moment from "moment";
-import { Fade } from "react-reveal";
+import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const NewsHeader = (props) => {
+  AOS.init({
+    duration: 1000,
+  });
+
   return (
     <React.Fragment>
       <div
@@ -14,35 +20,25 @@ const NewsHeader = (props) => {
             "')",
         }}
       >
-        <Fade up>
-          <h1 className="title">{props.title}</h1>
-        </Fade>
-        <Fade up>
-          <h3 className="date">
-            <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-            {Moment(props.date).format("DD MMMM YYYY")}
-          </h3>
-        </Fade>
+        <h1 className="title" data-aos="fade-up">
+          {props.title}
+        </h1>
+        <h3 className="date" data-aos="fade-up">
+          <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+          {Moment(props.date).format("DD MMMM YYYY")}
+        </h3>
         <div className="breadcrumbs">
-          <Fade up>
-            <div className="breadcrumbItem">
-              <a href="/">Home</a>
-            </div>
-          </Fade>
-          <Fade up>
-            <i className="fas fa-circle"></i>
-          </Fade>
-          <Fade up>
-            <div className="breadcrumbItem">
-              <a href="/news">News</a>
-            </div>
-          </Fade>
-          <Fade up>
-            <i className="fas fa-circle"></i>
-          </Fade>
-          <Fade up>
-            <div className="breadcrumbItem active">{props.title}</div>
-          </Fade>
+          <div className="breadcrumbItem" data-aos="fade-up">
+            <Link to="/">Home</Link>
+          </div>
+          <i className="fas fa-circle" data-aos="fade-up"></i>
+          <div className="breadcrumbItem" data-aos="fade-up">
+            <Link to="/news">News</Link>
+          </div>
+          <i className="fas fa-circle" data-aos="fade-up"></i>
+          <div className="breadcrumbItem active" data-aos="fade-up">
+            {props.title}
+          </div>
         </div>
       </div>
     </React.Fragment>

@@ -51,11 +51,9 @@
           &:hover {
             color: #fff;
           }
-        }
 
-        div {
           &:not(:first-child) {
-            margin-top: 0.5em;
+            margin-top: 1em;
           }
         }
       }
@@ -69,8 +67,11 @@
       font-size: 0.85rem;
       margin-top: 7vh;
 
-      a {
-        text-decoration: none;
+      .developedBy {
+        a {
+          color: var(--theme-clr);
+          text-decoration: none;
+        }
       }
     }
   }

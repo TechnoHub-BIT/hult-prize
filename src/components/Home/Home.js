@@ -4,12 +4,17 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import FAQ from "./FAQ";
-import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase";
 import Moment from "moment";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
+  AOS.init({
+    duration: 1000,
+  });
+
   const [downloads, setDownloads] = useState([]);
   useEffect(() => {
     db.collection("Documents")
@@ -50,34 +55,39 @@ const Home = () => {
 
   const [faqs, setfaqs] = useState([
     {
-      question: "Who are the speakers?",
+      question: "Who can participate?",
       answer:
-        "<strong>TEDxBITD</strong> is aiming to bring together a group of numerous inspiring ideas to the main stage. To get a better knowledge of the speakers, <a href='/speakers'>visit here</a>, else stay connected with us on our social media handles.",
+        "Students from any college under CSVTU are invited to form teams of 3-4. You are considered a student if, at the time of application submission, you have not yet graduated. Alumni and faculty are not allowed to be official team members.",
       open: true,
     },
     {
-      question: "Who can attend TEDxBITD?",
+      question: "How do I register for the Hult Prize?",
       answer:
-        "<strong>TEDxBITD</strong> is an independently organized event under the TEDx banner. Anyone who wishes to be a part of the first event can register and attend the event. <a href='/contact'>Contact us</a> for more information.",
+        "To register for the On-campus BIT Durg Hult Prize event, the registrations will be open soon. To get quick updates, stay in touch with us on our social media handles.",
       open: false,
     },
     {
-      question: "Where is the event venue?",
+      question: "What happens to the teams who don’t win the competition?",
       answer:
-        "<strong>TEDxBITD</strong> is looking forward to hosting numerous esteemed speakers and a great audience via online platform. <a href='/contact'>Contact us</a> for more information.",
+        "Teams that compete in their local Hult Prize On-campus competition and do not win can still apply to participate in one of the +25 Regional Summits through the general Hult Prize application window.",
       open: false,
     },
     {
-      question: "How long will be the event?",
+      question: "How will the teams be judged at the Hult Prize On-campus?",
       answer:
-        "<strong>TEDxBITD</strong> is an all-day event, starting from 10:00 am onwards. Schedule will be uploaded <a href='/schedule'>here</a> soon.",
+        "The Hult Prize BITD team brings esteemed judges every year to analyze and judge the teams. The criteria set for the judgment will be explained to the teams before the event.",
       open: false,
     },
     {
-      question:
-        "When will the registrations start/end? Can tickets be bought at the door?",
+      question: "Do participants get any resources? If yes, then what?",
       answer:
-        "The registrations will start soon. Stay connected with us on our social media for recent updates. <a href='/contact'>Contact us</a> for more information.",
+        "A wide range of resources is made accessible to students who decide to enter the Hult Prize, including one million dollars in start-up capital to the winner along with an ecosystem that constitutes mentors, judges, and others via the Hult Prize Accelerator Program.<br /><br />Alongside the resources provided by the Hult Prize, the BIT- D Team will be readily available to address any difficulties faced by the teams.",
+      open: false,
+    },
+    {
+      question: "What if a team cannot afford the costs?",
+      answer:
+        "One of the most important parts of being an entrepreneur is the ability to raise funds.<br /><br />Historically, selected teams have not had an issue coming up with the funding required to attend one of our regional events. Oftentimes universities afford the costs associated with travel and lodging, and in other cases, teams have crowdfunded their way to the city of their choice.<br /><br />Think of this as the first challenge you will face as an up-and-coming start-up.",
       open: false,
     },
   ]);
@@ -104,7 +114,7 @@ const Home = () => {
       <div className="homeContainer">
         <div className="mainCarousel">
           {slider.length && (
-            <Fade down>
+            <div data-aos="fade-down">
               <OwlCarousel
                 className="owl-carousel"
                 items={1}
@@ -141,141 +151,125 @@ const Home = () => {
                   );
                 })}
               </OwlCarousel>
-            </Fade>
+            </div>
           )}
         </div>
         <div className="section latestNewsSection">
-          <Fade up>
-            <h3 className="sectionTitle">
-              <span>Latest</span> News & Updates
-            </h3>
-          </Fade>
+          <h3 className="sectionTitle" data-aos="fade-up">
+            <span>Latest</span> News & Updates
+          </h3>
           <div className="newsGrid">
             {news.map((item, index) => {
               if (index < 3)
                 return (
-                  <Fade up>
-                    <div className="singleNews" key={index}>
-                      <Link to={`/news/` + `${item.id}`}>
-                        <img
-                          src={
-                            `https://drive.google.com/uc?export=view&id=` +
-                            `${item.imageUrl}`
-                          }
-                          alt={item.title}
-                        />
-                      </Link>
-                      <Link to={`/news/` + `${item.id}`} className="title">
-                        {item.title.length < 50
-                          ? item.title
-                          : item.title.substring(0, 50) + "..."}
-                      </Link>
-                      <h4 className="date">
-                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-                        {Moment(item.date).format("DD MMMM YYYY")}
-                      </h4>
-                      <p className="description">
-                        {item.shortDescription.length < 300
-                          ? item.shortDescription
-                          : item.shortDescription.substring(0, 300) + "..."}
-                      </p>
-                    </div>
-                  </Fade>
+                  <div className="singleNews" data-aos="fade-up" key={index}>
+                    <Link to={`/news/` + `${item.id}`}>
+                      <img
+                        src={
+                          `https://drive.google.com/uc?export=view&id=` +
+                          `${item.imageUrl}`
+                        }
+                        alt={item.title}
+                      />
+                    </Link>
+                    <Link to={`/news/` + `${item.id}`} className="title">
+                      {item.title.length < 50
+                        ? item.title
+                        : item.title.substring(0, 50) + "..."}
+                    </Link>
+                    <h4 className="date">
+                      <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                      {Moment(item.date).format("DD MMMM YYYY")}
+                    </h4>
+                    <p className="description">
+                      {item.shortDescription.length < 300
+                        ? item.shortDescription
+                        : item.shortDescription.substring(0, 300) + "..."}
+                    </p>
+                  </div>
                 );
             })}
           </div>
-          <Fade up>
-            <div style={{ textAlign: "center" }}>
-              <Link to="/news" className="ctaBtn">
-                Read More&nbsp;&nbsp;
-                <i className="fas fa-chevron-right"></i>
-              </Link>
-            </div>
-          </Fade>
-          <Fade up></Fade>
+          <div style={{ textAlign: "center" }} data-aos="fade-up">
+            <Link to="/news" className="ctaBtn">
+              Read More&nbsp;&nbsp;
+              <i className="fas fa-chevron-right"></i>
+            </Link>
+          </div>
         </div>
         <div className="section downloadsSection">
-          <Fade up>
-            <h3 className="sectionTitle">
-              Download all <span>Event Documents</span>
-            </h3>
-          </Fade>
+          <h3 className="sectionTitle" data-aos="fade-up">
+            Download all <span>Event Documents</span>
+          </h3>
           <div className="downloadsGrid">
             {downloads.map((item, index) => {
               if (index < documentsLength)
                 return (
-                  <Fade up>
-                    <div className="singleDownload">
-                      <div className="left">
-                        <h4 className="title">{item.title}</h4>
-                        <h5 className="date">
-                          <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
-                          {Moment(item.date).format("DD MMMM YYYY")}
-                        </h5>
-                      </div>
-                      <div className="right">
-                        <a
-                          href={`${item.url}`}
-                          target="_blank"
-                          className="downloadBtn"
-                        >
-                          Download
-                        </a>
-                      </div>
+                  <div className="singleDownload" data-aos="fade-up">
+                    <div className="left">
+                      <h4 className="title">{item.title}</h4>
+                      <h5 className="date">
+                        <i className="far fa-calendar-alt"></i>&nbsp;&nbsp;
+                        {Moment(item.date).format("DD MMMM YYYY")}
+                      </h5>
                     </div>
-                  </Fade>
+                    <div className="right">
+                      <a
+                        href={`${item.url}`}
+                        target="_blank"
+                        className="downloadBtn"
+                      >
+                        Download
+                      </a>
+                    </div>
+                  </div>
                 );
             })}
           </div>
           {downloads.length > documentsLength ? (
-            <Fade up>
-              <div className={ctaBtn} style={{ textAlign: "center" }}>
-                <div
-                  className="ctaBtn"
-                  onClick={() => {
-                    setLength(downloads.length);
-                    toggleBtn("hideBtn");
-                  }}
-                >
-                  View All&nbsp;&nbsp;
-                  <i className="fas fa-chevron-down"></i>
-                </div>
+            <div
+              className={ctaBtn}
+              style={{ textAlign: "center" }}
+              data-aos="fade-up"
+            >
+              <div
+                className="ctaBtn"
+                onClick={() => {
+                  setLength(downloads.length);
+                  toggleBtn("hideBtn");
+                }}
+              >
+                View All&nbsp;&nbsp;
+                <i className="fas fa-chevron-down"></i>
               </div>
-            </Fade>
+            </div>
           ) : null}
         </div>
         <div className="section aboutHultSection">
-          <Fade left>
-            <div className="logo">
-              <img
-                src="./assets/images/logos/bit-vertical-black.png"
-                alt="Hult Prize BITD 2022 Logo"
-              />
-            </div>
-          </Fade>
-          <Fade right>
-            <div className="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-              provident quas fugiat! Unde asperiores nihil harum odit sint
-              voluptates, accusamus magni quaerat cum necessitatibus? Iste
-              repellendus repellat perferendis nisi doloremque earum placeat
-              reiciendis autem, dicta, dolore pariatur neque labore qui quidem
-              vel enim recusandae odit minus. Ratione delectus repudiandae
-              rerum.
-            </div>
-          </Fade>
+          <div className="logo" data-aos="fade-right">
+            <img
+              src="./assets/images/logos/bit-vertical-black.png"
+              alt="Hult Prize BITD 2022 Logo"
+            />
+          </div>
+          <div className="text" data-aos="fade-left">
+            Our generation has been left with the biggest challenges to fix -
+            education, unemployment, poverty, and many more. But we are also the
+            most aware, capable, and knowledgeable generation. We value quality
+            over quantity, and we believe in change. We have incredible ideas -
+            capable of transformation. All we need is a platform. The Hult Prize
+            is that platform for us to lead a generation to change the world.
+          </div>
         </div>
         <div className="section contactUsSection">
-          <Fade left>
-            <h3 className="title">
-              Still got <span className="textTheme">mixed up</span> thoughts?
-              <br />
-              We are always here.
-            </h3>
-          </Fade>
-          <Fade right>
-            <Link to="/contact-us">Contact Us</Link>
-          </Fade>
+          <h3 className="title" data-aos="fade-right">
+            Still got <span className="textTheme">mixed up</span> thoughts?
+            <br />
+            We are always here.
+          </h3>
+          <Link to="/contact-us" data-aos="fade-left">
+            Contact Us
+          </Link>
         </div>
         {/* <div className="section sponsorsSection">
           <Fade up>
@@ -307,20 +301,16 @@ const Home = () => {
           </div>
         </div> */}
         <div className="section faqSection">
-          <Fade up>
-            <h3 className="sectionTitle">
-              <span>Frequently</span> Asked Questions
-            </h3>
-          </Fade>
+          <h3 className="sectionTitle" data-aos="fade-up">
+            <span>Frequently</span> Asked Questions
+          </h3>
           <section className="faqsList">
             <div className="container-fluid">
-              <Fade up>
-                <div className="singleFaq">
-                  {faqs.map((faq, i) => (
-                    <FAQ faq={faq} key={i} index={i} toggleFAQ={toggleFAQ} />
-                  ))}
-                </div>
-              </Fade>
+              <div className="singleFaq" data-aos="fade-up">
+                {faqs.map((faq, i) => (
+                  <FAQ faq={faq} key={i} index={i} toggleFAQ={toggleFAQ} />
+                ))}
+              </div>
             </div>
           </section>
         </div>

@@ -37,7 +37,7 @@ const CreateNews = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(true);
-    if (title && content && imageUrl && date && source && shortDescription ) {
+    if (title && content && imageUrl && date && source && shortDescription) {
       await db
         .collection("News")
         .add({
@@ -52,7 +52,8 @@ const CreateNews = () => {
           setLoader(false);
           showModal(
             <AlertModal
-              message="Created Successfully"
+              admin="true"
+              message="News Uploaded Successfully"
               icon="successful.png"
               reload="true"
               close={closeModal}
@@ -62,6 +63,7 @@ const CreateNews = () => {
         .catch((error) => {
           showModal(
             <AlertModal
+              admin="true"
               message={error.message}
               icon="failed.png"
               reload="true"
@@ -71,15 +73,14 @@ const CreateNews = () => {
           setLoader(false);
         });
     } else {
-      alert("Please fill all the details");
-      // showModal(
-      //   <AlertModal
-      //     message="Please fill all the details"
-      //     icon="failed.png"
-      //     reload="true"
-      //     close={closeModal}
-      //   />
-      // );
+      showModal(
+        <AlertModal
+          admin="true"
+          message="Please fill all the details"
+          icon="exclamation.png"
+          close={closeModal}
+        />
+      );
     }
   };
 
@@ -100,11 +101,11 @@ const CreateNews = () => {
                   id="title"
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
-                  placeholder="Title"
+                  placeholder="Title*"
                   autoFocus
                   required
                 />
-                <label htmlFor="title">Title</label>
+                <label htmlFor="title">Title*</label>
               </div>
             </Fade>
             <Fade up>
@@ -131,9 +132,10 @@ const CreateNews = () => {
                   id="shortDescription"
                   onChange={(e) => setShortDescription(e.target.value)}
                   value={shortDescription}
-                  placeholder="Short Description"
+                  placeholder="Short Description*"
+                  required
                 />
-                <label htmlFor="shortDescription">Short Description</label>
+                <label htmlFor="shortDescription">Short Description*</label>
               </div>
             </Fade>
             <Fade up>
@@ -143,9 +145,10 @@ const CreateNews = () => {
                   id="imageUrl"
                   onChange={(e) => setImageUrl(e.target.value)}
                   value={imageUrl}
-                  placeholder="Image-Url"
+                  placeholder="Drive Image ID*"
+                  required
                 />
-                <label htmlFor="imageUrl">Image-Url</label>
+                <label htmlFor="imageUrl">Drive Image ID*</label>
               </div>
             </Fade>
             <Fade up>
@@ -155,9 +158,10 @@ const CreateNews = () => {
                   id="date"
                   onChange={(e) => setDate(e.target.value)}
                   value={date}
-                  placeholder="Date"
+                  placeholder="Date*"
+                  required
                 />
-                <label htmlFor="date">Date</label>
+                <label htmlFor="date">Date*</label>
               </div>
             </Fade>
             <Fade up>
@@ -167,20 +171,20 @@ const CreateNews = () => {
                   id="source"
                   onChange={(e) => setSource(e.target.value)}
                   value={source}
-                  placeholder="Source"
+                  placeholder="Source*"
+                  required
                 />
-                <label htmlFor="source">Source</label>
+                <label htmlFor="source">Source*</label>
               </div>
             </Fade>
             <Fade right>
               <div className="inputGroup">
                 <button
-                  type="button"
-                  value="Submit"
+                  type="submit"
                   onClick={handleSubmit}
                   style={{ alignSelf: "flex-end" }}
                 >
-                  Create News
+                  Upload&nbsp;&nbsp;<i className="fas fa-upload"></i>
                 </button>
               </div>
             </Fade>

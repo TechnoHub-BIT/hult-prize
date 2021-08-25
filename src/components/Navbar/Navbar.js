@@ -135,7 +135,7 @@ const Navbar = () => {
           <div className="navbarRight">
             <div className="social">
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/bitd.hultprize/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
