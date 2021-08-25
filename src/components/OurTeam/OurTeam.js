@@ -24,8 +24,8 @@ const OurTeam = () => {
       <PageHeader title="Team 2022" />
       <div className="ourTeamContainer">
         <div className="section teamSection">
-          <div className="singleTeam">
-            <h2 className="title" data-aos="fade-up">
+          <div className="singleTeam" data-aos="fade-up">
+            <h2 className="title" >
               <span>Campus</span> Director
             </h2>
             <div className="members">
@@ -39,8 +39,8 @@ const OurTeam = () => {
               />
             </div>
           </div>
-          <div className="singleTeam">
-            <h2 className="title" data-aos="fade-up">
+          <div className="singleTeam" data-aos="fade-up">
+            <h2 className="title" >
               <span>Co-Campus</span> Director
             </h2>
             <div className="members">
@@ -54,8 +54,8 @@ const OurTeam = () => {
               />
             </div>
           </div>
-          <div className="singleTeam" id="technicalTeam">
-            <h2 className="title" data-aos="fade-up">
+          <div className="singleTeam" id="technicalTeam" data-aos="fade-up">
+            <h2 className="title" >
               <span>Technical</span> Team
             </h2>
             <div className="members members2">
@@ -66,7 +66,7 @@ const OurTeam = () => {
                 facebook="aaryan.khandelwal.731"
                 instagram="aaryan610"
                 linkedin="aaryan-khandelwal-89ba501a6"
-                data-aos="fade-up"
+                aos="fade-right"
               />
               <SingleMember
                 name="Bavisetti Narayan"
@@ -75,12 +75,12 @@ const OurTeam = () => {
                 facebook="Narayan.bavisetti"
                 instagram="bavisettinarayan"
                 linkedin="bavisetti-narayan-a94b5918b"
-                data-aos="fade-up"
+                aos="fade-left"
               />
             </div>
-          </div>
-          <div className="singleTeam">
-            <h2 className="title" data-aos="fade-up">
+          </div> 
+          <div className="singleTeam" data-aos="fade-up">
+            <h2 className="title" >
               <span>Marketing</span> Team
             </h2>
             <div className="members">
@@ -109,8 +109,8 @@ const OurTeam = () => {
               />
             </div>
           </div>
-          <div className="singleTeam">
-            <h2 className="title" data-aos="fade-up">
+          <div className="singleTeam" data-aos="fade-up">
+            <h2 className="title" >
               <span>Sponsorship & Finance</span> Team
             </h2>
             <div className="members members3">
@@ -120,7 +120,7 @@ const OurTeam = () => {
                 image="piyush-gupta"
                 instagram="pi_u_shhh"
                 linkedin="piyush-gupta-41494021a"
-                data-aos="fade-up"
+                aos="fade-right"
               />
 
               <SingleMember
@@ -129,7 +129,7 @@ const OurTeam = () => {
                 image="astha-jain"
                 instagram="astha_jain_3"
                 linkedin="astha-jain613"
-                data-aos="fade-up"
+                aos="fade-up"
               />
 
               <SingleMember
@@ -139,12 +139,12 @@ const OurTeam = () => {
                 facebook="piyush.piyushsahu.75"
                 instagram="piyus_h655"
                 linkedin="piyush-sahu-aa95581a9"
-                data-aos="fade-up"
+                aos="fade-left"
               />
             </div>
           </div>
-          <div className="singleTeam">
-            <h2 className="title" data-aos="fade-up">
+          <div className="singleTeam" data-aos="fade-up">
+            <h2 className="title" >
               <span>Content</span> Team
             </h2>
             <div className="members">
@@ -158,8 +158,8 @@ const OurTeam = () => {
               />
             </div>
           </div>
-          <div className="singleTeam">
-            <h2 className="title" data-aos="fade-up">
+          <div className="singleTeam" data-aos="fade-up">
+            <h2 className="title" >
               <span>Graphics</span> Team
             </h2>
             <div className="members">
@@ -174,8 +174,8 @@ const OurTeam = () => {
               />
             </div>
           </div>
-          <div className="singleTeam">
-            <h2 className="title" data-aos="fade-up">
+          <div className="singleTeam" data-aos="fade-up">
+            <h2 className="title" >
               <span>Video</span> Team
             </h2>
             <div className="members">
