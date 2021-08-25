@@ -35,7 +35,7 @@ const Downloads = () => {
       showModal(
         <AlertModal
           admin="true"
-          message="Only PDF and Word Files are allowed!"
+          message="Only PDF , DOCX and Word Files are allowed!"
           icon="exclamation.png"
           close={closeModal}
         />

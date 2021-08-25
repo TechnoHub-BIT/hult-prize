@@ -76,7 +76,7 @@ const Footer = () => {
             </Fade>
             <Fade right>
               <div>
-                Developed by -{" "}
+                Developed by{" "} -{" "}
                 <Link to="/team#technicalTeam" className="textTheme">
                   Hult Prize Technical Team
                 </Link>
