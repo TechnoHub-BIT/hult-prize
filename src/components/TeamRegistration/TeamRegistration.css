@@ -9,11 +9,16 @@
 .registerContainer .section.formSection .sectionSubtitle {
   font-size: 1.5rem;
   font-weight: 500;
+  margin: 1em 0 0;
 }
 
 .registerContainer .section.formSection .sectionSubtitle span {
   color: var(--theme-clr);
   font-weight: 500;
+}
+
+.registerContainer .section.formSection .row {
+  grid-row-gap: 2em;
 }
 
 @media only screen and (max-width: 992px) {
@@ -30,6 +35,9 @@
   .registerContainer .section.formSection .sectionSubtitle span {
     color: var(--theme-clr);
     font-weight: 500;
+  }
+  .registerContainer .section.formSection .row {
+    grid-row-gap: 1em;
   }
 }
 /*# sourceMappingURL=TeamRegistration.css.map */

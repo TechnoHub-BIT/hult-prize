@@ -7,110 +7,110 @@ import "aos/dist/aos.css";
 import { db } from "../../firebase";
 import AlertModal from "../AlertModal/AlertModal";
 
-
 const TeamRegistration = () => {
-  const [teamName,setTeamName] = useState('')
-  const [nameOne,setNameOne] = useState('');
-  const [numberOne,setNumberOne] = useState('')
-  const [emailOne,setEmailOne] = useState('')
-  const [semesterOne,setSemesterOne] = useState('')
-  const [branchOne,setBranchOne] = useState('')
-  const [collegeOne,setCollegeOne] = useState('')
-  const [linkedinOne,setLinkedinOne] = useState('')
+  const [teamName, setTeamName] = useState("");
+  const [nameOne, setNameOne] = useState("");
+  const [numberOne, setNumberOne] = useState("");
+  const [emailOne, setEmailOne] = useState("");
+  const [semesterOne, setSemesterOne] = useState("");
+  const [branchOne, setBranchOne] = useState("");
+  const [collegeOne, setCollegeOne] = useState("");
+  const [linkedinOne, setLinkedinOne] = useState("");
 
-  const [nameTwo,setNameTwo] = useState('');
-  const [numberTwo,setNumberTwo] = useState('')
-  const [emailTwo,setEmailTwo] = useState('')
-  const [semesterTwo,setSemesterTwo] = useState('')
-  const [branchTwo,setBranchTwo] = useState('')
-  const [collegeTwo,setCollegeTwo] = useState('')
-  const [linkedinTwo,setLinkedinTwo] = useState('')
+  const [nameTwo, setNameTwo] = useState("");
+  const [numberTwo, setNumberTwo] = useState("");
+  const [emailTwo, setEmailTwo] = useState("");
+  const [semesterTwo, setSemesterTwo] = useState("");
+  const [branchTwo, setBranchTwo] = useState("");
+  const [collegeTwo, setCollegeTwo] = useState("");
+  const [linkedinTwo, setLinkedinTwo] = useState("");
 
-  const [nameThree,setNameThree] = useState('');
-  const [numberThree,setNumberThree] = useState('')
-  const [emailThree,setEmailThree] = useState('')
-  const [semesterThree,setSemesterThree] = useState('')
-  const [branchThree,setBranchThree] = useState('')
-  const [collegeThree,setCollegeThree] = useState('')
-  const [linkedinThree,setLinkedinThree] = useState('')
+  const [nameThree, setNameThree] = useState("");
+  const [numberThree, setNumberThree] = useState("");
+  const [emailThree, setEmailThree] = useState("");
+  const [semesterThree, setSemesterThree] = useState("");
+  const [branchThree, setBranchThree] = useState("");
+  const [collegeThree, setCollegeThree] = useState("");
+  const [linkedinThree, setLinkedinThree] = useState("");
 
-  const [nameFour,setNameFour] = useState('');
-  const [numberFour,setNumberFour] = useState('')
-  const [emailFour,setEmailFour]= useState('')
-  const [semesterFour,setSemesterFour] = useState('')
-  const [branchFour,setBranchFour] = useState('')
-  const [collegeFour,setCollegeFour] = useState('')
-  const [linkedinFour,setLinkedinFour] = useState('')
-  
+  const [nameFour, setNameFour] = useState("");
+  const [numberFour, setNumberFour] = useState("");
+  const [emailFour, setEmailFour] = useState("");
+  const [semesterFour, setSemesterFour] = useState("");
+  const [branchFour, setBranchFour] = useState("");
+  const [collegeFour, setCollegeFour] = useState("");
+  const [linkedinFour, setLinkedinFour] = useState("");
+
   const [modal, showModal] = useState("");
   const [loader, setLoader] = useState(false);
   const closeModal = () => {
     showModal("");
   };
 
-const onSubmit = async(e) => {
-    e.preventDefault();
-    setLoader(true);
-      await db
-        .collection("team-registration")
-        .add({
-          teamName,
-          nameOne,
-          numberOne,
-          emailOne,
-          semesterOne,
-         branchOne,
-          collegeOne,
-          linkedinOne,
-          nameTwo,
-         numberTwo,
-         emailTwo,
-          semesterTwo,
-         branchTwo,
-         collegeTwo,
-         linkedinTwo,
-        
-          nameThree,
-          numberThree,
-         emailThree,
-          semesterThree,
-         branchThree,
-          collegeThree,
-         linkedinThree,
-        
-          nameFour,
-          numberFour,
-          emailFour,
-          semesterFour,
-          branchFour,
-          collegeFour,
-        linkedinFour
+  const [buttonDisabled, setButton] = useState(false);
 
-        })
-        .then(() => {
-          setLoader(false);
-          showModal(
-            <AlertModal
-              message="Team Registration Sucessfully!"
-              icon="successful.png"
-              reload="true"
-              close={closeModal}
-            />
-          );
-        })
-        .catch((error) => {
-          showModal(
-            <AlertModal
-              message={error.message}
-              icon="failed.png"
-              reload="true"
-              close={closeModal}
-            />
-          );
-          setLoader(false);
-        });
-    
-}
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setButton(true);
+    setLoader(true);
+    await db
+      .collection("team-registration")
+      .add({
+        teamName,
+        nameOne,
+        numberOne,
+        emailOne,
+        semesterOne,
+        branchOne,
+        collegeOne,
+        linkedinOne,
+        nameTwo,
+        numberTwo,
+        emailTwo,
+        semesterTwo,
+        branchTwo,
+        collegeTwo,
+        linkedinTwo,
+
+        nameThree,
+        numberThree,
+        emailThree,
+        semesterThree,
+        branchThree,
+        collegeThree,
+        linkedinThree,
+
+        nameFour,
+        numberFour,
+        emailFour,
+        semesterFour,
+        branchFour,
+        collegeFour,
+        linkedinFour,
+      })
+      .then(() => {
+        setLoader(false);
+        showModal(
+          <AlertModal
+            message="Team Registration Sucessfully!"
+            icon="successful.png"
+            reload="true"
+            close={closeModal}
+          />
+        );
+      })
+      .catch((error) => {
+        showModal(
+          <AlertModal
+            message={error.message}
+            icon="failed.png"
+            reload="true"
+            close={closeModal}
+          />
+        );
+        setLoader(false);
+      });
+  };
 
   return (
     <React.Fragment>
@@ -130,7 +130,7 @@ const onSubmit = async(e) => {
             Register your <span>Team</span>
           </h2>
           <form action="" method="post" onSubmit={onSubmit}>
-            <div className="row" style={{ gridRowGap: "2em" }}>
+            <div className="row">
               <div className="col-lg-12">
                 <div className="inputGroup">
                   <input
@@ -138,7 +138,7 @@ const onSubmit = async(e) => {
                     name="tname"
                     id="tname"
                     placeholder="Team Name*"
-                    onChange={(e) =>setTeamName(e.target.value)}
+                    onChange={(e) => setTeamName(e.target.value)}
                     value={teamName}
                     autoFocus
                     required
@@ -157,7 +157,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tlname"
                     id="tlname"
-                    onChange={(e) =>setNameOne(e.target.value)}
+                    onChange={(e) => setNameOne(e.target.value)}
                     value={nameOne}
                     placeholder="Name*"
                     required
@@ -171,7 +171,7 @@ const onSubmit = async(e) => {
                     type="number"
                     name="tlmobile"
                     id="tlmobile"
-                    onChange={(e) =>setNumberOne(e.target.value)}
+                    onChange={(e) => setNumberOne(e.target.value)}
                     value={numberOne}
                     placeholder="Mobile No.*"
                     required
@@ -185,7 +185,7 @@ const onSubmit = async(e) => {
                     type="email"
                     name="tlemail"
                     id="tlemail"
-                    onChange={(e) =>setEmailOne(e.target.value)}
+                    onChange={(e) => setEmailOne(e.target.value)}
                     value={emailOne}
                     placeholder="Email*"
                     required
@@ -199,7 +199,7 @@ const onSubmit = async(e) => {
                     type="number"
                     name="tlsemester"
                     id="tlsemester"
-                    onChange={(e) =>setSemesterOne(e.target.value)}
+                    onChange={(e) => setSemesterOne(e.target.value)}
                     value={semesterOne}
                     placeholder="Semester*"
                     required
@@ -213,7 +213,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tlbranch"
                     id="tlbranch"
-                    onChange={(e) =>setBranchOne(e.target.value)}
+                    onChange={(e) => setBranchOne(e.target.value)}
                     value={branchOne}
                     placeholder="Branch*"
                     required
@@ -228,7 +228,7 @@ const onSubmit = async(e) => {
                     name="tlcollege"
                     id="tlcollege"
                     placeholder="College*"
-                    onChange={(e) =>setCollegeOne(e.target.value)}
+                    onChange={(e) => setCollegeOne(e.target.value)}
                     value={collegeOne}
                     required
                   />
@@ -241,7 +241,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tllinkedin"
                     id="tllinkedin"
-                    onChange={(e) =>setLinkedinOne(e.target.value)}
+                    onChange={(e) => setLinkedinOne(e.target.value)}
                     value={linkedinOne}
                     placeholder="Linkedin"
                   />
@@ -259,7 +259,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm2name"
                     id="tm2name"
-                    onChange={(e) =>setNameTwo(e.target.value)}
+                    onChange={(e) => setNameTwo(e.target.value)}
                     value={nameTwo}
                     placeholder="Name*"
                     required
@@ -273,7 +273,7 @@ const onSubmit = async(e) => {
                     type="number"
                     name="tm2mobile"
                     id="tm2mobile"
-                    onChange={(e) =>setNumberTwo(e.target.value)}
+                    onChange={(e) => setNumberTwo(e.target.value)}
                     value={numberTwo}
                     placeholder="Mobile No.*"
                     required
@@ -287,7 +287,7 @@ const onSubmit = async(e) => {
                     type="email"
                     name="tm2email"
                     id="tm2email"
-                    onChange={(e) =>setEmailTwo(e.target.value)}
+                    onChange={(e) => setEmailTwo(e.target.value)}
                     value={emailTwo}
                     placeholder="Email*"
                     required
@@ -301,7 +301,7 @@ const onSubmit = async(e) => {
                     type="number"
                     name="tm2semester"
                     id="tm2semester"
-                    onChange={(e) =>setSemesterTwo(e.target.value)}
+                    onChange={(e) => setSemesterTwo(e.target.value)}
                     value={semesterTwo}
                     placeholder="Semester*"
                     required
@@ -315,7 +315,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm2branch"
                     id="tm2branch"
-                    onChange={(e) =>setBranchTwo(e.target.value)}
+                    onChange={(e) => setBranchTwo(e.target.value)}
                     value={branchTwo}
                     placeholder="Branch*"
                     required
@@ -329,7 +329,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm2college"
                     id="tm2college"
-                    onChange={(e) =>setCollegeTwo(e.target.value)}
+                    onChange={(e) => setCollegeTwo(e.target.value)}
                     value={collegeTwo}
                     placeholder="College*"
                     required
@@ -343,7 +343,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm2linkedin"
                     id="tm2linkedin"
-                    onChange={(e) =>setLinkedinTwo(e.target.value)}
+                    onChange={(e) => setLinkedinTwo(e.target.value)}
                     value={linkedinTwo}
                     placeholder="Linkedin"
                   />
@@ -361,7 +361,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm3name"
                     id="tm3name"
-                    onChange={(e) =>setNameThree(e.target.value)}
+                    onChange={(e) => setNameThree(e.target.value)}
                     value={nameThree}
                     placeholder="Name*"
                     required
@@ -375,7 +375,7 @@ const onSubmit = async(e) => {
                     type="number"
                     name="tm3mobile"
                     id="tm3mobile"
-                    onChange={(e) =>setNumberThree(e.target.value)}
+                    onChange={(e) => setNumberThree(e.target.value)}
                     value={numberThree}
                     placeholder="Mobile No.*"
                     required
@@ -389,7 +389,7 @@ const onSubmit = async(e) => {
                     type="email"
                     name="tm3email"
                     id="tm3email"
-                    onChange={(e) =>setEmailThree(e.target.value)}
+                    onChange={(e) => setEmailThree(e.target.value)}
                     value={emailThree}
                     placeholder="Email*"
                     required
@@ -403,7 +403,7 @@ const onSubmit = async(e) => {
                     type="number"
                     name="tm3semester"
                     id="tm3semester"
-                    onChange={(e) =>setSemesterThree(e.target.value)}
+                    onChange={(e) => setSemesterThree(e.target.value)}
                     value={semesterThree}
                     placeholder="Semester*"
                     required
@@ -417,7 +417,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm3branch"
                     id="tm3branch"
-                    onChange={(e) =>setBranchThree(e.target.value)}
+                    onChange={(e) => setBranchThree(e.target.value)}
                     value={branchThree}
                     placeholder="Branch*"
                     required
@@ -431,7 +431,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm3college"
                     id="tm3college"
-                    onChange={(e) =>setCollegeThree(e.target.value)}
+                    onChange={(e) => setCollegeThree(e.target.value)}
                     value={collegeThree}
                     placeholder="College*"
                     required
@@ -445,7 +445,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm3linkedin"
                     id="tm3linkedin"
-                    onChange={(e) =>setLinkedinThree(e.target.value)}
+                    onChange={(e) => setLinkedinThree(e.target.value)}
                     value={linkedinThree}
                     placeholder="Linkedin"
                   />
@@ -463,7 +463,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm4name"
                     id="tm4name"
-                    onChange={(e) =>setNameFour(e.target.value)}
+                    onChange={(e) => setNameFour(e.target.value)}
                     value={nameFour}
                     placeholder="Name"
                   />
@@ -476,7 +476,7 @@ const onSubmit = async(e) => {
                     type="number"
                     name="tm4mobile"
                     id="tm4mobile"
-                    onChange={(e) =>setNumberFour(e.target.value)}
+                    onChange={(e) => setNumberFour(e.target.value)}
                     value={numberFour}
                     placeholder="Mobile No."
                   />
@@ -489,7 +489,7 @@ const onSubmit = async(e) => {
                     type="email"
                     name="tm4email"
                     id="tm4email"
-                    onChange={(e) =>setEmailFour(e.target.value)}
+                    onChange={(e) => setEmailFour(e.target.value)}
                     value={emailFour}
                     placeholder="Email"
                   />
@@ -502,7 +502,7 @@ const onSubmit = async(e) => {
                     type="number"
                     name="tm4semester"
                     id="tm4semester"
-                    onChange={(e) =>setSemesterFour(e.target.value)}
+                    onChange={(e) => setSemesterFour(e.target.value)}
                     value={semesterFour}
                     placeholder="Semester"
                   />
@@ -515,7 +515,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm4branch"
                     id="tm4branch"
-                    onChange={(e) =>setBranchFour(e.target.value)}
+                    onChange={(e) => setBranchFour(e.target.value)}
                     value={branchFour}
                     placeholder="Branch"
                   />
@@ -528,7 +528,7 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm4college"
                     id="tm4college"
-                    onChange={(e) =>setCollegeFour(e.target.value)}
+                    onChange={(e) => setCollegeFour(e.target.value)}
                     value={collegeFour}
                     placeholder="College"
                   />
@@ -541,16 +541,22 @@ const onSubmit = async(e) => {
                     type="text"
                     name="tm4linkedin"
                     id="tm4linkedin"
-                    onChange={(e) =>setLinkedinFour(e.target.value)}
+                    onChange={(e) => setLinkedinFour(e.target.value)}
                     value={linkedinFour}
                     placeholder="Linkedin"
                   />
                   <label htmlFor="tm4linkedin">Linkedin</label>
                 </div>
               </div>
-              <div className="col-lg-6">
+              <div className="col-lg-12 text-center">
                 <div className="inputGroup">
-                  <button type="submit">Register</button>
+                  {buttonDisabled ? (
+                    <button type="button" disabled>
+                      Submitting...
+                    </button>
+                  ) : (
+                    <button type="submit">Submit Application</button>
+                  )}
                 </div>
               </div>
             </div>

@@ -8,11 +8,16 @@
       .sectionSubtitle {
         font-size: 1.5rem;
         font-weight: 500;
+        margin: 1em 0 0;
 
         span {
           color: var(--theme-clr);
           font-weight: 500;
         }
+      }
+
+      .row {
+        grid-row-gap: 2em;
       }
     }
   }
@@ -34,6 +39,10 @@
             color: var(--theme-clr);
             font-weight: 500;
           }
+        }
+
+        .row {
+          grid-row-gap: 1em;
         }
       }
     }
