@@ -90,6 +90,42 @@
           }
         }
 
+        .coordinators {
+          padding: 0 0 5vh;
+          display: flex;
+          justify-content: center;
+          background-color: var(--sec-clr);
+
+          .singleCoordinator {
+            display: flex;
+            align-items: center;
+
+            img {
+              height: 100px;
+              width: 100px;
+              border-radius: 10px;
+            }
+
+            .memberDetails {
+              margin-left: 2em;
+
+              .name {
+                font-size: 1.3rem;
+              }
+
+              .post {
+                color: var(--theme-clr);
+                font-size: 1rem;
+                font-weight: 400;
+              }
+            }
+
+            &:not(:first-child) {
+              margin-left: 10em;
+            }
+          }
+        }
+
         &:last-child {
           margin-bottom: 10vh;
         }
@@ -157,6 +193,37 @@
                     }
                   }
                 }
+              }
+            }
+          }
+
+          .coordinators {
+            padding: 5vh 15px;
+            flex-direction: column;
+
+            .singleCoordinator {
+              align-items: center;
+
+              img {
+                height: 90px;
+                width: 90px;
+              }
+
+              .memberDetails {
+                margin-left: 1em;
+
+                .name {
+                  font-size: 1.1rem;
+                }
+
+                .post {
+                  font-size: 0.9rem;
+                }
+              }
+
+              &:not(:first-child) {
+                margin-left: 0;
+                margin-top: 2em;
               }
             }
           }

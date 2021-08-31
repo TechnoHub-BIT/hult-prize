@@ -45,6 +45,15 @@ const Navbar = () => {
                   Dashboard
                 </Link>
                 <Link
+                  to="/admin/team-registrations"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Registrations
+                </Link>
+                <Link
                   to="/admin/news"
                   onClick={() => {
                     toggleNavbar(!navbarClass);
@@ -92,6 +101,15 @@ const Navbar = () => {
                   }}
                 >
                   Home
+                </Link>
+                <Link
+                  to="/register"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Register
                 </Link>
                 <Link
                   to="/news"

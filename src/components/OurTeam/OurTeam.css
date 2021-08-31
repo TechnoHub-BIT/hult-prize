@@ -102,6 +102,50 @@
   margin-left: 1em;
 }
 
+.ourTeamContainer .section.teamSection .singleTeam .coordinators {
+  padding: 0 0 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--sec-clr);
+}
+
+.ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator .memberDetails {
+  margin-left: 2em;
+}
+
+.ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator .memberDetails .name {
+  font-size: 1.3rem;
+}
+
+.ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator .memberDetails .post {
+  color: var(--theme-clr);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator:not(:first-child) {
+  margin-left: 10em;
+}
+
 .ourTeamContainer .section.teamSection .singleTeam:last-child {
   margin-bottom: 10vh;
 }
@@ -157,6 +201,35 @@
   }
   .ourTeamContainer .section.teamSection .singleTeam .members .singleMember .memberDetails .social .link:not(:first-child) {
     margin-left: 1em;
+  }
+  .ourTeamContainer .section.teamSection .singleTeam .coordinators {
+    padding: 5vh 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator img {
+    height: 90px;
+    width: 90px;
+  }
+  .ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator .memberDetails {
+    margin-left: 1em;
+  }
+  .ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator .memberDetails .name {
+    font-size: 1.1rem;
+  }
+  .ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator .memberDetails .post {
+    font-size: 0.9rem;
+  }
+  .ourTeamContainer .section.teamSection .singleTeam .coordinators .singleCoordinator:not(:first-child) {
+    margin-left: 0;
+    margin-top: 2em;
   }
 }
 /*# sourceMappingURL=OurTeam.css.map */
