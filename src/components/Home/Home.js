@@ -246,13 +246,13 @@ const Home = () => {
           ) : null}
         </div>
         <div className="section aboutHultSection">
-          <div className="logo" data-aos="fade-right">
+          <div className="logo" data-aos="fade-up">
             <img
               src="./assets/images/logos/bit-vertical-black.png"
               alt="Hult Prize BIT Durg 2022 Logo"
             />
           </div>
-          <div className="text" data-aos="fade-left">
+          <div className="text" data-aos="fade-up">
             Our generation has been left with the biggest challenges to fix -
             education, unemployment, poverty, and many more. But we are also the
             most aware, capable, and knowledgeable generation. We value quality
@@ -262,12 +262,12 @@ const Home = () => {
           </div>
         </div>
         <div className="section contactUsSection">
-          <h3 className="title" data-aos="fade-right">
+          <h3 className="title" data-aos="fade-up">
             Still got <span className="textTheme">mixed up</span> thoughts?
             <br />
             We are always here.
           </h3>
-          <Link to="/contact-us" data-aos="fade-left">
+          <Link to="/contact-us" data-aos="fade-up">
             Contact Us
           </Link>
         </div>

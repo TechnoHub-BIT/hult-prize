@@ -66,16 +66,16 @@ const OurTeam = () => {
                 facebook="aaryan.khandelwal.731"
                 instagram="aaryan610"
                 linkedin="aaryan-khandelwal-89ba501a6"
-                aos="fade-right"
+                data-aos="fade-up"
               />
               <SingleMember
                 name="Bavisetti Narayan"
-                post="Head"
+                post="Associate"
                 image="bavisetti-narayan"
                 facebook="Narayan.bavisetti"
                 instagram="bavisettinarayan"
                 linkedin="bavisetti-narayan-a94b5918b"
-                aos="fade-left"
+                data-aos="fade-up"
               />
             </div>
           </div>
@@ -120,7 +120,7 @@ const OurTeam = () => {
                 image="piyush-gupta"
                 instagram="pi_u_shhh"
                 linkedin="piyush-gupta-41494021a"
-                aos="fade-right"
+                data-aos="fade-up"
               />
 
               <SingleMember
@@ -129,7 +129,7 @@ const OurTeam = () => {
                 image="astha-jain"
                 instagram="astha_jain_3"
                 linkedin="astha-jain613"
-                aos="fade-up"
+                data-aos="fade-up"
               />
 
               <SingleMember
@@ -139,7 +139,7 @@ const OurTeam = () => {
                 facebook="piyush.piyushsahu.75"
                 instagram="piyus_h655"
                 linkedin="piyush-sahu-aa95581a9"
-                aos="fade-left"
+                data-aos="fade-up"
               />
             </div>
           </div>
