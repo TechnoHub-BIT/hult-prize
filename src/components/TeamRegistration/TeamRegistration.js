@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { db } from "../../firebase";
 import AlertModal from "../AlertModal/AlertModal";
+import emailjs from "emailjs-com";
 
 const TeamRegistration = () => {
   const [teamName, setTeamName] = useState("");
@@ -92,12 +93,21 @@ const TeamRegistration = () => {
         setLoader(false);
         showModal(
           <AlertModal
-            message="Team Registration Sucessfully!"
+            message="Application submitted sucessfully! An email has been sent to the Team Leader's registered email."
             icon="successful.png"
             reload="true"
             close={closeModal}
           />
         );
+        emailjs
+          .sendForm(
+            "service_m45r7g5", // Service Id
+            "template_weadojp", // Template Id
+            e.target,
+            "user_YJHkK18eGdYCSwvuV3vR0" // User Id
+          )
+          .then(console.log("Email sent!"));
+        e.target.reset();
       })
       .catch((error) => {
         showModal(
@@ -120,7 +130,6 @@ const TeamRegistration = () => {
           name="title"
           content="Register your Team for Hult Prize BITD 2022"
         />
-        <meta name="description" content="" />
       </Helmet>
       <PageHeader title="Team Registration" />
       {modal}
