@@ -16,6 +16,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #000;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   display: flex;

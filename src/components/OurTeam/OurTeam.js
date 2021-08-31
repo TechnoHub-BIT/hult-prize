@@ -25,7 +25,7 @@ const OurTeam = () => {
       <div className="ourTeamContainer">
         <div className="section teamSection">
           <div className="singleTeam" data-aos="fade-up">
-            <h2 className="title" >
+            <h2 className="title">
               <span>Campus</span> Director
             </h2>
             <div className="members">
@@ -40,7 +40,7 @@ const OurTeam = () => {
             </div>
           </div>
           <div className="singleTeam" data-aos="fade-up">
-            <h2 className="title" >
+            <h2 className="title">
               <span>Co-Campus</span> Director
             </h2>
             <div className="members">
@@ -55,7 +55,7 @@ const OurTeam = () => {
             </div>
           </div>
           <div className="singleTeam" id="technicalTeam" data-aos="fade-up">
-            <h2 className="title" >
+            <h2 className="title">
               <span>Technical</span> Team
             </h2>
             <div className="members members2">
@@ -78,9 +78,9 @@ const OurTeam = () => {
                 aos="fade-left"
               />
             </div>
-          </div> 
+          </div>
           <div className="singleTeam" data-aos="fade-up">
-            <h2 className="title" >
+            <h2 className="title">
               <span>Marketing</span> Team
             </h2>
             <div className="members">
@@ -110,7 +110,7 @@ const OurTeam = () => {
             </div>
           </div>
           <div className="singleTeam" data-aos="fade-up">
-            <h2 className="title" >
+            <h2 className="title">
               <span>Sponsorship & Finance</span> Team
             </h2>
             <div className="members members3">
@@ -144,7 +144,7 @@ const OurTeam = () => {
             </div>
           </div>
           <div className="singleTeam" data-aos="fade-up">
-            <h2 className="title" >
+            <h2 className="title">
               <span>Content</span> Team
             </h2>
             <div className="members">
@@ -159,7 +159,7 @@ const OurTeam = () => {
             </div>
           </div>
           <div className="singleTeam" data-aos="fade-up">
-            <h2 className="title" >
+            <h2 className="title">
               <span>Graphics</span> Team
             </h2>
             <div className="members">
@@ -175,7 +175,7 @@ const OurTeam = () => {
             </div>
           </div>
           <div className="singleTeam" data-aos="fade-up">
-            <h2 className="title" >
+            <h2 className="title">
               <span>Video</span> Team
             </h2>
             <div className="members">
@@ -184,7 +184,7 @@ const OurTeam = () => {
                 post="Head"
                 image="mihir-panikar"
                 facebook=""
-                instagram=""
+                instagram="mihirawr"
                 linkedin=""
                 data-aos="fade-up"
               />
