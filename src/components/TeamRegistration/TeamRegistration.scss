@@ -1,0 +1,41 @@
+.registerContainer {
+  .section {
+    padding: 10vh 10vw;
+
+    &.formSection {
+      padding: 10vh 15vw;
+
+      .sectionSubtitle {
+        font-size: 1.5rem;
+        font-weight: 500;
+
+        span {
+          color: var(--theme-clr);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .registerContainer {
+    .section {
+      padding: 10vh 15px;
+
+      &.formSection {
+        padding: 10vh 15px;
+
+        .sectionSubtitle {
+          font-size: 1.5rem;
+          font-weight: 500;
+
+          span {
+            color: var(--theme-clr);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

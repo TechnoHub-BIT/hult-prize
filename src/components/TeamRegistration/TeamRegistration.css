@@ -1,0 +1,35 @@
+.registerContainer .section {
+  padding: 10vh 10vw;
+}
+
+.registerContainer .section.formSection {
+  padding: 10vh 15vw;
+}
+
+.registerContainer .section.formSection .sectionSubtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.registerContainer .section.formSection .sectionSubtitle span {
+  color: var(--theme-clr);
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 992px) {
+  .registerContainer .section {
+    padding: 10vh 15px;
+  }
+  .registerContainer .section.formSection {
+    padding: 10vh 15px;
+  }
+  .registerContainer .section.formSection .sectionSubtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .registerContainer .section.formSection .sectionSubtitle span {
+    color: var(--theme-clr);
+    font-weight: 500;
+  }
+}
+/*# sourceMappingURL=TeamRegistration.css.map */

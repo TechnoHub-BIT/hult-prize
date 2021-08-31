@@ -34,13 +34,13 @@ const AboutUs = () => {
     {
       question: "How will the teams be judged at the Hult Prize On-campus?",
       answer:
-        "The Hult Prize BITD team brings esteemed judges every year to analyze and judge the teams. The criteria set for the judgment will be explained to the teams before the event.",
+        "The Hult Prize BIT Durg team brings esteemed judges every year to analyze and judge the teams. The criteria set for the judgment will be explained to the teams before the event.",
       open: false,
     },
     {
       question: "Do participants get any resources? If yes, then what?",
       answer:
-        "A wide range of resources is made accessible to students who decide to enter the Hult Prize, including one million dollars in start-up capital to the winner along with an ecosystem that constitutes mentors, judges, and others via the Hult Prize Accelerator Program.<br /><br />Alongside the resources provided by the Hult Prize, the BIT- D Team will be readily available to address any difficulties faced by the teams.",
+        "A wide range of resources is made accessible to students who decide to enter the Hult Prize, including one million dollars in start-up capital to the winner along with an ecosystem that constitutes mentors, judges, and others via the Hult Prize Accelerator Program.<br /><br />Alongside the resources provided by the Hult Prize, the BIT Durg Team will be readily available to address any difficulties faced by the teams.",
       open: false,
     },
     {
@@ -68,10 +68,10 @@ const AboutUs = () => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>Hult Prize BITD 2022- About the Event</title>
+        <title>Hult Prize BIT Durg 2022- About the Event</title>
         <meta
           name="title"
-          content="What is Hult Prize? | Hult Prize BITD 2022"
+          content="What is Hult Prize? | Hult Prize BIT Durg 2022"
         />
         <meta
           name="description"
@@ -119,7 +119,7 @@ const AboutUs = () => {
         </div>
         <div className="section onCampusSection">
           <h2 className="title" data-aos="fade-up">
-            <span>Hult Prize BIT-D:</span> A competition run by students, for
+            <span>Hult Prize BIT Durg:</span> A competition run by students, for
             the students!
           </h2>
           <p className="text" data-aos="fade-up">
@@ -139,14 +139,14 @@ const AboutUs = () => {
             <br />
             <br />
             At BIT Durg, we behold the caliber to transform the world. The Hult
-            Prize BITD is an opportunity for all aspiring young minds to go
+            Prize BIT Durg is an opportunity for all aspiring young minds to go
             about their idea of change. To build an enterprise that pronounces
             impact.
             <br />
             <br />
-            We - the Hult Prize BITD team - assure the competing teams with all
-            the support and guidance in our power. The teams will be mentored
-            and addressed frequently by acclaimed professionals.
+            We - the Hult Prize BIT Durg team - assure the competing teams with
+            all the support and guidance in our power. The teams will be
+            mentored and addressed frequently by acclaimed professionals.
           </p>
         </div>
         <div className="section onCampusSection">
@@ -243,13 +243,13 @@ const AboutUs = () => {
             to the Regional Summit!
             <br />
             <br />
-            The winning team from the Hult Prize BITD event will be competing at
-            the Hult Prize Regionals. One winning team from each host city will
-            then move onto a summer business incubator, where partakers will
-            receive mentorship, advisory and strategic planning, as they create
-            prototypes and set up to commence their new social business. A final
-            round of competition will be hosted, where the winning team will be
-            awarded the $1,000,000 prize.
+            The winning team from the Hult Prize BIT Durg event will be
+            competing at the Hult Prize Regionals. One winning team from each
+            host city will then move onto a summer business incubator, where
+            partakers will receive mentorship, advisory and strategic planning,
+            as they create prototypes and set up to commence their new social
+            business. A final round of competition will be hosted, where the
+            winning team will be awarded the $1,000,000 prize.
             <br />
             <br />
             It is time to ask ourselves, “Has every problem been solved?”, “Is
@@ -277,48 +277,33 @@ const AboutUs = () => {
         </div>
         <div className="section eventBulletinsSection">
           <h2 className="sectionTitle" data-aos="fade-up">
-            Here are the <span>Event Bulletins</span>
+            Last Year's <span>Event Bulletins</span>
           </h2>
           <div className="bulletinsList">
             <div className="singleBulletin" data-aos="fade-up">
-              <i className="fas fa-crown"></i>
-              <h3 className="title">Prize Money</h3>
-              <p className="desc">To be revealed soon</p>
-            </div>
-            <div className="singleBulletin" data-aos="fade-up">
               <i className="fas fa-users"></i>
               <h3 className="title">150+</h3>
-              <p className="desc">
-                Students participated in Hult Prize BITD 2021.
-              </p>
+              <p className="desc">Students participated last year</p>
             </div>
             <div className="singleBulletin" data-aos="fade-up">
               <i className="fas fa-school"></i>
-              <h3 className="title">45+</h3>
-              <p className="desc">
-                Colleges are already a part of our campaign.
-              </p>
+              <h3 className="title">10+</h3>
+              <p className="desc">Colleges took part</p>
             </div>
             <div className="singleBulletin" data-aos="fade-up">
-              <i className="fas fa-school"></i>
-              <h3 className="title">45+</h3>
-              <p className="desc">
-                Colleges are already a part of our campaign.
-              </p>
+              <i className="far fa-calendar-alt"></i>
+              <h3 className="title">10+</h3>
+              <p className="desc">Sessions</p>
             </div>
             <div className="singleBulletin" data-aos="fade-up">
-              <i className="fas fa-school"></i>
-              <h3 className="title">45+</h3>
-              <p className="desc">
-                Colleges are already a part of our campaign.
-              </p>
+              <i className="fas fa-user-tie"></i>
+              <h3 className="title">20+</h3>
+              <p className="desc">Industry Experts</p>
             </div>
             <div className="singleBulletin" data-aos="fade-up">
-              <i className="fas fa-school"></i>
-              <h3 className="title">45+</h3>
-              <p className="desc">
-                Colleges are already a part of our campaign.
-              </p>
+              <i className="fas fa-award"></i>
+              <h3 className="title">3</h3>
+              <p className="desc">Teams escalated to the Regionals</p>
             </div>
           </div>
         </div>

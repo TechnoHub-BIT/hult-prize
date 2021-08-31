@@ -7,6 +7,7 @@ import AboutUs from "./AboutUs/AboutUs";
 import OurTeam from "./OurTeam/OurTeam";
 import NewsList from "./News/NewsList/NewsList";
 import SingleNews from "./News/SingleNews/SingleNews";
+import TeamRegistration from "./TeamRegistration/TeamRegistration";
 //End Pages
 
 //Admin Pages
@@ -51,6 +52,8 @@ const MainComponent = () => {
           <Route exact path="/our-team" component={OurTeam} />
           <Route exact path="/news" component={NewsList} />
           <Route exact path="/news/:id" component={SingleNews} />
+          <Route exact path="/register" component={TeamRegistration} />
+          <Route exact path="/team-registration" component={TeamRegistration} />
           {/* End Pages */}
 
           {/* Admin Pages */}

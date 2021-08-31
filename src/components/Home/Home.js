@@ -75,13 +75,13 @@ const Home = () => {
     {
       question: "How will the teams be judged at the Hult Prize On-campus?",
       answer:
-        "The Hult Prize BITD team brings esteemed judges every year to analyze and judge the teams. The criteria set for the judgment will be explained to the teams before the event.",
+        "The Hult Prize BIT Durg team brings esteemed judges every year to analyze and judge the teams. The criteria set for the judgment will be explained to the teams before the event.",
       open: false,
     },
     {
       question: "Do participants get any resources? If yes, then what?",
       answer:
-        "A wide range of resources is made accessible to students who decide to enter the Hult Prize, including one million dollars in start-up capital to the winner along with an ecosystem that constitutes mentors, judges, and others via the Hult Prize Accelerator Program.<br /><br />Alongside the resources provided by the Hult Prize, the BIT- D Team will be readily available to address any difficulties faced by the teams.",
+        "A wide range of resources is made accessible to students who decide to enter the Hult Prize, including one million dollars in start-up capital to the winner along with an ecosystem that constitutes mentors, judges, and others via the Hult Prize Accelerator Program.<br /><br />Alongside the resources provided by the Hult Prize, the BIT Durg Team will be readily available to address any difficulties faced by the teams.",
       open: false,
     },
     {
@@ -249,7 +249,7 @@ const Home = () => {
           <div className="logo" data-aos="fade-right">
             <img
               src="./assets/images/logos/bit-vertical-black.png"
-              alt="Hult Prize BITD 2022 Logo"
+              alt="Hult Prize BIT Durg 2022 Logo"
             />
           </div>
           <div className="text" data-aos="fade-left">
@@ -282,7 +282,7 @@ const Home = () => {
               <div className="singleSponsor">
                 <img
                   src="./assets/images/logos/zomato.png"
-                  alt="Zomato- Hult Prize BITD 2022 Sponsor"
+                  alt="Zomato- Hult Prize BIT Durg 2022 Sponsor"
                 />
                 <h4 className="name">Zomato</h4>
                 <h5 className="title">Food Partner</h5>
@@ -292,7 +292,7 @@ const Home = () => {
               <div className="singleSponsor">
                 <img
                   src="./assets/images/logos/zomato.png"
-                  alt="Zomato- Hult Prize BITD 2022 Sponsor"
+                  alt="Zomato- Hult Prize BIT Durg 2022 Sponsor"
                 />
                 <h4 className="name">Zomato</h4>
                 <h5 className="title">Food Partner</h5>
