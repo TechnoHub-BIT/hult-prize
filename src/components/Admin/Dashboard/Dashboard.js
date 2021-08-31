@@ -53,6 +53,18 @@ const Dashboard = () => {
     };
     fetchdata();
   }, []);
+
+  const [registrationsLength, setRegistrationsLength] = useState();
+  useEffect(() => {
+    const fetchdata = async () => {
+      db.collection("team-registration")
+        .get()
+        .then(function (querySnapshot) {
+          setRegistrationsLength(querySnapshot.size);
+        });
+    };
+    fetchdata();
+  }, []);
   return (
     <React.Fragment>
       <PageHeader title="Admin Dashboard" />
@@ -97,6 +109,13 @@ const Dashboard = () => {
               </Link>
               <Link to="/admin/news" className="button">
                 <i className="fas fa-wrench"></i>&nbsp;&nbsp;Manage
+              </Link>
+            </div>
+            <div className="singleCard">
+              <h3 className="title">Team Registrations</h3>
+              <h4 className="total">{registrationsLength} Registrations</h4>
+              <Link to="/admin/team-registrations" className="button">
+                <i className="fas fa-eye"></i>&nbsp;&nbsp;View
               </Link>
             </div>
           </div>

@@ -33,6 +33,7 @@ import { AuthProvider } from "../contexts/AuthContext";
 import DisplayDocuments from "./Admin/Documents/DisplayDocuments";
 import DisplaySliders from "./Admin/Slider/DisplaySliders";
 import DisplayNews from "./Admin/News/DisplayNews";
+import teamRegistrations from "./Admin/TeamRegistrations/teamRegistrations";
 
 const MainComponent = () => {
   config({ ssrFadeout: true });
@@ -82,6 +83,7 @@ const MainComponent = () => {
             path="/admin/create-news"
             component={CreateNews}
           />
+          <PrivateRoute exact path="/admin/team-registrations" component={teamRegistrations} />
           {/* End Admin Pages */}
 
           <Footer />
