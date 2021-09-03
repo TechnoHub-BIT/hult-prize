@@ -23,7 +23,6 @@ const TeamRegistration = () => {
   const [emailTwo, setEmailTwo] = useState("");
   const [semesterTwo, setSemesterTwo] = useState("");
   const [branchTwo, setBranchTwo] = useState("");
-  const [collegeTwo, setCollegeTwo] = useState("");
   const [linkedinTwo, setLinkedinTwo] = useState("");
 
   const [nameThree, setNameThree] = useState("");
@@ -31,7 +30,6 @@ const TeamRegistration = () => {
   const [emailThree, setEmailThree] = useState("");
   const [semesterThree, setSemesterThree] = useState("");
   const [branchThree, setBranchThree] = useState("");
-  const [collegeThree, setCollegeThree] = useState("");
   const [linkedinThree, setLinkedinThree] = useState("");
 
   const [nameFour, setNameFour] = useState("");
@@ -39,7 +37,6 @@ const TeamRegistration = () => {
   const [emailFour, setEmailFour] = useState("");
   const [semesterFour, setSemesterFour] = useState("");
   const [branchFour, setBranchFour] = useState("");
-  const [collegeFour, setCollegeFour] = useState("");
   const [linkedinFour, setLinkedinFour] = useState("");
 
   const [modal, showModal] = useState("");
@@ -70,7 +67,6 @@ const TeamRegistration = () => {
         emailTwo,
         semesterTwo,
         branchTwo,
-        collegeTwo,
         linkedinTwo,
 
         nameThree,
@@ -78,7 +74,6 @@ const TeamRegistration = () => {
         emailThree,
         semesterThree,
         branchThree,
-        collegeThree,
         linkedinThree,
 
         nameFour,
@@ -86,7 +81,6 @@ const TeamRegistration = () => {
         emailFour,
         semesterFour,
         branchFour,
-        collegeFour,
         linkedinFour,
       })
       .then(() => {
@@ -247,6 +241,7 @@ const TeamRegistration = () => {
               <div className="col-lg-6">
                 <div className="inputGroup">
                   <input
+                  
                     type="text"
                     name="tllinkedin"
                     id="tllinkedin"
@@ -338,8 +333,8 @@ const TeamRegistration = () => {
                     type="text"
                     name="tm2college"
                     id="tm2college"
-                    onChange={(e) => setCollegeTwo(e.target.value)}
-                    value={collegeTwo}
+                    value={collegeOne}
+                    disabled
                     placeholder="College*"
                     required
                   />
@@ -440,8 +435,8 @@ const TeamRegistration = () => {
                     type="text"
                     name="tm3college"
                     id="tm3college"
-                    onChange={(e) => setCollegeThree(e.target.value)}
-                    value={collegeThree}
+                    value={collegeOne}
+                    disabled
                     placeholder="College*"
                     required
                   />
@@ -531,19 +526,21 @@ const TeamRegistration = () => {
                   <label htmlFor="tm4branch">Branch</label>
                 </div>
               </div>
+              {nameFour !== "" || semesterFour!== "" || branchFour !== "" || numberFour !== "" || emailFour !== "" ? 
               <div className="col-lg-6">
                 <div className="inputGroup">
                   <input
                     type="text"
                     name="tm4college"
                     id="tm4college"
-                    onChange={(e) => setCollegeFour(e.target.value)}
-                    value={collegeFour}
+                    value={collegeOne}
+                    disabled
                     placeholder="College"
                   />
                   <label htmlFor="tm4college">College</label>
                 </div>
               </div>
+              : null }
               <div className="col-lg-6">
                 <div className="inputGroup">
                   <input

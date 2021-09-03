@@ -37,41 +37,41 @@ const teamRegistrations = () => {
                         <span className="date">Semester : {data.semesterOne}</span>
                         <span className="date">Branch : {data.branchOne}</span>
                         <span className="date">College Name : {data.collegeOne}</span>
-                        <span className="date">LinkedIn : {data.linkedOne}</span>
+                        <span className="date">LinkedIn : {data.linkedinOne}</span>
                       </h3>
                       <h3 className="title">
                       Memeber 3
-                      <span className="date">Name : {data.nameOne}</span>
-                        <span className="date">Mobile No. : {data.numberOne}</span>
-                        <span className="date">Email : {data.emailOne}</span>
-                        <span className="date">Semester : {data.semesterOne}</span>
-                        <span className="date">Branch : {data.branchOne}</span>
+                      <span className="date">Name : {data.nameThree}</span>
+                        <span className="date">Mobile No. : {data.numberThree}</span>
+                        <span className="date">Email : {data.emailThree}</span>
+                        <span className="date">Semester : {data.semesterThree}</span>
+                        <span className="date">Branch : {data.branchThree}</span>
                         <span className="date">College Name : {data.collegeOne}</span>
-                        <span className="date">LinkedIn : {data.linkedOne}</span>
+                        <span className="date">LinkedIn : {data.linkedinThree}</span>
                       </h3>
 
                     </div>
                     <div className="right">
                     <h3 className="title">
                       Memeber 2
-                      <span className="date">Name : {data.nameOne}</span>
-                        <span className="date">Mobile No. : {data.numberOne}</span>
-                        <span className="date">Email : {data.emailOne}</span>
-                        <span className="date">Semester : {data.semesterOne}</span>
+                      <span className="date">Name : {data.nameTwo}</span>
+                        <span className="date">Mobile No. : {data.numberTwo}</span>
+                        <span className="date">Email : {data.emailTwo}</span>
+                        <span className="date">Semester : {data.semesterTwo}</span>
                         <span className="date">Branch : {data.branchOne}</span>
                         <span className="date">College Name : {data.collegeOne}</span>
-                        <span className="date">LinkedIn : {data.linkedOne}</span>
+                        <span className="date">LinkedIn : {data.linkedinTwo}</span>
                       </h3>
-                      {data.nameOne ? 
+                      {data.nameFour? 
                       <h3 className="title">
                       Memeber 4
-                      <span className="date">Name : {data.nameOne}</span>
-                        <span className="date">Mobile No. : {data.numberOne}</span>
-                        <span className="date">Email : {data.emailOne}</span>
-                        <span className="date">Semester : {data.semesterOne}</span>
-                        <span className="date">Branch : {data.branchOne}</span>
+                      <span className="date">Name : {data.nameFour}</span>
+                        <span className="date">Mobile No. : {data.numberFour}</span>
+                        <span className="date">Email : {data.emailFour}</span>
+                        <span className="date">Semester : {data.semesterFour}</span>
+                        <span className="date">Branch : {data.branchFour}</span>
                         <span className="date">College Name : {data.collegeOne}</span>
-                        <span className="date">LinkedIn : {data.linkedOne}</span>
+                        <span className="date">LinkedIn : {data.linkedinFour}</span>
                       </h3>
                       : null}
                     </div>
