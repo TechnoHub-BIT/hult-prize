@@ -139,6 +139,15 @@ const Navbar = () => {
                   Team 2022
                 </Link>
                 <Link
+                  to="/campus-ambassador"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Campus Ambassador
+                </Link>
+                <Link
                   to="/contact-us"
                   onClick={() => {
                     toggleNavbar(!navbarClass);

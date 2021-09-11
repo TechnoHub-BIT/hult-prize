@@ -55,6 +55,7 @@ const MainComponent = () => {
           <Route exact path="/news/:id" component={SingleNews} />
           <Route exact path="/register" component={TeamRegistration} />
           <Route exact path="/team-registration" component={TeamRegistration} />
+          <Route exact path="/campus-ambassador" render={() => (window.location = "https://docs.google.com/forms/d/e/1FAIpQLScCrbUbh0KjCVBJH8VMzW5wiiew1YcQ7atJc1wJpVKppXrYjw/viewform")} />
           {/* End Pages */}
 
           {/* Admin Pages */}
