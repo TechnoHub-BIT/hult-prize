@@ -4,6 +4,7 @@ import React from "react";
 import Home from "./Home/Home";
 import ContactUs from "./ContactUs/ContactUs";
 import AboutUs from "./AboutUs/AboutUs";
+import Events from "./Events/Events";
 import OurTeam from "./OurTeam/OurTeam";
 import NewsList from "./News/NewsList/NewsList";
 import SingleNews from "./News/SingleNews/SingleNews";
@@ -49,13 +50,21 @@ const MainComponent = () => {
           <Route exact path="/home" component={Home} />
           <Route exact path="/contact-us" component={ContactUs} />
           <Route exact path="/about-us" component={AboutUs} />
+          <Route exact path="/events" component={Events} />
           <Route exact path="/team" component={OurTeam} />
           <Route exact path="/our-team" component={OurTeam} />
           <Route exact path="/news" component={NewsList} />
           <Route exact path="/news/:id" component={SingleNews} />
           <Route exact path="/register" component={TeamRegistration} />
           <Route exact path="/team-registration" component={TeamRegistration} />
-          <Route exact path="/campus-ambassador" render={() => (window.location = "https://docs.google.com/forms/d/e/1FAIpQLScCrbUbh0KjCVBJH8VMzW5wiiew1YcQ7atJc1wJpVKppXrYjw/viewform")} />
+          <Route
+            exact
+            path="/campus-ambassador"
+            render={() =>
+              (window.location =
+                "https://docs.google.com/forms/d/e/1FAIpQLScCrbUbh0KjCVBJH8VMzW5wiiew1YcQ7atJc1wJpVKppXrYjw/viewform")
+            }
+          />
           {/* End Pages */}
 
           {/* Admin Pages */}
@@ -84,7 +93,11 @@ const MainComponent = () => {
             path="/admin/create-news"
             component={CreateNews}
           />
-          <PrivateRoute exact path="/admin/team-registrations" component={teamRegistrations} />
+          <PrivateRoute
+            exact
+            path="/admin/team-registrations"
+            component={teamRegistrations}
+          />
           {/* End Admin Pages */}
 
           <Footer />

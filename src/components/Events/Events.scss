@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+span {
+  color: var(--theme-clr);
+}
+.eventsContainer {
+  .eventHeading {
+    padding: 6rem 0 6rem 0;
+    .head {
+      color: var(--theme-clr);
+      text-align: center;
+      letter-spacing: 0.7rem;
+    }
+  }
+  .eventMainpage {
+    box-sizing: border-box;
+    .mainpage {
+      position: relative;
+      height: 60vh;
+      background-image: url("https://drive.google.com/uc?export=view&id=1vIi-i6PjDTL9WvK1OAcRX-kUHtVDamVD");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fff;
+      box-sizing: border-box;
+      background-position: 0 100%;
+      background-attachment: fixed;
+      justify-content: flex-end;
+      padding: 5rem 8rem 20vh;
+      clip-path: polygon(0 0, 100% 10%, 100% 80%, 0 100%);
+      .eventtitle {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 500;
+        z-index: 2;
+      }
+      h5 {
+        padding: 2rem 0 0 0;
+      }
+      h2 {
+        letter-spacing: 0.6rem;
+        z-index: 3;
+      }
+    }
+    .mainpage::after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .eventsUpcoming {
+    h1 {
+      text-align: center;
+      padding: 4rem 0rem;
+    }
+    span {
+      color: var(--theme-clr);
+    }
+    .eventcard {
+      // background-color: red;
+      margin: 1rem 6rem 0 6rem;
+    }
+  }
+  .events2Upcoming {
+    margin: 0px 0px 0px 6rem;
+  }
+  .previousyearslider {
+    // background-color: var(--theme-clr);
+    width: 100%;
+    .sliderheading {
+      h1 {
+        margin: 0 0 3rem 0;
+      }
+      .bar {
+        height: 2px;
+        width: 50px;
+        background-color: var(--theme-clr);
+        margin: 2em auto;
+      }
+    }
+
+    // background-color: tomato;
+    .sliderimg {
+      justify-content: center;
+      margin: 0 550px 0;
+      width: 100%;
+      // overflow: hidden;
+    }
+  }
+  .speakerDetails {
+    margin: 4rem 0 0 0;
+    h1 {
+      text-align: center;
+      font-weight: 500;
+      padding: 0 0 2rem 0;
+    }
+    img {
+      width: 100px;
+    }
+    .speakerscard {
+      display: flex;
+      margin: 4rem 0 0 0;
+      justify-content: space-evenly;
+    }
+  }
+  .prevoiusyearevents {
+    margin: 9rem 0 0 0;
+    h1 {
+      text-align: center;
+      //font-weight: 500;
+      font-size: 50px;
+    }
+    .peviouvents {
+      margin: 5rem 0 0 6rem;
+    }
+  }
+  .previousyearslider {
+    text-align: center;
+    position: relative;
+    .sliderimg {
+      width: 50%;
+      left: auto;
+      right: auto;
+      justify-content: center;
+
+      img {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
+  .previouseventsbulletent {
+    text-align: center;
+    line-height: 2rem;
+    margin: 4rem 0 5rem 0;
+    .bulletentheading {
+      margin: 0 0 4rem 0;
+    }
+    .bulletentdetails {
+      ul {
+        list-style: none;
+        li {
+          margin: 0 0 2rem 0;
+        }
+        li::before {
+          content: "\f135";
+          font-family: "FontAwesome";
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .eventsContainer {
+    .eventHeading {
+      padding: 4rem 0 4rem 0;
+      text-align: center;
+      .head {
+        letter-spacing: normal;
+      }
+    }
+    .eventMainpage {
+      .mainpage {
+        padding: 5rem 1rem 20vh 1rem;
+        .clgtitle {
+          padding: 0px 0px 10rem 0px;
+          color: tomato;
+        }
+      }
+    }
+    .eventsUpcoming {
+      .eventcard {
+        margin: 1rem 1rem 0 -2rem;
+      }
+    }
+    .previousyearslider {
+      // background-color: var(--theme-clr);
+      width: 100%;
+      //background-color: tomato;
+      .sliderimg {
+        justify-content: center;
+        margin: 0 16% 0;
+        width: 145%;
+        // overflow: hidden;
+      }
+    }
+    .speakerDetails {
+      .speakerscard {
+        display: block;
+      }
+    }
+    .prevoiusyearevents {
+      margin: 1rem 0 0 0;
+      .peviouvents {
+        margin: 5rem 0 0 3rem;
+      }
+    }
+    .previouseventsbulletent {
+      text-align: center;
+      line-height: 2rem;
+      margin: 5rem 0 5rem 0;
+      .bulletentheading {
+        margin: 0 0 4rem 0;
+      }
+      .bulletentdetails {
+        ul {
+          li {
+            margin: 0 1rem 2rem 1rem;
+          }
+        }
+      }
+    }
+  }
+}

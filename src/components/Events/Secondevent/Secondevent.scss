@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.Secondevent {
+  .SecondeventContainer {
+    background-color: var(--light-black);
+    color: var(--sec-clr);
+    max-width: 90%;
+    border-radius: 2rem;
+    margin: 0rem 0rem 3rem 0rem;
+    box-sizing: border-box;
+    padding: 20px;
+    .speaker {
+      display: none;
+      justify-content: space-evenly;
+      .singleSpeaker {
+        img {
+          border-radius: 15px;
+          width: 100px;
+        }
+      }
+    }
+  }
+  .SecondeventContainer:hover {
+    transform: scale(1.02);
+    transition: 0.5s;
+  }
+}

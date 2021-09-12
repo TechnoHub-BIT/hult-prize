@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  color: var(--theme-clr);
+}
+
+.eventsContainer .eventHeading {
+  padding: 6rem 0 6rem 0;
+}
+
+.eventsContainer .eventHeading .head {
+  color: var(--theme-clr);
+  text-align: center;
+  letter-spacing: 0.7rem;
+}
+
+.eventsContainer .eventMainpage {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.eventsContainer .eventMainpage .mainpage {
+  position: relative;
+  height: 60vh;
+  background-image: url("https://drive.google.com/uc?export=view&id=1vIi-i6PjDTL9WvK1OAcRX-kUHtVDamVD");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-position: 0 100%;
+  background-attachment: fixed;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 5rem 8rem 20vh;
+  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 80%, 0 100%);
+          clip-path: polygon(0 0, 100% 10%, 100% 80%, 0 100%);
+}
+
+.eventsContainer .eventMainpage .mainpage .eventtitle {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.eventsContainer .eventMainpage .mainpage h5 {
+  padding: 2rem 0 0 0;
+}
+
+.eventsContainer .eventMainpage .mainpage h2 {
+  letter-spacing: 0.6rem;
+  z-index: 3;
+}
+
+.eventsContainer .eventMainpage .mainpage::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.eventsContainer .eventsUpcoming h1 {
+  text-align: center;
+  padding: 4rem 0rem;
+}
+
+.eventsContainer .eventsUpcoming span {
+  color: var(--theme-clr);
+}
+
+.eventsContainer .eventsUpcoming .eventcard {
+  margin: 1rem 6rem 0 6rem;
+}
+
+.eventsContainer .events2Upcoming {
+  margin: 0px 0px 0px 6rem;
+}
+
+.eventsContainer .previousyearslider {
+  width: 100%;
+}
+
+.eventsContainer .previousyearslider .sliderheading h1 {
+  margin: 0 0 3rem 0;
+}
+
+.eventsContainer .previousyearslider .sliderheading .bar {
+  height: 2px;
+  width: 50px;
+  background-color: var(--theme-clr);
+  margin: 2em auto;
+}
+
+.eventsContainer .previousyearslider .sliderimg {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 550px 0;
+  width: 100%;
+}
+
+.eventsContainer .speakerDetails {
+  margin: 4rem 0 0 0;
+}
+
+.eventsContainer .speakerDetails h1 {
+  text-align: center;
+  font-weight: 500;
+  padding: 0 0 2rem 0;
+}
+
+.eventsContainer .speakerDetails img {
+  width: 100px;
+}
+
+.eventsContainer .speakerDetails .speakerscard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 4rem 0 0 0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.eventsContainer .prevoiusyearevents {
+  margin: 9rem 0 0 0;
+}
+
+.eventsContainer .prevoiusyearevents h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.eventsContainer .prevoiusyearevents .peviouvents {
+  margin: 5rem 0 0 6rem;
+}
+
+.eventsContainer .previousyearslider {
+  text-align: center;
+  position: relative;
+}
+
+.eventsContainer .previousyearslider .sliderimg {
+  width: 50%;
+  left: auto;
+  right: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.eventsContainer .previousyearslider .sliderimg img {
+  width: 50%;
+  text-align: center;
+}
+
+.eventsContainer .previouseventsbulletent {
+  text-align: center;
+  line-height: 2rem;
+  margin: 4rem 0 5rem 0;
+}
+
+.eventsContainer .previouseventsbulletent .bulletentheading {
+  margin: 0 0 4rem 0;
+}
+
+.eventsContainer .previouseventsbulletent .bulletentdetails ul {
+  list-style: none;
+}
+
+.eventsContainer .previouseventsbulletent .bulletentdetails ul li {
+  margin: 0 0 2rem 0;
+}
+
+.eventsContainer .previouseventsbulletent .bulletentdetails ul li::before {
+  content: "\f135";
+  font-family: "FontAwesome";
+  margin-right: 1em;
+}
+
+@media only screen and (max-width: 992px) {
+  .eventsContainer .eventHeading {
+    padding: 4rem 0 4rem 0;
+    text-align: center;
+  }
+  .eventsContainer .eventHeading .head {
+    letter-spacing: normal;
+  }
+  .eventsContainer .eventMainpage .mainpage {
+    padding: 5rem 1rem 20vh 1rem;
+  }
+  .eventsContainer .eventMainpage .mainpage .clgtitle {
+    padding: 0px 0px 10rem 0px;
+    color: tomato;
+  }
+  .eventsContainer .eventsUpcoming .eventcard {
+    margin: 1rem 1rem 0 -2rem;
+  }
+  .eventsContainer .previousyearslider {
+    width: 100%;
+  }
+  .eventsContainer .previousyearslider .sliderimg {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 16% 0;
+    width: 145%;
+  }
+  .eventsContainer .speakerDetails .speakerscard {
+    display: block;
+  }
+  .eventsContainer .prevoiusyearevents {
+    margin: 1rem 0 0 0;
+  }
+  .eventsContainer .prevoiusyearevents .peviouvents {
+    margin: 5rem 0 0 3rem;
+  }
+  .eventsContainer .previouseventsbulletent {
+    text-align: center;
+    line-height: 2rem;
+    margin: 5rem 0 5rem 0;
+  }
+  .eventsContainer .previouseventsbulletent .bulletentheading {
+    margin: 0 0 4rem 0;
+  }
+  .eventsContainer .previouseventsbulletent .bulletentdetails ul li {
+    margin: 0 1rem 2rem 1rem;
+  }
+}
+/*# sourceMappingURL=Events.css.map */

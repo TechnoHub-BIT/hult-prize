@@ -130,6 +130,15 @@ const Navbar = () => {
                   About
                 </Link>
                 <Link
+                  to="/events"
+                  onClick={() => {
+                    toggleNavbar(!navbarClass);
+                    setIcon(!menuIcon);
+                  }}
+                >
+                  Events
+                </Link>
+                <Link
                   to="/team"
                   onClick={() => {
                     toggleNavbar(!navbarClass);
